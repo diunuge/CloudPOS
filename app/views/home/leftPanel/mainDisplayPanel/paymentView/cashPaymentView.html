@@ -1,0 +1,14 @@
+<div>
+    <div style="height: 312px;">
+        <label class="CloudFont Small-CloudFont">Cash Payment :</label>
+        <div class="input-control text full-size full-width">
+            <input ng-model="Payment.PaymentDetailDto.PayAmount" class="DefaultInputNumber" type="number">
+        </div>
+        <div>
+            <button ng-click="Payment.AddPayment(Payment.PaymentModes.CashPayment)" style="width: 100%; margin-top: 8px; height: 45px; font-size: 18px;" class="shortcut-button bg-grayLight bg-active-darkBlue fg-white ItemButtons">Add</button>
+            <button ng-click="Payment.SavePayment()" style="width: 100%; margin-top: 8px; height: 45px; font-size: 18px;" class="shortcut-button bg-grayLight bg-active-darkBlue fg-white ItemButtons">Save</button>
+        </div>
+        <div ng-include="'views/home/leftPanel/mainDisplayPanel/paymentView/paymentsListView.html'"></div>
+    </div>
+    <div ng-include="'views/home/leftPanel/mainDisplayPanel/commonSubViews/pricingView.html'"></div>
+</div>

@@ -1,0 +1,18 @@
+<div ng-controller="HomeLeftPanelPaymentController">
+    <!-- Payment options menu -->
+    <div class="PaymentOptionsMenu" radio-button-group active-class="CloudPosUiStructureButtonsThemeCatThreeActive" inactive-class="CloudPosUiStructureButtonsThemeCatThree">
+        <button ng-click="PaymentModesNavigator.ToCashPaymentPage()" class="shortcut-button bg-active-darkBlue fg-white PaymentButton CloudFont Small-CloudFont ItemButtons CloudPosUiStructureButtonsThemeCatThreeActive">Cash</button>
+        <button ng-click="PaymentModesNavigator.ToCreditCardPaymentPage()" class="shortcut-button bg-active-darkBlue fg-white PaymentButton CloudFont Small-CloudFont ItemButtons CloudPosUiStructureButtonsThemeCatThree">Credit Card</button>
+        <button ng-click="PaymentModesNavigator.ToChequePaymentPage()" class="shortcut-button bg-active-darkBlue fg-white PaymentButton CloudFont Small-CloudFont ItemButtons CloudPosUiStructureButtonsThemeCatThree">Cheque</button>
+        <button ng-click="PaymentModesNavigator.ToDutyMealPaymentPage()" class="shortcut-button bg-active-darkBlue fg-white PaymentButton CloudFont Small-CloudFont ItemButtons CloudPosUiStructureButtonsThemeCatThree">Duty Meal</button>
+        <button ng-click="PaymentModesNavigator.ToCityLedgerPaymentPage()" class="shortcut-button bg-active-darkBlue fg-white PaymentButton CloudFont Small-CloudFont ItemButtons CloudPosUiStructureButtonsThemeCatThree">City Ledger</button>
+        <button ng-click="PaymentModesNavigator.ToAdvancePaymentPage()" class="shortcut-button bg-active-darkBlue fg-white PaymentButton CloudFont Small-CloudFont ItemButtons CloudPosUiStructureButtonsThemeCatThree">Advance</button>
+    </div>
+
+    <!-- Payment options displaying panel -->
+    <div class="PaymentBody" ng-include="UrlFactory.UrlHolders.HomePageLeftPanelPaymentOption">
+    </div>
+    <permission-retrieval-dialog-box showup="Payment.PermissionRetrieval.isPopupEnabled"
+                                     callback="Payment.PermissionRetrieval.Callback">
+    </permission-retrieval-dialog-box>
+</div>

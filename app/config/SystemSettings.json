@@ -1,0 +1,70 @@
+{
+    "SystemSettings": {
+        "RestrictTablesForWaiters": {
+            "SystemID": 1,
+            "Description": "Restrict Tables for Waiters",
+            "Value": false,
+            "Factor": null
+        },
+        "FastFoodServiceCharge": {
+            "SystemID": 2,
+            "Description": "Fast Food Service Charges",
+            "Value": false,
+            "Factor": null
+        },
+        "TaxBreakUp": {
+            "SystemID": 3,
+            "Description": "Tax BreakUp",
+            "Value": false,
+            "Factor": null
+        },
+        "TabAllowed": {
+            "SystemID": 4,
+            "Description": "Tab Allowed",
+            "Value": false,
+            "Factor": null
+        },
+        "AutoLockTimeDuration": {
+            "SystemID": 7,
+            "Description": "Auto lock time duration",
+            "Value": false,
+            "Factor": null
+        },
+        "DeliveryServiceCharge": {
+            "SystemID": 15,
+            "Description": "Delivery Service Charges",
+            "Value": false,
+            "Factor": null
+        },
+        "CloseTableOrderOnSave": {
+            "SystemID": 19,
+            "Description": "Close Table Order OnSave",
+            "Value": false,
+            "Factor": null
+        },
+        "CloseTabsOrderOnSave": {
+            "SystemID": 20,
+            "Description": "Close Tabs Order OnSave",
+            "Value": false,
+            "Factor": null
+        },
+        "CloseTakeOutOnSave": {
+            "SystemID": 21,
+            "Description": "Close TakeOut Order OnSave",
+            "Value": false,
+            "Factor": null
+        },
+        "CloseDeliveryOrderOnSave": {
+            "SystemID": 22,
+            "Description": "Close Delivery Order OnSave",
+            "Value": false,
+            "Factor": null
+        },
+        "SameUserAuthorization": {
+            "SystemID": 31,
+            "Description": "Same User Authorization",
+            "Value": false,
+            "Factor": null
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "foodItems":
+  [
+    {"orderDetailId":1, "foodId":1, "foodName":"Brown Rice", "price":120, "cover":0},
+    {"orderDetailId":2, "foodId":2, "foodName":"Beer", "price":130, "cover":1},
+    {"orderDetailId":3, "foodId":2, "foodName":"Beer", "price":120, "cover":1},
+    {"orderDetailId":4, "foodId":3, "foodName":"Apple", "price":150, "cover":2},
+    {"orderDetailId":5, "foodId":4, "foodName":"Red Wine", "price":110, "cover":2}    
+  ]
+}

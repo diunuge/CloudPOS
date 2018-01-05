@@ -1,0 +1,85 @@
+<style>
+    div#calenderTable td, div#calenderTable th {
+        min-width:10em;
+        height: 4em;
+        text-align: center;
+        border:1px solid grey;
+    }
+</style>
+<div id="reservation-datepicker">
+    <md-datepicker ng-model="reservationDataModule.FilterDateString"
+                   md-placeholder="Enter a date"
+                   md-min-date="reservationDataModule.MinDate"></md-datepicker>
+</div>
+<div id="calenderTable" class="">
+<!--    <div style="color: black;">
+        <button>&lt;</button>
+        <input type="date">
+        <button>&gt;</button>
+    </div>-->
+ <!--   <div style="width: 160px !important; height: 30px !important;" class="input-control text">
+        <input ng-model="reservationDataModule.FilterDateString" type="date">
+        &lt;!&ndash;<button style="font-size: 20px !important; height: 30px !important;" class="button"><span style="" class="mif-calendar"></span></button>&ndash;&gt;
+    </div>-->
+   <!-- <div class="input-control text" data-role="datepicker">
+        <input type="text" ng-model="reservationDataModule.FilterDateString">
+        <button class="button"><span class="mif-calendar"></span></button>
+    </div>-->
+
+    <!-- Top Div -->
+    <div>
+        <div style="display: inline-block; float: left; margin-right: 4px;">
+            <table>
+                <tr>
+                    <th class="CloudFont SmallerHeading-CloudFont">Tables</th>
+                </tr>
+            </table>
+        </div>
+        <div id="resRightPanelTableTimeSlots" style="display: inline-block; width: 550px; overflow: hidden; height: 60px; float: left; ">
+            <table>
+                <tr>
+                    <th class="CloudFont SmallerHeading-CloudFont"
+                        ng-repeat="item in reservationDataModule.arResTimeSlots"
+                        id="timeSlot{{item.id}}"
+                        data-time-slot-id="{{item.id}}">{{item.TimeLoadDate}}</th>
+                </tr>
+            </table>
+        </div>
+  </div>
+    <div id="resRightPanelTableTables" style="display: inline-block; float: left; max-height: 505px; overflow: hidden; margin-right: 4px;">
+        <table>
+            <tr class="CloudFont SmallerHeading-CloudFont"
+                ng-repeat="item in reservationDataModule.arResTables"><th>Floor {{item.FloorId}} : Table {{item.TblNo}}</th></tr>
+        </table>
+    </div>
+    <div id="resRightPanelTableScrolling" onscroll="scrollingFunc()" style="display: inline-block; float: left; width: 550px; height: 505px; overflow: auto;">
+        <table>
+            <tr ng-repeat="row in reservationDataModule.arResTables">
+                <th class="CloudFont SmallerHeading-CloudFont"
+                    ng-click="reservationDataModule.TableTimeSlotClick($event, row, $index)"
+                    class="{{reservationSlotClass}}"
+                    ng-repeat="column in reservationDataModule.arResTimeSlots"
+                    data-time-slot="{{$index}}"
+                    data-table-id="{{row.TblNo}}"></th>
+            </tr>
+        </table>
+    </div>
+    <script>
+
+        /// Initializes datepicker
+        /*$(function(){window.jQuery3("#datepicker").datepicker();});*/
+
+        /// Initializes calender scrolling functions and
+        /// touch events
+        (function() {
+
+        })();
+
+        function scrollingFunc(e) {
+            var elem = $('#resRightPanelTableScrolling');
+            $('#resRightPanelTableTimeSlots').scrollLeft(elem.scrollLeft());
+            $('#resRightPanelTableTables').scrollTop(elem.scrollTop());
+        }
+    </script>
+</div>
+

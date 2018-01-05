@@ -1,0 +1,172 @@
+/*
+/////// Theme //////
+*/
+
+html{
+   /* background-color: rgb(14, 27, 34);*/
+}
+
+body {
+    margin:0px;
+}
+
+.cloudPOStheme{
+ }
+
+.cloudPOStheme input[type='text'], input[type='number']{
+    color:black;
+}
+
+
+.cloudPOStheme th, td {
+    /*border:1px solid #929087;*/
+}
+
+.cloudPOStheme .mainDivFrame {
+    min-width: 1024px;
+    min-height: 768px;
+    background-color: rgb(14, 27, 34);
+}
+
+.cloudPOStheme .addedItemsTable {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.cloudPOStheme .addedItemsTable th {
+    background-color: aliceblue;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 2em;
+}
+
+.cloudPOStheme .addedItemsTable td {
+    background-color: rgb(247, 202, 150);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 2em;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cloudPOStheme .priceListTable {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: small;
+    background-color: rgb(85, 150, 185);
+    width: 98%;
+}
+
+.cloudPOStheme .priceListTable td {
+    padding-left:0.4em;
+}
+
+.cloudPOStheme .priceListTable #grandTotal {
+    font-size: x-large;
+    background-color: rgb(69, 70, 70);
+}
+
+/*  Buttons  */
+
+.cloudPOStheme .btn-type-one {
+    display: inline-block;
+    background-color: rgb(150, 197, 67);
+    margin:0.2em 0.2em;
+    padding:0.8em 0.6em;
+    color: aliceblue;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 96%;
+    text-align: center;
+    border-radius: 0.3em;
+    font-size:16px;
+}
+
+.cloudPOStheme .btn-type-one:hover {
+    background-color: rgb(171, 208, 102);
+    cursor: pointer;
+}
+
+.cloudPOStheme .btn-type-one-active {
+    display: inline-block;
+    background-color: rgb(108, 143, 44);
+}
+
+.cloudPOStheme .btn-type-two {
+    display: inline-block;
+    background-color: rgb(57, 97, 123);
+    margin:0.4em 0.6em;
+    padding:0.4em 0.6em;
+    color: aliceblue;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+.cloudPOStheme .btn-type-two:hover {
+    background-color: rgb(77, 130, 166);
+    cursor: pointer;
+}
+
+.cloudPOStheme .btn-type-two-active {
+    background-color: rgb(44, 74, 95);
+}
+
+.cloudPOStheme .btn-new-order {
+    background-color: lightgray;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: aliceblue;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.2em;
+    margin: auto;
+}
+
+.cloudPOStheme .btn-new-order:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+.cloudPOStheme .btn-type-three {
+    display: inline-block;
+    background-color: rgb(57, 97, 123);
+    margin:0.4em 0.3em;
+    padding:1.2em 0.6em;
+    color: aliceblue;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 30%;
+    text-align: center;
+    border-radius: 0.4em;
+    cursor: pointer;
+}
+
+.cloudPOStheme .btn-type-three.btn-type-three-active{
+    background-color: rgb(57, 62, 66);
+    font-weight: bold;
+}
+
+.cloudPOStheme .nav-bar .btn-type-three {
+    width:17%;
+}
+
+/* Category Bar */
+.cloudPOStheme .category-bar .font-dec {
+    /*font-size: medium;*/
+    font-weight: bold;
+}
+
+.cloudPOStheme .category-bar .cat-nav-btn{
+    padding:0.8em 0.6em;
+    margin: 0.2em 0.3em;
+    background-color: #4cae4c;
+    width:6em;
+    text-align: center;
+}
+
+.cloudPOStheme .category-bar .cat-item-btn{
+    padding:0.8em 0.6em;
+    margin: 0.2em 0.3em;
+    background-color: #4cae4c;
+    min-width:8.3em;
+    text-align: center;
+    border-radius: 0.3em;
+}

@@ -1,0 +1,74 @@
+/* Define the UI structure theme of the home page */
+
+/* Left panel */
+/* Left panel upper menu */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel.CloudPosUiStructureContentPanel {
+
+}
+
+/* Left panel */
+/* Left panel bottom menu */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel.CloudPosUiStructureMenu {
+
+}
+
+/* Left panel */
+/* Payments */
+/* Left panel payment options menu */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel div.PaymentOptionsMenu {
+
+}
+
+/* Left panel */
+/* Payments */
+/* Left panel payment options menu buttons */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel div.PaymentOptionsMenu button.PaymentButton {
+
+}
+
+/* Left panel */
+/* Payment */
+/* Input type = text */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel div.PaymentBody Input[type='text'] {
+
+}
+
+/* Middle panel */
+/* Horizontal carousel */
+/* Buttons */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .HorizontalCarouselMenu .CarouselItemButtons {
+
+}
+
+/* Middle panel */
+/* Horizontal carousel */
+/* Navigation buttons: next button and previous button*/
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .HorizontalCarouselMenu .CarouselNavButtons {
+
+}
+
+/* Middle panel */
+/* Vertical carousel */
+/* Buttons */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .VerticalCarouselMenu .CarouselItemButtons {
+
+}
+
+/* Middle panel */
+/* Vertical carousel */
+/* Navigation buttons: next button and previous button*/
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .VerticalCarouselMenu .CarouselNavButtons {
+
+}
+
+/* Middle panel */
+/* Filtered items */
+/* Buttons */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .FilteredItemsPanel .FilteredItemButtons {
+
+}
+
+/* Right panel */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageRightPanel {
+
+}

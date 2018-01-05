@@ -1,0 +1,59 @@
+{
+    "MealTypes": {
+        "ALL": {
+            "MealTypeName": "ALL",
+            "MealTypeID": 0
+        },
+        "Table": {
+            "MealTypeName": "TABLE",
+            "MealTypeID": 0
+        },
+        "TakeAway": {
+            "MealTypeName": "TAKEAWAY",
+            "MealTypeID": 0
+        },
+        "Delivery": {
+            "MealTypeName": "DELIVERY",
+            "MealTypeID": 0
+        },
+        "TABLETAKEAWAY": {
+            "MealTypeName": "TABLE/TAKEAWAY",
+            "MealTypeID": 0
+        },
+        "TABLEDELIVERY": {
+            "MealTypeName": "TABLE/DELIVERY",
+            "MealTypeID": 0
+        },
+        "DELIVERYTAKEAWAY": {
+            "MealTypeName": "DELIVERY/TAKEAWAY",
+            "MealTypeID": 0
+        }
+    },
+
+    "OrderCategories": {
+        "DiningOrder": {
+            "Code": "N",
+            "Name": "Table Order",
+            "OrderCategoryId": 0
+        },
+        "TakeoutOrder": {
+            "Code": "F",
+            "Name": "Takeout Order",
+            "OrderCategoryId": 0
+        },
+        "DeliveryOrder": {
+            "Code": "D",
+            "Name": "Delivery Order",
+            "OrderCategoryId": 0
+        },
+        "TabOrder": {
+            "Code": "T",
+            "Name": "Tab Order",
+            "OrderCategoryId": 0
+        }
+    },
+
+    "WellKnownStatus": {
+
+    }
+}

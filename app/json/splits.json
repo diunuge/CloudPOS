@@ -1,0 +1,16 @@
+{
+  "splits": 
+    [
+        {
+          "invoiceId":1234,
+          "orderId":1,
+          "totalAmount":360,
+          "splitFoods":
+            [
+              {"orderDetailId":6, "foodId":1, "foodName":"Brown Rice", "price":120, "cover":0},
+              {"orderDetailId":7, "foodId":1, "foodName":"Brown Rice", "price":120, "cover":0},
+              {"orderDetailId":8, "foodId":1, "foodName":"Brown Rice", "price":120, "cover":0}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+  "foodItems":
+     [
+        {
+          "foodId": 1,
+          "foodName": "Chicken Pizza",
+          "price" : 620
+        },
+        {
+          "foodId": 2,
+          "foodName": "Kottu",
+          "price" : 140
+        },
+        {
+          "foodId": 3,
+          "foodName": "Scramble Pudin",
+          "price" : 110
+        },
+        {
+          "foodId": 4,
+          "foodName": "Brown Rice",
+          "price" : 220
+        },
+        {
+          "foodId": 5,
+          "foodName": "Ice Cream",
+          "price" : 220
+        }
+     ]
+}

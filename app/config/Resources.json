@@ -1,0 +1,18 @@
+{
+    "SystemResources": {
+        "MainApiBranches": {
+            "AdminService": "AdminService.svc",
+            "MasterService": "MasterService.svc",
+            "SecurityService": "SecurityService.svc",
+            "ReservationService": "ReservationService.svc"
+        },
+        "ApiCalls": {
+            "SystemUsers": "",
+            "SystemUserLevels": "",
+            "SystemPrivileges": "",
+            "SystemMenus": "",
+            "SystemUserLevelPrivileges": "",
+            "SystemUserLevelRules": ""
+        }
+    }
+}

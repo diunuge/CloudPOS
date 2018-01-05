@@ -1,0 +1,62 @@
+<div class="PaymentPanelView" ng-controller="PaymentPanelController">
+    <!-- Payment options selecting panel -->
+    <div class="MainPanels LeftPanel">
+        <div data-role="{{(PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) ? '' : 'group'}}" data-group-type="one-state">
+        <div>
+            <button class="button {{((!PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) && HomeDataModule.SelectedOrder.Order.OrderID === undefined) ? '' : 'primary'}} PaymentOptionsButton"
+                    ng-click="PaymentDataModule.NavigationHandler.RightPanel.Payment.ToCashPayment()"
+                    ng-disabled="(!PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) && HomeDataModule.SelectedOrder.Order.OrderID === undefined">
+                Cash
+            </button>
+            <button class="button {{((!PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) && HomeDataModule.SelectedOrder.Order.OrderID === undefined) ? '' : 'primary'}} PaymentOptionsButton"
+                    ng-click="PaymentDataModule.NavigationHandler.RightPanel.Payment.ToCreditCardPayment()"
+                    ng-disabled="(!PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) && HomeDataModule.SelectedOrder.Order.OrderID == undefined">
+                Credit Card
+            </button>
+            <button class="button {{((!PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) && HomeDataModule.SelectedOrder.Order.OrderID === undefined) ? '' : 'primary'}} PaymentOptionsButton"
+                    ng-click="PaymentDataModule.NavigationHandler.RightPanel.Payment.ToChequePayment()"
+                    ng-disabled="(!PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) && HomeDataModule.SelectedOrder.Order.OrderID == undefined">
+                Cheque
+            </button>
+            <button class="button {{((!PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn() && HomeDataModule.SelectedOrder.Order.OrderID === undefined) || PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) ? '' : 'primary'}} PaymentOptionsButton"
+                    ng-click="PaymentDataModule.NavigationHandler.RightPanel.Payment.ToDutyMealPayment()"
+                    ng-disabled="PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn() || HomeDataModule.SelectedOrder.Order.OrderID === undefined">
+                Duty Meal
+            </button>
+            <button class="button {{((!PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn() && HomeDataModule.SelectedOrder.Order.OrderID === undefined) || PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) ? '' : 'primary'}} PaymentOptionsButton"
+                    ng-click="PaymentDataModule.NavigationHandler.RightPanel.Payment.ToCityLedgerPayment()"
+                    ng-disabled="PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn() || HomeDataModule.SelectedOrder.Order.OrderID === undefined">
+                City Ledger
+            </button>
+            <button class="button {{((!PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn() && HomeDataModule.SelectedOrder.Order.OrderID === undefined) || PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn()) ? '' : 'primary'}} PaymentOptionsButton"
+                    ng-click="PaymentDataModule.NavigationHandler.RightPanel.Payment.ToAdvancePayment()"
+                    ng-disabled="PaymentDataModule.AdvanceDeposit.IsAdvanceDepositOn() || HomeDataModule.SelectedOrder.Order.OrderID === undefined">
+                Advance
+            </button>
+        </div>
+        <hr/>
+        <div style="margin-top: 0.6rem;">
+            <button class="button primary PaymentOptionsButton"
+                    ng-click="PaymentDataModule.NavigationHandler.RightPanel.ToMultiplePayment()">
+                Multiple Payment
+            </button>
+            <button class="button primary PaymentOptionsButton"
+                    ng-click="PaymentDataModule.NavigationHandler.RightPanel.ToAdvanceDeposit()">
+                Advance Deposit
+            </button>
+        </div>
+        </div>
+        <hr/>
+        <div style="position: absolute; bottom: 0; width: 100%;">
+            <button class="button success PaymentOptionsButton"
+                    style="padding: 0"
+                    ng-click="PaymentDataModule.Payment.MakePayment()">
+                CONFIRM
+            </button>
+        </div>
+    </div>
+    <!-- Payment options, keypad, added payments list -->
+    <div class="MainPanels RightPanel" ng-include="UrlFactory.UrlHolders.HomeViewMiddlePanelPaymentPanel.RightPanel.BodyArea">
+
+    </div>
+</div>

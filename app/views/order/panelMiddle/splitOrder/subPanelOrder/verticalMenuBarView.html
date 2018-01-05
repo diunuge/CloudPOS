@@ -1,0 +1,49 @@
+<style>
+    [ng-controller='OrderPanelMiddleSubPanelOrderVerticalMenuBarController'] .btn.btn-success {
+        width: 98%;
+        margin: 0.2em 0em;
+        height: 3.5em;
+    }
+</style>
+<div ng-controller="OrderPanelMiddleSubPanelOrderVerticalMenuBarController" style="margin-top: 0.85em;">
+<button onclick="scrollUp()" class="btn btn-success">˄</button><br/>
+<div id="verticalScrollBarScrollingArea" style="max-height:312px; overflow: hidden;">
+    <button style="overflow: hidden; text-overflow: ellipsis; font-size: 14px; height: 4em !important;" ng-class="{'active': $first}" ng-repeat="foodType in orderDataModule.filteredFoodTypesAr track by $index" ng-click="selectFoodItems($event, foodType.FoodTypeId)" class="btn btn-success">{{foodType.FoodTypeName}}</button><br/>
+</div>
+<button onclick="scrollDown()" class="btn btn-success">˅</button><br/>
+</div>
+<script>
+    var vsscr = 0;
+    var vsscrollingBlock=0;
+    var vsscrollWidth;
+    var vselemW = 200;
+
+    function scrollDown(){
+        vsscrollWidth = Math.round($('#verticalScrollBarScrollingArea')[0].scrollHeight - $('#verticalScrollBarScrollingArea').height());
+        if(vsscrollWidth>vsscr) {
+            if((vsscrollWidth-vsscr)>vselemW){
+                vsscr += vselemW;
+            }else{
+                vsscr += (vsscrollWidth-vsscr);
+            }
+            $('#verticalScrollBarScrollingArea').animate({
+                scrollTop: vsscr
+            }, 600, function () {
+            });
+        }
+    }
+
+    function scrollUp(){
+        if(vsscr>0) {
+            if(vsscr>vselemW){
+                vsscr = (vsscr - vselemW);
+            }else {
+                vsscr = 0;
+            }
+            $('#verticalScrollBarScrollingArea').animate({
+                scrollTop: vsscr
+            }, 600, function () {
+            });
+        }
+    }
+</script>

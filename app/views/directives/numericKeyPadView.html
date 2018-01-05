@@ -1,0 +1,53 @@
+<div class="CloudPosKeyPad">
+    <div style="float: left; padding-left: 0.4rem;">
+        <div>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(1)">1</button>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(2)">2</button>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(3)">3</button>
+        </div>
+        <div>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(4)">4</button>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(5)">5</button>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(6)">6</button>
+        </div>
+        <div>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(7)">7</button>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(8)">8</button>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(9)">9</button>
+        </div>
+        <div>
+            <button class="button large-button numeric-keys keys-theme" ng-click="Backspace()">C</button>
+            <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(0)">0</button>
+            <button class="button large-button numeric-keys keys-theme" ng-click="Clear()">CLS</button>
+        </div>
+    </div>
+    <div style="float: left; width: 48% !important; margin-left: 0.5rem;">
+        <div>
+            <button class="button large-button numeric-keys-notes keys-theme" ng-click="AddValue(50)">
+                <span class="badge">50</span>
+            </button>
+            <button class="button large-button numeric-keys-notes keys-theme" ng-click="AddValue(1000)">
+                <span class="badge">1000</span>
+            </button>
+        </div>
+        <div>
+            <button class="button large-button numeric-keys-notes keys-theme" ng-click="AddValue(100)">
+                <span class="badge">100</span>
+            </button>
+            <button class="button large-button numeric-keys-notes keys-theme" ng-click="AddValue(2000)">
+                <span class="badge">2000</span>
+            </button>
+        </div>
+        <div>
+            <button class="button large-button numeric-keys-notes keys-theme" ng-click="AddValue(500)">
+                <span class="badge">500</span>
+            </button>
+            <button class="button large-button numeric-keys-notes keys-theme" ng-click="AddValue(5000)">
+                <span class="badge">5000</span>
+            </button>
+        </div>
+        <div>
+            <button class="button large-button enter-button keys-theme" ng-click="DueAmountToggle()">{{DueAmountValue | currency : '' : 2}}</button>
+        </div>
+    </div>
+</div>

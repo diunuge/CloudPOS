@@ -1,0 +1,51 @@
+<div ng-controller="BillDisplayPanelController" style="height: 100%;">
+    <div style="height: 70%; overflow: auto;">
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="">Name</th>
+            <th class="">Qty</th>
+            <th class="">Amount</th>
+        </tr>
+        </thead>
+        <thead>
+        <tr ng-repeat="orderDetail in BillDataModule.OrderDetailsList">
+            <td>{{orderDetail.Name}}&nbsp;<span ng-if="orderDetail.Remarks!=''" class="mif-bubbles"></span></td>
+            <td>{{orderDetail.Quantity}}</td>
+            <td>{{orderDetail.NetPrice | currency : 'Rs. ' : 2}}</td>
+        </tr>
+        </thead>
+    </table>
+    </div>
+
+    <div style="height: 30%;">
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="">No Of Items : {{BillDataModule.BillSummary.Quantity}}</th>
+            <th class=""></th>
+        </tr>
+        <tr>
+            <th class="">Net Total : {{BillDataModule.BillSummary.NetTotal | currency : 'Rs. ' : 2}}</th>
+            <th class=""></th>
+        </tr>
+        <tr>
+            <th class="">Service Charge : {{BillDataModule.BillSummary.ServiceChargeTotal | currency : 'Rs. ' : 2}}</th>
+            <th class=""></th>
+        </tr>
+        <tr>
+            <th class="">Tax Total : {{BillDataModule.BillSummary.TaxTotal | currency : 'Rs. ' : 2}}</th>
+            <th class=""></th>
+        </tr>
+        <tr>
+            <th class="">Discount Total : {{BillDataModule.BillSummary.DiscountTotal | currency : 'Rs. ' : 2}}</th>
+            <th class=""></th>
+        </tr>
+        <tr>
+            <th class=""><h3>Grand Total : {{BillDataModule.BillSummary.GrandTotal | currency : 'Rs. ' : 2}}</h3></th>
+            <th class=""></th>
+        </tr>
+        </thead>
+    </table>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+{
+  "orders":
+    [
+      {"orderId": 1, "orderType": "N","noOfGuests":5, "tableId":1, "deliveryId":"", "takeoutId":"", "tabId":""}
+    ]
+}

@@ -1,0 +1,58 @@
+<div class="accordion"
+     data-role="accordion"
+     data-close-any="true"
+     style="height: 100%; overflow: auto;">
+    <div class="frame active">
+        <div class="heading">Dining Orders</div>
+        <div class="content" data-role="group" data-group-type="multi-state" data-button-style="class">
+            <button class="button large-button"
+                    style="width: 100%; display: block; height: auto; text-align: left;"
+                    ng-repeat="order in PaymentDataModule.MultiplePayment.Orders.DiningOrders"
+                    ng-click="PaymentDataModule.MultiplePayment.AddOrder($event, order)">
+                <h5>Order ID : {{order.OrderID}}</h5>
+                <h5>Guest Phone No : {{order.GuestID}}</h5>
+                <h6>Tables : </h6>
+                <h6>Reservation ID : {{order.ReservationID}}</h6>
+            </button>
+        </div>
+    </div>
+
+    <div class="frame">
+        <div class="heading">Takeout Orders</div>
+        <div class="content" data-role="group" data-group-type="multi-state" data-button-style="class">
+            <button class="button large-button"
+                    style="width: 100%; display: block; height: auto; text-align: left;"
+                    ng-repeat="order in PaymentDataModule.MultiplePayment.Orders.TakeoutOrders"
+                    ng-click="PaymentDataModule.MultiplePayment.AddOrder($event, order)">
+                <h5>Order ID : {{order.OrderID}}</h5>
+                <h5>Guest Phone No : {{order.GuestID}}</h5>
+            </button>
+        </div>
+    </div>
+
+    <!--<div class="frame">
+        <div class="heading">Delivery Orders</div>
+        <div class="content" data-role="group" data-group-type="multi-state" data-button-style="class">
+            <button class="button large-button"
+                    style="width: 100%; display: block; height: auto; text-align: left;"
+                    ng-repeat="order in PaymentDataModule.MultiplePayment.Orders.DeliveryOrders"
+                    ng-click="PaymentDataModule.MultiplePayment.AddOrder($event, order)">
+                <h5>Order ID : {{order.OrderID}}</h5>
+                <h5>Guest Phone No : {{order.GuestID}}</h5>
+            </button>
+        </div>
+    </div>-->
+
+    <div class="frame">
+        <div class="heading">Tab Orders</div>
+        <div class="content" data-role="group" data-group-type="multi-state" data-button-style="class">
+            <button class="button large-button"
+                    style="width: 100%; display: block; height: auto; text-align: left;"
+                    ng-repeat="order in PaymentDataModule.MultiplePayment.Orders.TabOrders"
+                    ng-click="PaymentDataModule.MultiplePayment.AddOrder($event, order)">
+                <h5>Order ID : {{order.OrderID}}</h5>
+                <h5>Guest Phone No : {{order.GuestID}}</h5>
+            </button>
+        </div>
+    </div>
+</div>

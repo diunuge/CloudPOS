@@ -1,0 +1,143 @@
+/* CloudPOS Master Theme */
+
+/* WARNING */
+/* Please note - Do not attempt to change any value which is not mentioned in the comments area.*/
+/* such a change can lead to unexpected results in the structure of the app. */
+/* DO NOT ATTEMPT TO CHANGE ANY CSS VALUE WHICH IS NOT MENTIONED IN THE CHANGEABLE LIST */
+
+/* Main structure theme */
+/* Changeable list - background-color */
+div.CloudPosUiStructureMainContainer.CloudPosUiThemeMainStructure {
+}
+
+/* Header */
+/* Define the theme of the top ribbon */
+/* CAUTION */
+/* DO NOT ATTEMPT ANY CHANGES */
+div.CloudPosUiStructureMainContainer.CloudPosUiThemeMainStructure .CloudPosUiThemeUpperRibbon {
+}
+
+/* Theme - CloudPOS header */
+/* This css class effects main ribbon's immediate children panels */
+/* Changeable list - background-color, border-color */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon>.CloudPosUiStructureUpperRibbonPanelsTheme {
+    background-color: #f7f7f7;
+    border-color: #0000ff;
+}
+
+/* Theme - CloudPOS header */
+/* Changeable list - background-color, border-color */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon>.CloudPosUiStructureUpperRibbonPanelsTheme .CloudPosUpperRibbonFonts {
+    color: #002451;
+}
+
+/* Theme - CloudPOS header */
+/* Changeable list - background-color */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon .CloudPosUiStructureNavigatorsTheme {
+    background-color: #999 !important;
+}
+
+/* Theme - CloudPOS header */
+/* Changeable values list - background-color */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon .CloudPosUiStructureNavigatorsActiveTheme {
+    background-color: #59cde2 !important;
+}
+
+/* Theme - CloudPOS header */
+/* Changeable values list - background-color, border-color */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureTwoPanelStructure.CloudPosUiStructurePanelsTheme,
+.CloudPosUiStructureThreePanelStructure.CloudPosUiStructurePanelsTheme {
+    background-color: #efefef !important;
+    border-color: #b3b3b7 !important;
+}
+
+/* Theme - CloudPOS buttons theme */
+/* Changeable values list - background-color, border-color*/
+div.CloudPosUiStructureMainContainer button.CloudPosUiStructureButtonsThemeCatOne {
+  /*  background-color: #5c9ff3 !important;
+    border-color: #2266c1 !important;*/
+}
+
+/* Theme - CloudPOS buttons theme */
+/* Changeable values list - background-color, border-color*/
+div.CloudPosUiStructureMainContainer button.CloudPosUiStructureButtonsThemeCatTwo {
+    background-color: #2d81ea !important;
+    border-color: #3a5e8e !important;
+}
+
+/* Theme - CloudPOS buttons theme */
+/* Changeable values list - background-color, border-color*/
+div.CloudPosUiStructureMainContainer button.CloudPosUiStructureButtonsThemeCatThree {
+    background-color: #2d81ea !important;
+    border-color: #3a5e8e !important;
+}
+
+/* Theme - CloudPOS buttons theme */
+/* Changeable values list - background-color, border-color*/
+div.CloudPosUiStructureMainContainer button.CloudPosUiStructureButtonsThemeCatFour {
+    background-color: #2d81ea !important;
+    border-color: #3a5e8e !important;
+}
+
+/* Theme - CloudPOS buttons theme */
+/* Changeable values list - background-color, border-color*/
+div.CloudPosUiStructureMainContainer button.CloudPosUiStructureButtonsThemeCatFive {
+    background-color: #f3f7fb !important;
+}
+
+/* Theme - CloudPOS buttons theme */
+/* Changeable values list - background-color, border-color, font-weight, color */
+div.CloudPosUiStructureMainContainer button.CloudPosUiStructureButtonsThemeCatThreeActive {
+    background-color: #7b94af !important;
+}
+
+/* Theme - CloudPOS buttons theme */
+/* Changeable values list - background-color, border-color, font-weight, color */
+div.CloudPosUiStructureMainContainer button[disabled].CloudPosUiStructureButtonsThemeCatThree {
+    background-color: #a7a5a5 !important;
+}
+
+/* Theme - CloudPOS buttons theme */
+/* Changeable values list - background-color, border-color*/
+div.CloudPosUiStructureMainContainer button.CloudPosUiStructureButtonsThemeCatFiveActive {
+    background-color: #cfdae4 !important;
+}
+
+/* Theme - CloudPOS input elements */
+/* Changeable list - background-color, color, font-weight */
+div.CloudPosUiStructureMainContainer Input[type='text'],Input[type='number'],Input[type='date'] {
+
+}
+
+/* CloudPOS Predefined Fonts Themes */
+/* Changeable list - background-color, color, font-weight */
+div.CloudPosUiStructureMainContainer .CloudFont {
+}
+
+/* Small font  theme */
+/* Changeable list - background-color, color, font-weight */
+div.CloudPosUiStructureMainContainer .CloudFont.Small-CloudFont {
+    color: #52677a !important;
+    font-weight: 700 !important;
+}
+
+/* BigHeading theme */
+/* Changeable list - background-color, color, font-weight */
+div.CloudPosUiStructureMainContainer .CloudFont.BigHeading-CloudFont {
+    color: #52677a !important;
+    font-weight: 700 !important;
+}
+
+/* SmallHeading theme */
+/* Changeable list - background-color, color, font-weight */
+div.CloudPosUiStructureMainContainer .CloudFont.SmallHeading-CloudFont {
+    color: #52677a !important;
+    font-weight: 700 !important;
+}
+
+/* SmallerHeading */
+/* Changeable list - background-color, color, font-weight */
+div.CloudPosUiStructureMainContainer .CloudFont.SmallerHeading-CloudFont {
+    color: #52677a !important;
+    font-weight: 700 !important;
+}

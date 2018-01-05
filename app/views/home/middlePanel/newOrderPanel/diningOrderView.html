@@ -1,0 +1,12 @@
+<dining-reservation-panel is-ready="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.IsReady"
+                          tables-list="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.Tables"
+                          floors-list="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.FloorsList"
+                          reservations-list="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.Reservations"
+                          callback="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.UsersSelectionModelBox.OpenPopup"
+                          filter-reservations="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.ReservationFilteringCallback.callback"
+                          reservation-update-callback="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.UpdateReservation">
+</dining-reservation-panel>
+<users-selection-directive callback="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.UsersSelectionModelBox.Callback"
+                           showup="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.UsersSelectionModelBox.IsShowUp"
+                           options="HomeDataModule.MiddlePanel.NewOrderPanel.DiningOrder.UsersSelectionModelBox.Users">
+</users-selection-directive>

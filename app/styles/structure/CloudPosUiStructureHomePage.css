@@ -1,0 +1,128 @@
+/* Define the UI structure of the home page */
+
+/* Left Panel */
+/* Content panel */
+/* Heights of the main panels are 642px */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel.CloudPosUiStructureContentPanel
+{
+    height: 510px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #c6c6e0;
+    overflow: hidden !important;
+    padding: 4px !important;
+}
+
+/* Left panel */
+/* Menu area */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel.CloudPosUiStructureMenu
+{
+    /*display: flex !important;*/
+    align-items: center !important;
+    height: 82px !important;
+    width: 100% !important;
+    margin:0 auto !important;
+}
+
+/* LeftPanel */
+/* OrderDetail panel */
+/* pricing table */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel .pricingTable {
+
+}
+
+/* LeftPanel */
+/* OrderDetail panel */
+/* pricing table */
+/* td, th */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel .pricingTable tr>td,tr>th {
+    padding: 0px !important;
+}
+
+/* Left panel */
+/* Payments */
+/* Left panel payment options menu */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel div.PaymentOptionsMenu {
+
+}
+
+/* Left panel */
+/* Payments */
+/* Left panel payment options menu buttons */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel div.PaymentOptionsMenu button.PaymentButton {
+    width: 90px !important;
+    height: 45px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 4px !important;
+}
+
+/* Left panel */
+/* Payment */
+/* Input type = text, type = number, type = date */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel div.PaymentBody Input[type='text'].DefaultInputText,Input[type='date'].DefaultInputDate,Input[type='number'].DefaultInputNumber {
+/*    font-family: sans-serif !important;
+    height: 30px !important;
+    font-weight: bold !important;
+    line-height: 30px !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    margin-left: 2px !important;*/
+}
+
+/* Left panel */
+/* Payment */
+/* Credit card payment */
+/* Allowed credit card types */
+/* Buttons group */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageLeftPanel div.CreditCardPaymentView div.radio-buttons-group button{
+    display: block;
+    height: 30px;
+    font-size: 14px;
+    width: 270px;
+}
+
+/* Middle panel */
+/* Horizontal carousel */
+/* Item buttons */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .HorizontalCarouselMenu .CarouselItemButtons
+{
+    min-width: 107px !important;
+    height: 57px !important;
+}
+
+/* Middle panel */
+/* Horizontal carousel */
+/* Navigation buttons */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .HorizontalCarouselMenu .CarouselNavButtons
+{
+    width: 75px !important;
+    height: 57px !important;
+}
+
+/* Middle panel */
+/* Vertical carousel */
+/* Item buttons */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .VerticalCarouselMenu .CarouselItemButtons
+{
+    width: 120px !important;
+    height: 57px !important;
+}
+
+/* Middle panel */
+/* Vertical carousel */
+/* Navigation buttons */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .VerticalCarouselMenu .CarouselNavButtons
+{
+    width: 120px !important;
+}
+
+/* Middle panel */
+/* Filtered Items */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureHomePage.CloudPosUiStructureHomePageMiddlePanel .FilteredItemsPanel .FilteredItemButtons
+{
+    width: 138px !important;
+    height: 100px !important;
+    margin: 2px !important;
+}

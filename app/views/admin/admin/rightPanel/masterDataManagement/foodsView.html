@@ -1,0 +1,613 @@
+<div ng-controller="MasterDataFoodMgController"
+     class="grid"
+     style="position:relative;">
+        <div class="row cells3">
+            <div class="cell colspan2"
+                 style="height: 35.8rem; overflow: auto;">
+
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell colspan1">
+                        <h5>Recipe Name : </h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control text full-size"
+                             data-role="input">
+                            <input type="text"
+                                   placeholder="Recipe Name.."
+                                   ng-model="MasterDataFoodMgDataModule.RecipeMgt.ItemDto.Name">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell colspan1">
+                        <h5>Selling Price : </h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control number full-size"
+                             data-role="input">
+                            <input type="number"
+                                   placeholder="Selling Price.."
+                                   ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.Price">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="input-control full-size">
+                    <label class="input-control checkbox">
+                        <input type="checkbox"
+                               ng-model="MasterDataFoodMgDataModule.RecipeMgt.ItemDto.IsRawMaterial">
+                        <span class="check"></span>
+                        <span class="caption">Direct Item</span>
+                    </label>
+                </div>
+
+
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell colspan1">
+                        <h5>Standard Cost : </h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control number full-size"
+                             data-role="input">
+                            <input type="number"
+                                   placeholder="Standard Cost.."
+                                   ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.StandardCost">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell colspan1">
+                        <h5>Calorie Count : </h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control number full-size"
+                             data-role="input">
+                            <input type="number"
+                                   placeholder="Calorie Count.."
+                                   ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.CalorieCount">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell colspan1">
+                        <h5>Calorie Count : </h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control number full-size"
+                             data-role="input">
+                            <input type="number"
+                                   placeholder="Index ID.."
+                                   ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.IndexId">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="grid">
+                    <div class="row cells4">
+                        <div class="cell">
+                            <h4 class="sub-alt-header">Printer Name : </h4>
+                        </div>
+                        <div class="cell colspan3">
+                            <div class="input-control select full-size"
+                                data-role="select"
+                                data-placeholder="Select a printer..."
+                                style="">
+                                <select ng-options="item.Description for item in MasterDataFoodMgDataModule.Resources.Printers"
+                                        ng-model="MasterDataFoodMgDataModule.RecipeMgt.SelectedValues.Printer">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell colspan1">
+                        <h5>Margin (%) : </h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control number full-size"
+                             data-role="input">
+                            <input type="number"
+                                   placeholder="Margin (%).."
+                                   disabled>
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell colspan1">
+                        <h5>Cooking Time (min) : </h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control number full-size"
+                             data-role="input">
+                            <input type="number"
+                                   placeholder="Cooking Time (min).."
+                                   ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.CookingTime">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell colspan1">
+                        <h5>Description : </h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control textarea full-size"
+                             data-text-max-height="200">
+                            <textarea placeholder="Description.."
+                                      ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="grid">
+                    <div class="row cells4">
+                        <div class="cell">
+                            <h4 class="sub-alt-header">Food Type : </h4>
+                        </div>
+                        <div class="cell colspan3">
+                            <div class="input-control select full-size"
+                                 data-role="select"
+                                 data-placeholder="Select a food type...">
+                                <select ng-options="item.Name for item in MasterDataFoodMgDataModule.Resources.FoodSubCategories"
+                                        ng-model="MasterDataFoodMgDataModule.RecipeMgt.SelectedValues.FoodType"
+                                        id="foodSubCategorySelection">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="row cells4">
+                        <div class="cell">
+                            <h4 class="sub-alt-header">Item Type : </h4>
+                        </div>
+                        <div class="cell colspan3">
+                            <div class="input-control select full-size"
+                                 data-role="select"
+                                 data-placeholder="Select an item.."
+                                 style="">
+                                <select ng-options="item.Name for item in MasterDataFoodMgDataModule.Resources.ItemTypes"
+                                        ng-model="MasterDataFoodMgDataModule.RecipeMgt.SelectedValues.ItemType">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="row cells4">
+                        <div class="cell">
+                            <h4 class="sub-alt-header">Measure Type : </h4>
+                        </div>
+                        <div class="cell colspan3">
+                            <div class="input-control select full-size"
+                                 data-role="select"
+                                 data-placeholder="Select a measure type..."
+                                 style="">
+                                <select ng-options="item.Name for item in MasterDataFoodMgDataModule.Resources.MeasureTypes"
+                                        ng-model="MasterDataFoodMgDataModule.RecipeMgt.SelectedValues.MeasureType">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-control full-size"
+                     style="height: auto;">
+                        <label class="input-control checkbox">
+                            <input type="checkbox"
+                                   ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.Measurable">
+                            <span class="check"></span>
+                            <span class="caption">Is Measurable</span>
+                        </label>
+                </div>
+                    <div class=""
+                         style="height: auto;">
+                        <label class="input-control checkbox">
+                            <input type="checkbox"
+                                   ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.HasModifier">
+                            <span class="check"></span>
+                            <span class="caption">Has Modifier</span>
+                        </label>
+                    </div>
+                    <div class=""
+                         style="height: auto;">
+                        <label class="input-control checkbox">
+                            <input type="checkbox"
+                                   ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.IsModifier">
+                            <span class="check"></span>
+                            <span class="caption">Is Modifier</span>
+                        </label>
+                    </div>
+                <div class="input-control full-size"
+                     style="height: auto;">
+                    <label class="input-control checkbox">
+                        <input type="checkbox"
+                               ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.IsFinalItem">
+                        <span class="check"></span>
+                        <span class="caption">Final Item</span>
+                    </label>
+                </div>
+                <div class="row cells2"
+                     style="border: 0.05rem solid; border-radius: 0.3rem; padding: 0.2rem;">
+                    <div class="cell">
+                        <div class="input-control full-size">
+                            <label class="input-control checkbox">
+                                <input type="checkbox"
+                                       ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.IsTax1On">
+                                <span class="check"></span>
+                                <span class="caption">VAT</span>
+                            </label>
+                        </div>
+                        <div class="input-control full-size">
+                            <label class="input-control checkbox">
+                                <input type="checkbox"
+                                       ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.IsTax2On">
+                                <span class="check"></span>
+                                <span class="caption">OT</span>
+                            </label>
+                        </div>
+                        <div class="input-control full-size">
+                            <label class="input-control checkbox">
+                                <input type="checkbox"
+                                       ng-model="MasterDataFoodMgDataModule.RecipeMgt.FoodDto.ServiceChargeOn">
+                                <span class="check"></span>
+                                <span class="caption">Service Charge</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="input-control full-size">
+                            <label class="input-control checkbox">
+                                <input type="checkbox"
+                                       ng-model="MasterDataFoodMgDataModule.RecipeMgt.MealType.OnTable">
+                                <span class="check"></span>
+                                <span class="caption">On Table</span>
+                            </label>
+                        </div>
+                        <div class="input-control full-size">
+                            <label class="input-control checkbox">
+                                <input type="checkbox"
+                                       ng-model="MasterDataFoodMgDataModule.RecipeMgt.MealType.Takeout">
+                                <span class="check"></span>
+                                <span class="caption">Take Out</span>
+                            </label>
+                        </div>
+                        <div class="input-control full-size">
+                            <label class="input-control checkbox">
+                                <input type="checkbox"
+                                       ng-model="MasterDataFoodMgDataModule.RecipeMgt.MealType.Delivery">
+                                <span class="check"></span>
+                                <span class="caption">Delivery</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div ng-hide="true">
+                    <h4 class="sub-header">Ingredient Cost Breakdown</h4>
+                </div>
+                <div>
+                    <table class="table"
+                           ng-hide="true">
+                        <thead>
+                        <tr>
+                            <th class="sortable-column">Item Code</th>
+                            <th class="sortable-column">Item</th>
+                            <th class="sortable-column">Quantity</th>
+                            <th class="sortable-column">Average Cost</th>
+                            <th class="sortable-column"></th>
+                        </tr>
+                        </thead>
+                        <thead>
+                        <tr>
+                            <td class="sortable-column">
+
+                            </td>
+                            <td class="sortable-column">
+
+                            </td>
+                            <td class="sortable-column">
+
+                            </td>
+                            <td class="sortable-column">
+
+                            </td>
+                            <td class="sortable-column"
+                                style="text-align: center;">
+                                <span class="mif-plus"></span>
+                            </td>
+                        </tr>
+                        </thead>
+                        <thead ng-repeat="recipeItem in MasterDataFoodMgDataModule.RecipeMgt.RecipeItemDtosList">
+                        <tr>
+                            <td class="sortable-column">
+                                {{recipeItem.ItemId}}
+                            </td>
+                            <td class="sortable-column">
+                                {{recipeItem.FoodName}}
+                            </td>
+                            <td class="sortable-column">
+                                {{recipeItem.Quantity}}
+                            </td>
+                            <td class="sortable-column">
+                                {{recipeItem.AvgPricePerUnit}}
+                            </td>
+                            <td class="sortable-column"
+                                ng-click="MasterDataFoodMgDataModule.RecipeMgt.ToggleCharm()"
+                                style="text-align: center;">
+                                <span class="mif-plus"></span>
+                            </td>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div>
+                    <button class="button primary"
+                            style="width: 100%;"
+                            ng-click="MasterDataFoodMgDataModule.RecipeMgt.CreateRecipe()">Confirm</button>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="input-control text full-size"
+                     data-role="input">
+                    <input type="text"
+                           placeholder="Search.."
+                           ng-model="MasterDataFoodMgDataModule.Filter.FilteringWord">
+                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                </div>
+                <div class="listview-outlook"
+                     data-role="listview"
+                     style="height: 33rem; overflow: auto;">
+                    <div class="list"
+                         ng-repeat="item in MasterDataFoodMgDataModule.Filter.FilteredItems"
+                         ng-click="MasterDataFoodMgDataModule.RecipeMgt.SelectRecipe($event, item)">
+                        <div class="list-content">
+                            <span class="list-title">{{item.Name}}</span>
+                            <span class="list-subtitle">Category : {{MasterDataFoodMgDataModule.Filter.GetFoodCategoryName(item.FoodCatId)}}</span>
+                            <span class="list-subtitle">Food Type : {{MasterDataFoodMgDataModule.Filter.GetFoodSubCategoryName(item.FoodTypeId)}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Side Bars -->
+        <div id="recipeItemAddingCharm"
+             data-role="charm"
+             data-position="right"
+             style="position: absolute; width: 36%;">
+            <div id="charmBodyArea">
+                <div style="height: 90%;">
+                <h4>Add recipe item</h4>
+                <hr/>
+                <h5>Items :</h5>
+                <div class="input-control select full-size"
+                    data-role="select"
+                    data-placeholder="Items.."
+                    style="">
+                    <select>
+                    </select>
+                </div>
+                <h5>Quantity :</h5>
+                <div class="input-control number full-size"
+                    data-role="input">
+                    <input type="number"
+                        placeholder="Quantity.."
+                        min-value="1">
+                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                </div>
+                <h5>Serving :</h5>
+                <div class="input-control select full-size"
+                    data-role="select"
+                    data-placeholder="Serving.."
+                    style="">
+                    <select>
+                    </select>
+                </div>
+                <h5>Average Cost :</h5>
+                <div class="input-control text full-size"
+                    data-role="input">
+                    <input type="text"
+                        placeholder="Average Cost..">
+                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                </div>
+                </div>
+                <div style="height: 10%;">
+                    <button class="button"
+                            style="width: 100%; height: 2.5rem;">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="FoodSubCategoryAddingCharm"
+             data-role=""
+             data-position="right"
+             style="/*position: absolute;*/ width: 36%;">
+                <div style="height: 90%;">
+                    <md-sidenav class="md-sidenav-right md-whiteframe-z2"
+                                md-component-id="foodCategoryPanel" md-is-locked-open="false">
+                               <!-- md-is-locked-open="$mdMedia('gt-md')">-->
+
+                        <md-content layout-padding
+                                    ng-controller="FoodClassificationMgController">
+                            <h3>Food Category</h3>
+                            <div>
+                                <md-autocomplete
+                                        ng-disabled="false"
+                                        md-no-cache="false"
+                                        md-selected-item="FoodClassificationMgDataModule.FoodCategory.FoodCategoryDropDown.SelectedItem"
+                                        md-search-text-change=""
+                                        md-search-text="FoodClassificationMgDataModule.FoodCategory.FoodCategoryDropDown.SearchingText"
+                                        md-selected-item-change="FoodClassificationMgDataModule.FoodCategory.FoodCategoryDropDown.OnSelectedItemChange(item)"
+                                        md-items="item in FoodClassificationMgDataModule.FoodCategory.FoodCategoryDropDown.SearchingQuery()"
+                                        md-item-text="item.Description"
+                                        md-min-length="0"
+                                        placeholder="Select a food category">
+                                    <md-item-template>
+                                        <span md-highlight-text="FoodClassificationMgDataModule.FoodCategory.FoodCategoryDropDown.SearchingText"
+                                              md-highlight-flags="^i">{{item.Description}}</span>
+                                    </md-item-template>
+                                    <md-not-found>
+                                        No matches found for "{{FoodClassificationMgDataModule.FoodCategory.FoodCategoryDropDown.SearchingText}}".
+                                    </md-not-found>
+                                </md-autocomplete>
+                                <h5>Category Name :</h5>
+                                <div class="input-control text full-size"
+                                     data-role="input">
+                                    <input type="text"
+                                           ng-model="FoodClassificationMgDataModule.FoodCategory.FoodCategoryDto.Description"
+                                           placeholder="Category Name..">
+                                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                                </div>
+                                <h5>Index :</h5>
+                                <div class="input-control text full-size"
+                                     data-role="input">
+                                    <input type="text"
+                                           ng-model="FoodClassificationMgDataModule.FoodCategory.FoodCategoryDto.IndexID"
+                                           placeholder="Index ID..">
+                                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                                </div>
+                                <div class="input-control full-size">
+                                    <button class="button"
+                                            ng-click="FoodClassificationMgDataModule.FoodCategory.Action()">{{(FoodClassificationMgDataModule.FoodCategory.FoodCategoryDto.FoodCatId>-1) ? 'Save' : 'ADD'}}</button>
+                                    <button class="button"
+                                            ng-show="(FoodClassificationMgDataModule.FoodCategory.FoodCategoryDto.FoodCatId>-1)"
+                                            ng-click="FoodClassificationMgDataModule.FoodCategory.Delete()"><span class="mif-cross"></span></button>
+                                </div>
+                            </div>
+                        </md-content>
+                    </md-sidenav>
+                </div>
+        </div>
+
+        <div id="FoodCategoryAddingCharm"
+             data-role=""
+             data-position="right"
+             style="/*position: absolute;*/ width: 36%;">
+            <div style="height: 90%;">
+                <md-sidenav class="md-sidenav-right md-whiteframe-z2"
+                            md-component-id="foodSubCategoryPanel" md-is-locked-open="false">
+                            <!--md-is-locked-open="$mdMedia('gt-md')">-->
+
+                    <md-content layout-padding
+                                ng-controller="FoodClassificationMgController">
+                        <h3>Food Type</h3>
+                        <div>
+                            <md-autocomplete
+                                    ng-disabled="false"
+                                    md-no-cache="false"
+                                    md-selected-item="FoodClassificationMgDataModule.FoodSubCategory.FoodSubCategoryDropDown.SelectedItem"
+                                    md-search-text-change=""
+                                    md-search-text="FoodClassificationMgDataModule.FoodSubCategory.FoodSubCategoryDropDown.SearchingText"
+                                    md-selected-item-change="FoodClassificationMgDataModule.FoodSubCategory.FoodSubCategoryDropDown.OnSelectedItemChange(item)"
+                                    md-items="item in FoodClassificationMgDataModule.FoodSubCategory.FoodSubCategoryDropDown.SearchingQuery()"
+                                    md-item-text="item.Name"
+                                    md-min-length="0"
+                                    placeholder="Select a food category">
+                                <md-item-template>
+                                        <span md-highlight-text="FoodClassificationMgDataModule.FoodSubCategory.FoodSubCategoryDropDown.SearchingText"
+                                              md-highlight-flags="^i">{{item.Name}}</span>
+                                </md-item-template>
+                                <md-not-found>
+                                    No matches found for "{{FoodClassificationMgDataModule.FoodCategory.FoodSubCategoryDropDown.SearchingText}}".
+                                </md-not-found>
+                            </md-autocomplete>
+                            <h5>Food Type Name :</h5>
+                            <div class="input-control text full-size"
+                                 data-role="input">
+                                <input type="text"
+                                       ng-model="FoodClassificationMgDataModule.FoodSubCategory.FoodSubCategoryDto.Name"
+                                       placeholder="Food Type Name..">
+                                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                            </div>
+                            <h5>Index No :</h5>
+                            <div class="input-control number full-size"
+                                 data-role="input">
+                                <input type="number"
+                                       ng-model="FoodClassificationMgDataModule.FoodSubCategory.FoodSubCategoryDto.IndexId"
+                                       placeholder="Index No..">
+                                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                            </div>
+                            <h5>Meal Type :</h5>
+                            <md-autocomplete
+                                    ng-disabled="false"
+                                    md-no-cache="false"
+                                    md-selected-item="FoodClassificationMgDataModule.FoodSubCategory.MealTypeDropDown.SelectedItem"
+                                    md-search-text-change=""
+                                    md-search-text="FoodClassificationMgDataModule.FoodSubCategory.MealTypeDropDown.SearchingText"
+                                    md-selected-item-change="FoodClassificationMgDataModule.FoodSubCategory.MealTypeDropDown.OnSelectedItemChange(item)"
+                                    md-items="item in FoodClassificationMgDataModule.FoodSubCategory.MealTypeDropDown.SearchingQuery()"
+                                    md-item-text="item.Name"
+                                    md-min-length="0"
+                                    placeholder="Select a meal type">
+                                <md-item-template>
+                                        <span md-highlight-text="FoodClassificationMgDataModule.FoodSubCategory.MealTypeDropDown.SearchingText"
+                                              md-highlight-flags="^i">{{item.Name}}</span>
+                                </md-item-template>
+                                <md-not-found>
+                                    No matches found for "{{FoodClassificationMgDataModule.FoodCategory.MealTypeDropDown.SearchingText}}".
+                                </md-not-found>
+                            </md-autocomplete>
+
+                            <h5>Food Category :</h5>
+                            <md-autocomplete
+                                    ng-disabled="false"
+                                    md-no-cache="false"
+                                    md-selected-item="FoodClassificationMgDataModule.FoodSubCategory.FoodCategoryDropDown.SelectedItem"
+                                    md-search-text-change=""
+                                    md-search-text="FoodClassificationMgDataModule.FoodSubCategory.FoodCategoryDropDown.SearchingText"
+                                    md-selected-item-change="FoodClassificationMgDataModule.FoodSubCategory.FoodCategoryDropDown.OnSelectedItemChange(item)"
+                                    md-items="item in FoodClassificationMgDataModule.FoodSubCategory.FoodCategoryDropDown.SearchingQuery()"
+                                    md-item-text="item.Description"
+                                    md-min-length="0"
+                                    placeholder="Select a food category">
+                                <md-item-template>
+                                        <span md-highlight-text="FoodClassificationMgDataModule.FoodSubCategory.FoodCategoryDropDown.SearchingText"
+                                              md-highlight-flags="^i">{{item.Description}}</span>
+                                </md-item-template>
+                                <md-not-found>
+                                    No matches found for "{{FoodClassificationMgDataModule.FoodCategory.FoodCategoryDropDown.SearchingText}}".
+                                </md-not-found>
+                            </md-autocomplete>
+                            <div class="input-control full-size">
+                                <button class="button"
+                                        ng-click="FoodClassificationMgDataModule.FoodSubCategory.Action()">{{(FoodClassificationMgDataModule.FoodSubCategory.FoodSubCategoryDto.FoodTypeId>-1) ? 'Save' : 'ADD'}}</button>
+                                <button class="button"
+                                        ng-show="(FoodClassificationMgDataModule.FoodSubCategory.FoodSubCategoryDto.FoodTypeId>-1)"
+                                        ng-click="FoodClassificationMgDataModule.FoodSubCategory.Delete()"><span class="mif-cross"></span></button>
+                            </div>
+                        </div>
+                    </md-content>
+                </md-sidenav>
+            </div>
+        </div>
+</div>

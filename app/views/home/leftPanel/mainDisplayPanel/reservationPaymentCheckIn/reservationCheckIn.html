@@ -1,0 +1,26 @@
+<div style="height: 410px; overflow: auto;">
+    <div ng-repeat="item in ReservationCheckInDataModule.Reservations track by $index">
+        <div ng-click="ReservationCheckInDataModule.ReservationClick($event, item)"
+             ng-if="item.Status=='A'"
+             style="background-color: cadetblue; padding: 2px; margin: 1px;" >
+            <h5 style="margin: 4px;">Guest Name : {{item.GuestName}}</h5>
+            <h5 style="margin: 4px;">Phone No : {{item.GuestId}}</h5>
+            <h5 style="margin: 4px;">Tables : <span ng-repeat="tbl in item.TableName">{{tbl}}, </span></h5>
+        </div>
+        <div ng-click="ReservationCheckInDataModule.ReservationClick($event, item)"
+             ng-if="item.Status=='C'"
+             style="padding: 2px; margin: 1px;">
+            <h5 style="margin: 4px;">Guest Name : {{item.GuestName}}</h5>
+            <h5 style="margin: 4px;">Phone No : {{item.GuestId}}</h5>
+            <h5 style="margin: 4px;">Tables : <span ng-repeat="tbl in item.TableName">{{tbl}}, </span></h5>
+        </div>
+    </div>
+</div>
+<div>
+    <button ng-click="ReservationCheckInDataModule.CheckIn()" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="width: 49%; height: 40px">
+        <span class="title  CloudFont Small-CloudFont">Check In</span>
+    </button>
+    <button ng-click="ReservationCheckInDataModule.CancelReservation()" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="width: 49%; height: 40px">
+        <span class="title  CloudFont Small-CloudFont">Cancel</span>
+    </button>
+</div>

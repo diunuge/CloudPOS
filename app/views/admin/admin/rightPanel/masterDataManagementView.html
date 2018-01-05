@@ -1,0 +1,18 @@
+<div ng-controller="MasterDataManagementController">
+    <div class="app-bar">
+        <ul class="app-bar-menu">
+            <li><a href="">Food Recipes</a></li>
+            <span class="app-bar-divider"></span>
+            <li ng-click="MasterDataMgDataModule.navigation.ToFoodCategoriesView($event)"><a href="">Food Category</a></li>
+            <span class="app-bar-divider"></span>
+            <li ng-click="MasterDataMgDataModule.navigation.ToFoodTypesView($event)"><a href="">Food Type</a></li>
+            <span class="app-bar-divider"></span>
+            <li><a href="">Messages</a></li>
+            <span class="app-bar-divider"></span>
+            <li><a href="">Delivery Zones</a></li>
+        </ul>
+    </div>
+    <div ng-include="UrlFactory.UrlHolders.AdminPanel.RightPanel.MasterDataMgtPanel.ContentArea">
+
+    </div>
+</div>

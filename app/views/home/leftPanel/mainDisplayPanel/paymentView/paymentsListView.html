@@ -1,0 +1,18 @@
+<div style="height: 150px !important; overflow-x: hidden !important; overflow-y: auto !important;">
+<table class="table pricingTable" style="border: 1px solid;">
+    <thead>
+    <tr>
+        <th class="sortable-column">Payment Mode</th>
+        <th class="sortable-column">Currency</td>
+        <th class="sortable-column">Amount</td>
+        <th></th>
+    </tr>
+    <tr ng-repeat="item in Payment.PaymentDto.paymentDetailResponseDtoList track by $index">
+        <td>{{Payment.GetPaymentModeObject(item.PaymentModeID).PaymentMode}}</td>
+        <td>LKR</td>
+        <td>{{item.PayAmount}}</td>
+        <td class="mif-cross"></td>
+    </tr>
+    </thead>
+</table>
+</div>

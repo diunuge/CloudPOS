@@ -1,0 +1,30 @@
+{
+    "SystemConfiguration": {
+        "ConfigFiles": {
+            "ReferenceData": {
+                "Url": "config/ReferenceData.json",
+                "Object": null
+            },
+            "Resources": {
+                "Url": "config/Resources.json",
+                "Object": null
+            },
+            "SystemSettings": {
+                "Url": "config/SystemSettings.json",
+                "Object": null
+            },
+            "DataTransferObjects": {
+                "Url": "config/DataTransferObjects.json",
+                "Object": null
+            },
+            "SystemMessages": {
+                "Url": "config/SystemMessages.json",
+                "Object": null
+            },
+            "UserPrivileges": {
+                "Url": "config/UserPrivileges.json",
+                "Object": null
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<!-- Payment Info -->
+<div class="PaymentInfo">
+    <!-- Grand Total -->
+    <button class="button large-button PaymentInfoButtons">
+        <h5>Grand Total </h5>
+        <h6>{{PaymentDataModule.Payment.PaymentSummary.GrandTotal | currency : 'Rs. ' : 2}}</h6>
+    </button>
+    <button class="button large-button PaymentInfoButtons">
+        <h5>Settled Amount </h5>
+        <h6>{{PaymentDataModule.Payment.PaymentSummary.SettledAmount | currency : 'Rs. ' : 2}}</h6>
+    </button>
+    <button class="button large-button PaymentInfoButtons">
+        <h5>Due Amount </h5>
+        <h6>{{PaymentDataModule.Payment.PaymentSummary.DueAmount | currency : 'Rs. ' : 2}}</h6>
+    </button>
+</div>
+
+<!-- Payment options -->
+<div class="PaymentOptions">
+    <div ng-include="UrlFactory.UrlHolders.HomeViewMiddlePanelPaymentPanel.RightPanel.PaymentOptionsArea" style="height: 80% !important; padding: 0.4rem !important;">
+
+    </div>
+    <div style="height: 20% !important; position: relative;">
+        <button class="button large-button primary"
+                style="position: absolute; right: 0.4rem; width: 8rem;" ng-click="PaymentDataModule.Payment.AddPayment()">
+            ADD
+        </button>
+    </div>
+</div>
+
+<!-- Key Pad -->
+<div class="KeyPad">
+    <numeric-key-pad-directive value="PaymentDataModule.Payment.PaymentDetailDto.PayAmount"
+                               total="PaymentDataModule.Payment.PaymentSummary.GrandTotal"
+                               due-amount="PaymentDataModule.Payment.PaymentSummary.DueAmount">
+                               </numeric-key-pad-directive>
+</div>
+
+<!-- Added payments list -->
+<div class="AddedPayments"
+     ng-include="'views/home/middlePanel/PaymentPanel/AddedPaymentsView.html'"
+     style="overflow: auto;">
+</div>

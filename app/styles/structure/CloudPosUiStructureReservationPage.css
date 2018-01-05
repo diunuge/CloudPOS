@@ -1,0 +1,11 @@
+/* Reservation Structure Definition */
+
+/* Left panel */
+
+/* Right panel */
+/* Date picker drop down */
+div.CloudPosUiStructureMainContainer .calendar.calendar-dropdown {
+    font-size: 22px !important;
+    max-width: 300px !important;
+    width: 300px !important;
+}

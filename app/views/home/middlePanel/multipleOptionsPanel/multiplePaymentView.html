@@ -1,0 +1,51 @@
+<div ng-controller="MultiplePaymentController">
+    <div active-class="CloudPosUiStructureButtonsThemeCatThreeActive"
+         inactive-class="CloudPosUiStructureButtonsThemeCatThree"
+         style="height: 590px; overflow: auto">
+        <div class="panel">
+            <span class="title">Dining Orders</span>
+            <div class="Orders"
+                 ng-click="MultiplePaymentDataModule.OrderManipulation.OrderClick($event, order)"
+                 ng-repeat="order in MultiplePaymentDataModule.DiningOrders"
+                 order-id="order.OrderID"
+                 style="border: 1px solid black; padding: 4px; margin: 4px 0px 4px 0px;">
+                <h4>Order ID :&nbsp;{{order.OrderID}}</h4>
+                <h4>Guest Phone No :&nbsp;{{order.GuestID}}</h4>
+                <h5>Reservation ID :&nbsp;{{order.ReservationId}}</h5>
+            </div>
+        </div>
+        <div class="panel">
+            <span class="title">Takeout Order</span>
+            <div class="Orders"
+                 ng-repeat="order in MultiplePaymentDataModule.TakeoutOrders"
+                 ng-click="MultiplePaymentDataModule.OrderManipulation.OrderClick($event, order)"
+                 order-id="order.OrderID"
+                 style="border: 1px solid black; padding: 4px; margin: 4px 0px 4px 0px">
+                <h4>Order ID :&nbsp;{{order.OrderID}}</h4>
+                <h4>Guest Phone No :&nbsp;{{order.GuestID}}</h4>
+            </div>
+        </div>
+        <div class="panel">
+            <span class="title">Delivery Orders</span>
+            <div class="Orders"
+                 ng-repeat="order in MultiplePaymentDataModule.DeliveryOrders"
+                 ng-click="MultiplePaymentDataModule.OrderManipulation.OrderClick($event, order)"
+                 order-id="order.OrderID"
+                 style="border: 1px solid black; padding: 4px; margin: 4px 0px 4px 0px">
+                <h4>Order ID :&nbsp;{{order.OrderID}}</h4>
+                <h4>Guest Phone No :&nbsp;{{order.GuestID}}</h4>
+            </div>
+        </div>
+        <div class="panel">
+            <span class="title">Tab Orders</span>
+            <div class="Orders"
+                 ng-repeat="order in MultiplePaymentDataModule.TabOrders"
+                 ng-click="MultiplePaymentDataModule.OrderManipulation.OrderClick($event, order)"
+                 order-id="order.OrderID"
+                 style="border: 1px solid black; padding: 4px; margin: 4px 0px 4px 0px">
+                <h4>Order ID :&nbsp;{{order.OrderID}}</h4>
+                <h4>Guest Phone No :&nbsp;{{order.GuestID}}</h4>
+            </div>
+        </div>
+    </div>
+</div>

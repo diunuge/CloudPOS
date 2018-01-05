@@ -1,0 +1,15 @@
+<style>
+    [ng-controller='FooterController'] .btn.btn-primary {
+        height: 3.2em;
+        font-size: large;
+        font-family: sans-serif;
+        padding:0.4em 3em;
+    }
+</style>
+<div ng-controller="FooterController" class="nav-bar" style="clear: both; width: 100%;">
+    <button class="btn btn-primary active" ng-click="navBtnClick($event, 'order')">Home</button>
+    <button class="btn btn-primary" ng-click="navBtnClick($event, 'reservation')">Reservation</button>
+    <button class="btn btn-primary" ng-click="navBtnClick($event, 'report')">Report</button>
+    <button class="btn btn-primary" ng-click="navBtnClick($event, 'admin')">Admin</button>
+    <button class="btn btn-primary" ng-click="navBtnClick($event, 'wastage')">Wastage</button>
+</div>

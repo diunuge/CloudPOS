@@ -1,0 +1,110 @@
+{
+    "#Common": "....",
+
+    "#Headings": "..",
+    "label.heading.cloudposclient": "Cloud POS Client",
+    "label.heading.cloudpos": "Cloud POS",
+    "label.heading.resources": "Resources",
+    "label.heading.loginname":"Login Name",
+    "label.heading.userprofile":"User Profile",
+    "label.heading.userid":"User ID",
+    "label.heading.username":"User Name",
+    "label.heading.keyboarshortcuts":"Keyboard Shortcuts",
+    "label.heading.reports":"Reports",
+    "label.heading.saveorsubmit":"Save/Submit Forms",
+    "label.heading.cancel":"Cancel",
+    "label.heading.logout":"Logout",
+    "label.heading.search":"Search",
+    "label.heading.help":"Help",
+    "label.heading.language":"Language",
+
+    "#Menu Links": "..",
+
+    "#Anchors": "..",
+    "label.anchor.startpage": "Start Page",
+    "label.anchor.homepage": "Home Page",
+    "label.anchor.loginpage": "Login Page",
+    "label.anchor.logout": "Sign Out",
+    "label.anchor.home": "Home",
+    "label.anchor.all": "All",
+    "label.anchor.admin": "Admin",
+    "label.anchor.reports": "Reports",
+    "label.anchor.profile": "Profile",
+    "label.anchor.settings": "Settings",
+    "label.anchor.usermanual": "User Manual",
+    "label.anchor.dashboard":"Dashboard",
+    "label.anchor.help":"Help",
+    "label.anchor.about":"About",
+    "label.anchor.save":"Save",
+    "label.anchor.delete": "Delete",
+    "label.achor.activate": "Activate",
+    "label.anchor.close": "Close",
+
+    "#Inputs": "..",
+    "label.input.name": "Name",
+    "label.input.firstname": "First name",
+    "label.input.lastname": "Last name",
+    "label.input.middlename": "Middle name",
+    "label.input.fullname": "Name",
+
+    "#Buttons": "..",
+    "label.button.previous": "Previous",
+    "label.button.next": "Next",
+    "label.button.save": "Submit",
+    "label.button.cancel": "Cancel",
+    "label.button.edit": "Edit",
+    "label.button.delete": "Delete",
+    "label.button.confirm": "Confirm",
+    "label.button.close": "Close",
+    "label.button.login": "Login",
+    "label.button.signin": "Sign In",
+    "label.button.resetPassword": "Reset Password",
+
+    "#Misc Labels": "..",
+
+    "#Enumeration & Error Messages": "..",
+    "label.error": "Error",
+    "error.login.failed": "Please try again, your credentials are not valid.",
+    "error.connection.failed": "Couldn't connect to server. Make sure you are using correct settings.",
+    "error.msg.command.unsupported": "Programmer error: The `command` issued is not supported.",
+    "error.msg.query.parameter.value.unsupported": "`{{params[1].value}}` is not supported as a value of query parameter `{{params[0].value}}`.",
+    "error.msg.not.authorized": "Insufficient privileges to perform this action.",
+    "error.msg.invalid.request.body": "The JSON provided in the body of the request is invalid or missing.",
+    "error.msg.parameter.unsupported": "The parameter `{{params[0].value}}` has been passed and is not supported for this request.",
+    "error.msg.column.mandatory": "Mandatory field not provided.",
+    "error.msg.header": "You have the following errors:",
+    "validation.msg.validation.errors.exist": "Validation errors exist.",
+    "#---------": "------------",
+    "#Common loan/saving charges": "....",
+
+    "#Anchors": "..",
+
+    "#Inputs": "..",
+    "label.input.paymentdate":"Payment date",
+
+    "#---------": "------------",
+
+    "#Index": "....",
+
+    "#Headings": "..",
+
+    "#Menu Links": "..",
+
+    "#Anchors": "..",
+
+    "#Inputs": "..",
+
+    "#Search": "..",
+    "label.search.scope.all": "All",
+
+
+    "#Buttons": "..",
+
+    "#Misc Labels": "..",
+
+    "#Enumeration & Error Messages": "..",
+    "validation.msg.collectionsheet.calendarId.cannot.be.blank":"Collection sheet cannot be generated for center/group without attach meeting define",
+
+    "#------": "------------",
+    "": ""
+}

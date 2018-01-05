@@ -1,0 +1,20 @@
+<div>
+<label style="display: block;" class="CloudFont Small-CloudFont">Cheque Payment :</label>
+<div style="clear: both; height: 375px;">
+    <label class="CloudFont Small-CloudFont">Cheque No :</label><br/>
+    <input ng-model="Payment.PaymentDetailDto.ChequeNo" class="DefaultInputNumber" type="number"><br/>
+    <label class="CloudFont Small-CloudFont">Amount :</label><br/>
+    <input ng-model="Payment.PaymentDetailDto.PayAmount" class="DefaultInputNumber" type="number"><br/>
+    <label class="CloudFont Small-CloudFont">Bank :</label><br/>
+    <input ng-model="Payment.PaymentDetailDto.BankId" class="DefaultInputText" type="text"><br/>
+    <label class="CloudFont Small-CloudFont">Branch :</label><br/>
+    <input ng-model="Payment.PaymentDetailDto.BranchId" class="DefaultInputText" type="text"><br/>
+    <label class="CloudFont Small-CloudFont">Cheque Date :</label><br/>
+    <input ng-model="Payment.PaymentDetailDto.ChequeDate" class="DefaultInputDate" type="date"><br/>
+    <label class="CloudFont Small-CloudFont">Realized Date :</label><br/>
+    <input ng-model="Payment.PaymentDetailDto.ChequeRealizedDate" class="DefaultInputDate" type="date"><br/>
+</div>
+<div>
+    <button ng-click="Payment.AddPayment(Payment.PaymentModes.ChequePayment)" style="width: 100%; margin-top: 8px; height: 45px; font-size: 18px;" class="shortcut-button bg-grayLight bg-active-darkBlue fg-white ItemButtons">Add</button>
+</div>
+</div>

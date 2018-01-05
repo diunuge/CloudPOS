@@ -1,0 +1,43 @@
+
+<div id="newOrderViewUiHandlers" ng-controller="OrderPanelMiddleSubPanelNewOrderController" style="height: 566px; padding-top:0.3em; padding-left:0.2em; overflow: auto;">
+    <ul class="nav nav-tabs">
+        <li ng-if="orderDataModule.DataStore.SelectedOrderType == 'N'" class="active"><a data-toggle="tab" href="#home" onclick="newOrderViewUiHandlers.navBarOnClick(event)">Tables</a></li>
+        <li ng-if="orderDataModule.DataStore.SelectedOrderType == 'T'"><a data-toggle="tab" href="#menu1" onclick="newOrderViewUiHandlers.navBarOnClick(event)">Takeouts</a></li>
+        <li ng-if="orderDataModule.DataStore.SelectedOrderType == 'F'"><a data-toggle="tab" href="#menu2" onclick="newOrderViewUiHandlers.navBarOnClick(event)">Tabs</a></li>
+        <li ng-if="orderDataModule.DataStore.SelectedOrderType == 'D'"><a data-toggle="tab" href="#menu3" onclick="newOrderViewUiHandlers.navBarOnClick(event)">Delivery</a></li>
+    </ul>
+
+    <div class="tab-content" style="color: #ffffff; overflow: hidden">
+        <div id="home" ng-if="orderDataModule.DataStore.SelectedOrderType == 'N'" style="overflow: auto; max-height: 510px;" class="tab-pane fade in active form-group">
+            <h3>Tables</h3>
+            <div ng-include="'views/order/panelMiddle/splitOrder/subPanelNewOrder/tableView.html'"></div>
+        </div>
+        <div id="menu1" ng-if="orderDataModule.DataStore.SelectedOrderType == 'T'"  style=" overflow: auto; max-height: 510px;"  class="tab-pane fade in active">
+            <h3>Takeouts</h3>
+            <div ng-include="'views/order/panelMiddle/splitOrder/subPanelNewOrder/takeoutView.html'"></div>
+        </div>
+        <div id="menu2" ng-if="orderDataModule.DataStore.SelectedOrderType == 'F'"  style="overflow: auto; max-height: 510px;"  class="tab-pane fade in active">
+            <h3>Tabs</h3>
+            <div ng-include="'views/order/panelMiddle/splitOrder/subPanelNewOrder/tabsView.html'"></div>
+        </div>
+        <div id="menu3" ng-if="orderDataModule.DataStore.SelectedOrderType == 'D'"  style="overflow: auto; max-height: 510px;"  class="tab-pane fade in active">
+            <h3>Delivery</h3>
+            <div ng-include="'views/order/panelMiddle/splitOrder/subPanelNewOrder/deliveryView.html'"></div>
+        </div>
+    </div>
+</div>
+<script>
+    var newOrderViewUiHandlers = {};
+    //$('#newOrderViewUiHandlers .tab-content>div').css("display", "none");
+
+    newOrderViewUiHandlers.navBarOnClick = function(evnt) {
+        evnt.preventDefault();
+        var tabDivs = $('#newOrderViewUiHandlers .tab-content>div');
+        var curTarget = $(evnt.currentTarget.parentNode);
+        tabDivs.css("display", "none");
+        tabDivs.removeClass('active');
+        curTarget.siblings("li").removeClass("active");
+        curTarget.addClass("active");
+        $($(evnt.currentTarget).attr("href")).css("display", "block");
+    };
+</script>

@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th class="sortable-column">Payment Mode</th>
+        <th class="sortable-column">Currency</th>
+        <th class="sortable-column">Amount</th>
+    </tr>
+    </thead>
+    <thead>
+    <tr ng-repeat="item in PaymentDataModule.Payment.PaymentsList">
+        <td class="sortable-column">{{PaymentDataModule.Payment.GetPaymentMethodName(item.PaymentModeID)}}</td>
+        <td class="sortable-column">LKR</td>
+        <td class="sortable-column">{{item.PayAmount | currency : 'Rs. ' : 2}}</td>
+        <td class="sortable-column"
+            ng-click="PaymentDataModule.Payment.RemovePayment(item)"><span class="mif-cross"></span></td>
+    </tr>
+    </thead>
+</table>

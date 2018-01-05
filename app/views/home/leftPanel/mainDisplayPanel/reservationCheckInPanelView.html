@@ -1,0 +1,14 @@
+<div ng-controller="HomeLeftPanelReservationCheckInController">
+    <div>
+        <button ng-click="" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="width: 49%; height: 40px">
+            <span class="title  CloudFont Small-CloudFont">Reservations</span>
+        </button>
+        <button ng-click=""
+                class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage"
+                style="width: 49%; height: 40px"
+                ng-hide="true">
+            <span class="title  CloudFont Small-CloudFont"></span>
+        </button>
+    </div>
+    <div ng-include="'views/home/leftPanel/mainDisplayPanel/reservationPaymentCheckIn/reservationCheckIn.html'"></div>
+</div>

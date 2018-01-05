@@ -1,0 +1,81 @@
+<div ng-controller="GuestCreationController">
+    <h5>Phone Number* :</h5>
+    <div class="input-control number"
+         data-role="input"
+         style="width: 100%;">
+        <input type="number"
+               placeholder="Phone Number.."
+               ng-model="LeftPanelDataModule.AdvanceDeposit.GuestID">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <h5>Email* :</h5>
+    <div class="input-control text"
+         data-role="input"
+         style="width: 100%;">
+        <input type="email"
+               placeholder="Email.."
+               ng-model="LeftPanelDataModule.AdvanceDeposit.Email">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <div>
+        <label class="input-control radio">
+            <input type="radio"
+                   name="title"
+                   ng-model="LeftPanelDataModule.AdvanceDeposit.Title"
+                   value="1"
+                   checked>
+            <span class="check"></span>
+            <span class="caption">Mr</span>
+        </label>
+        <label class="input-control radio">
+            <input type="radio" name="title"
+                   ng-model="LeftPanelDataModule.AdvanceDeposit.Title" value="2">
+            <span class="check"></span>
+            <span class="caption">Mrs</span>
+        </label>
+        <label class="input-control radio">
+            <input type="radio" name="title"
+                   ng-model="LeftPanelDataModule.AdvanceDeposit.Title" value="3">
+            <span class="check"></span>
+            <span class="caption">Miss</span>
+        </label>
+        <label class="input-control radio">
+            <input type="radio" name="title"
+                   ng-model="LeftPanelDataModule.AdvanceDeposit.Title" value="4">
+            <span class="check"></span>
+            <span class="caption">Dr</span>
+        </label>
+    </div>
+    <h5>First Name* :</h5>
+    <div class="input-control text"
+         data-role="input"
+         style="width: 100%;">
+        <input type="text"
+               placeholder="First Name.."
+               ng-model="LeftPanelDataModule.AdvanceDeposit.FirstName">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <h5>Last Name :</h5>
+    <div class="input-control text"
+         data-role="input"
+         style="width: 100%;">
+        <input type="text"
+               placeholder="Last Name.."
+               ng-model="LeftPanelDataModule.AdvanceDeposit.LastName">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <h5>Remarks :</h5>
+    <div class="input-control text"
+               data-role="input"
+               style="width: 100%;">
+    <input type="text"
+           placeholder="Remarks.."
+           ng-model="LeftPanelDataModule.AdvanceDeposit.Remarks">
+    <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <div>
+        <button class="button {{(LeftPanelDataModule.AdvanceDeposit.SelectedGuest == null) ? 'primary' : ''}}"
+                ng-disabled="LeftPanelDataModule.AdvanceDeposit.SelectedGuest != null"
+                style="width: 100%; height: 3rem;" ng-click="GuestCreationDataModule.CreateGuest()">Create New Guest</button>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<style>
+    .order-split-table.invoices-table {
+    }
+
+    .order-split-table.invoices-table .borderLess{
+        border-left: 0px solid !important;
+        border-right: 0px solid !important;
+    }
+
+</style>
+<div ng-controller="OrderPanelMiddleSubPanelSplitRightPanelController" style="margin-top:1em; height: 518px; overflow: auto;">
+<table class="order-split-table invoices-table">
+    <tbody>
+    <thead>
+    <tr><th></th><th>Food Name</th><th>Qty</th><th>C</th><th colspan="2">Total Amount</th></tr>
+    </thead>
+    <thead ng-repeat="item in orderDataModule.getSplitFoodItemsArr track by $index">
+    <tr><td colspan="5"></td></tr>
+        <tr>
+            <th class="borderLess">{{item.invoiceId}}</th><th class="borderLess" colspan="2">Invoice</th><th colspan="2" class="borderLess" style="border-right: 1px solid grey !important;"><button class="btn btn-default">P</button><button class="btn btn-default">P</button><button class="btn btn-default">D</button></th>
+        </tr>
+        <tr ng-repeat="foodItem in item.splitFoods track by $index">
+            <td>{{$index+1}}</td>
+            <td>{{foodItem.foodName}}</td>
+            <td></td>
+            <td>{{foodItem.cover}}</td>
+            <td colspan="2">{{foodItem.price}}</td>
+        </tr>
+        <tr>
+            <th class="borderLess" colspan="2">Total Amount</th>
+            <th class="borderLess" colspan="2">{{item.splitFoods.length}}</th>
+            <th class="borderLess" colspan="2">{{item.totalAmount}}</th>
+        </tr>
+</thead>
+    </tbody>
+</table>
+
+</div>

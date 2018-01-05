@@ -1,0 +1,11 @@
+<button ng-repeat="item in HomeDataModule.FoodsMasterData.FilteredFoodItems track by $index"
+        ng-click="HomeDataModule.MiddlePanel.AddOrderDetail(item)"
+        class="button primary CloudPosUiStructureHomePage FilteredItemButtons CloudPosUiStructureButtonsThemeCatOne">
+    <span class="title CloudFont Small-CloudFont">{{item.Name}}</span>
+</button>
+
+<!--
+<md-button style="height: 70px; width: 100px; margin: 0.1rem;"
+           ng-repeat="item in HomeDataModule.FoodsMasterData.FilteredFoodItems track by $index"
+           class="md-raised md-primary CloudPosUiStructureHomePage CloudPosUiStructureButtonsThemeCatOne"
+           ng-click="HomeDataModule.MiddlePanel.AddOrderDetail(item)">{{item.Name}}</md-button>-->

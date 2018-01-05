@@ -1,0 +1,55 @@
+<div style="display: block;">
+    <div>
+        <button id="LeftPanelBottomMenuPrintBtn1"
+                ng-disabled="(HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled && HomeDataModule.FlowHandlerVariables.isPaymentEnabled==false) || HomeDataModule.SelectedOrder.Order.OrderID==0 || HomeDataModule.SelectedOrder.Order.OrderID===undefined ||
+                HomeDataModule.SelectedOrder.OrderCategory.Code==HomeDataModule.OrderCategories.TakeoutOrder.Code"
+                class="button {{((HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled && HomeDataModule.FlowHandlerVariables.isPaymentEnabled==false) || HomeDataModule.SelectedOrder.Order.OrderID==0 || HomeDataModule.SelectedOrder.Order.OrderID===undefined || HomeDataModule.SelectedOrder.OrderCategory.Code==HomeDataModule.OrderCategories.TakeoutOrder.Code) ? '' : 'primary'}}"
+                style="width: 24%; height: 65px;">
+            <span class="icon mif-print mif-2x"></span>
+        </button>
+        <button id="LeftPanelBottomMenuReorderBtn1"
+                ng-disabled="(HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled && HomeDataModule.FlowHandlerVariables.isPaymentEnabled==false) || HomeDataModule.SelectedOrder.Order.OrderID==0 || HomeDataModule.SelectedOrder.Order.OrderID===undefined || HomeDataModule.FlowHandlerVariables.isInPayment"
+                class="button {{((HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled && HomeDataModule.FlowHandlerVariables.isPaymentEnabled==false) || HomeDataModule.SelectedOrder.Order.OrderID==0 || HomeDataModule.SelectedOrder.Order.OrderID===undefined || HomeDataModule.FlowHandlerVariables.isInPayment) ? '' : 'primary'}}"
+                ng-click="LeftPanelDataModule.Reorder.Reorder()"
+                style="width: 24%; height: 65px;">
+            <span class="icon mif-redo mif-2x"></span>
+        </button>
+        <button id="LeftPanelBottomMenuSplitOrderBtn1"
+                ng-disabled="!(HomeDataModule.SelectedOrder.OrderCategory === HomeDataModule.OrderCategories.DiningOrder &&
+                HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled==false && HomeDataModule.FlowHandlerVariables.isPaymentEnabled)"
+                ng-click="UiHandlers.HomePageUi.LeftPanel.ToggleOrderSplit()"
+                class="button {{(HomeDataModule.SelectedOrder.OrderCategory === HomeDataModule.OrderCategories.DiningOrder &&
+                HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled==false &&
+                HomeDataModule.FlowHandlerVariables.isPaymentEnabled) ? 'primary' : ''}}"
+                style="width: 24%; height: 65px;">
+            <span class="icon mif-enlarge2 mif-2x"></span>
+        </button>
+        <button id=""
+                ng-disabled="HomeDataModule.SelectedOrder.Order.OrderID==undefined || HomeDataModule.SelectedOrder.Order.OrderID==0 || HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled==true"
+                ng-click="UiHandlers.HomePageUi.LeftPanel.ToDiscountPanel()"
+                class="button {{(HomeDataModule.SelectedOrder.Order.OrderID==undefined ||
+                HomeDataModule.SelectedOrder.Order.OrderID==0 || HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled==true) ? '' : 'primary'}}"
+                style="width: 24%; height: 65px;">
+            <span class="icon mif-2x">%</span>
+        </button>
+    </div>
+</div>
+<div>
+    <button id="LeftPanelBottomMenuSavePaymentBtn1"
+            ng-disabled="HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled==false &&
+            HomeDataModule.FlowHandlerVariables.isPaymentEnabled==false"
+            ng-click="UiHandlers.HomePageUi.LeftPanel.SavePaymentButton()"
+            class="button {{(HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled ||
+            HomeDataModule.FlowHandlerVariables.isPaymentEnabled) ? 'primary' : ''}}"
+            style="width: 74.5%; height: 50px;">
+        <span class="icon {{(HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled &&
+        HomeDataModule.FlowHandlerVariables.isPaymentEnabled==false) ? 'mif-floppy-disk' :
+        (HomeDataModule.FlowHandlerVariables.isOrderSaveEnabled==false && HomeDataModule.FlowHandlerVariables.isPaymentEnabled) ? 'mif-money' : 'mif-floppy-disk'}} mif-2x"></span>
+    </button>
+    <button style="width: 24.1%; height: 50px;"
+            ng-disabled="!Navigation.DisableNavigationButtons"
+            class="button {{(Navigation.DisableNavigationButtons) ? 'primary' : ''}}"
+            ng-click="HomeDataModule.UnfreezScreen()">
+        <span class="icon mif-cross"></span>
+    </button>
+</div>

@@ -1,0 +1,120 @@
+<div ng-controller="TaxManagementController">
+    <div>
+        <div class="grid">
+            <div class="row cells4">
+                <div class="cell">
+                    <h5>Taxes :</h5>
+                </div>
+                <div class="cell colspan3">
+                    <md-autocomplete md-selected-item="TaxManagementDataModule.TaxesDropDown.SelectedItem"
+                                     md-search-text="TaxManagementDataModule.TaxesDropDown.SearchingText"
+                                     md-items="item in TaxManagementDataModule.TaxesDropDown.FilterFunc()"
+                                     md-selected-item-change="TaxManagementDataModule.TaxesDropDown.OnSelectedItemChange()"
+                                     md-item-text="item.TaxHeader.Description">
+                        <md-item-template>
+                            <span md-highlight-text="searchText">{{item.TaxHeader.Description}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No matches found.
+                        </md-not-found>
+                    </md-autocomplete>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="grid">
+            <div class="row cells4">
+                <div class="cell">
+                    <h5>Description :</h5>
+                </div>
+                <div class="cell colspan3">
+                    <div class="input-control full-size text" data-role="input">
+                        <input type="text"
+                               ng-model="TaxManagementDataModule.Description">
+                        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="grid">
+            <div class="row cells4">
+                <div class="cell">
+                    <h5>Rate :</h5>
+                </div>
+                <div class="cell colspan3">
+                    <div class="input-control full-size text" data-role="input">
+                        <input type="text" ng-model="TaxManagementDataModule.TaxSum" disabled>
+                        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="grid">
+            <div class="row cells4">
+                <div class="cell">
+                    <h5>From Date :</h5>
+                </div>
+                <div class="cell colspan3">
+                    <md-datepicker ng-model="TaxManagementDataModule.FromDateDatePicker.SelectedDate"
+                                   md-placeholder="Enter a date"
+                                   md-min-date="TaxManagementDataModule.FromDateDatePicker.MinDate"></md-datepicker>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="grid">
+            <div class="row cells4">
+                <div class="cell">
+                    <h5>To Date :</h5>
+                </div>
+                <div class="cell colspan3">
+                    <md-datepicker ng-model="TaxManagementDataModule.ToDateDatePicker.SelectedDate"
+                                   md-placeholder="Enter a date"
+                                   md-min-date="TaxManagementDataModule.FromDateDatePicker.SelectedDate"></md-datepicker>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div class="grid"
+                 ng-repeat="item in TaxManagementDataModule.TaxDetails.AddedTaxes track by $index">
+                <div class="row cells5">
+                    <div class="cell">
+                        <h5>Name :</h5>
+                    </div>
+                    <div class="cell colspan1">
+                        <div class="input-control full-size text"
+                             data-role="input">
+                            <input type="text"
+                                   ng-model="item.Name">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                    <div class="cell colspan1">
+                        <h5>Rate :</h5>
+                    </div>
+                    <div class="cell colspan1">
+                        <div class="input-control full-size text" data-role="input">
+                            <input type="number"
+                                   min="0"
+                                   ng-model="item.Rate">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                    <div class="cell colspan1">
+                        <button ng-click="TaxManagementDataModule.TaxDetails.RemoveTax($index)">Remove</button>
+                        <button ng-click="TaxManagementDataModule.TaxDetails.AddTax($index)">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="button primary" ng-click="TaxManagementDataModule.CreateTax()">Create Tax</button>
+</div>

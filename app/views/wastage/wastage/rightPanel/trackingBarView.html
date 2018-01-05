@@ -1,0 +1,5 @@
+<ul class="breadcrumbs2" style="font-size: 18px; height: 4.1rem;">
+    <li ng-click="wastageDataModule.FoodItemsSelectionPanel.StepBack(2)"><a style="padding: 0.8em 1em;" href="#"><span class="icon mif-home"></span></a></li>
+    <li ng-if="wastageDataModule.FoodItemsSelectionPanel.SelectedFoodCategory !== undefined" ng-click="wastageDataModule.FoodItemsSelectionPanel.StepBack(1)" ><a style="padding: 0.8em 1em;" href="#">{{(wastageDataModule.FoodItemsSelectionPanel.SelectedFoodCategory !== undefined) ? wastageDataModule.FoodItemsSelectionPanel.SelectedFoodCategory.Description : ""}}</a></li>
+    <li ng-if="wastageDataModule.FoodItemsSelectionPanel.SelectedFoodSubCategory !== undefined"><a style="padding: 0.8em 1em;" href="#">{{(wastageDataModule.FoodItemsSelectionPanel.SelectedFoodSubCategory !== undefined) ? wastageDataModule.FoodItemsSelectionPanel.SelectedFoodSubCategory.Name : ""}}</a></li>
+</ul>

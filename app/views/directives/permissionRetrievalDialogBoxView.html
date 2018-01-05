@@ -1,0 +1,23 @@
+<div class="bgFrame" style="top: 0; left: 0; z-index: 32; display: none; align-items: center; position: fixed; background-color: rgba(149, 149, 222, 0.41);; width: 100%; height: 100%;">
+    <div style="display: inline-block; position: relative; width: 500px; height: 200px; margin: auto; background-color: #7f9494; border: 4px solid gray;">
+
+        <div class="form-group" style="overflow: auto;">
+            <div>
+                <label for="usernameInput">Username:</label>
+                <input ng-model="Credentials.Username" class="form-control" type="text" id="usernameInput">
+            </div>
+            <div>
+                <label for="passwordInput">Password:</label>
+                <input ng-model="Credentials.Password" class="form-control" type="password" id="passwordInput">
+            </div>
+        </div>
+        <div style="position: relative; height: 58px;">
+            <button ng-click="ClosePopup(true)" style="margin: 2px; position: absolute; bottom: 0px; left: 0px; height: 50px; width: 120px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white">
+                <span class="title CloudFont Small-CloudFont">Grant Permission</span>
+            </button>
+            <button ng-click="ClosePopup(false)" style="margin: 2px; position: absolute; bottom: 0px; right: 0px; height: 50px; width: 120px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white">
+                <span class="title CloudFont Small-CloudFont">Cancel</span>
+            </button>
+        </div>
+    </div>
+</div>

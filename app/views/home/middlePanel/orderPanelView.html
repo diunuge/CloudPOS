@@ -1,0 +1,15 @@
+<div id="HorizontalFoodCategoryBar" ng-include="'views/home/middlePanel/orderPanel/horizontalFoodCategoryPanelView.html'">
+</div>
+
+<div style="width: 125px !important; float: left; !important; margin-top: 4px;" id="VerticalFoodTypeBar" ng-include="'views/home/middlePanel/orderPanel/verticalFoodTypePanelView.html'">
+</div>
+
+<div style="float: left; padding: 4px !important; width: 455px !important; overflow-x: hidden !important; overflow-y: auto !important; height: 420px !important;" id="FoodItemBar" ng-include="'views/home/middlePanel/orderPanel/filteredFoodItemsPanelView.html'" class="FilteredItemsPanel">
+</div>
+<guest-selection-bar-directive ng-if="(HomeDataModule.SelectedOrder.OrderCategory.Code == HomeDataModule.OrderCategories.DiningOrder.Code)"
+                               guest-count="HomeDataModule.SelectedOrder.Reservation.NoOfGuest"
+                               selected-cover="HomeDataModule.SelectedOrder.CoverNumber"
+                               active-class="'CloudPosUiStructureButtonsThemeCatThreeActive'"
+                               inactive-class="'CloudPosUiStructureButtonsThemeCatThree'"
+                               style="position:absolute !important; bottom: 0px !important; left: 4px !important;">
+</guest-selection-bar-directive>

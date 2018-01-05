@@ -1,0 +1,75 @@
+<div style="height: 100%;"
+     ng-controller="OrdersDisplayPanel"
+     data-role="group"
+     data-group-type="one-state"
+     data-group-type="one-state">
+<div class="accordion"
+         data-role="accordion"
+         data-close-any="true">
+        <div class="frame active">
+            <div class="heading">Dining Orders</div>
+            <div class="content">
+                <div style="height: 31rem; overflow: auto;">
+                    <button class="button"
+                            style="width: 100%; display: block; text-align: left; height: auto;"
+                            ng-repeat="item in OrdersDisplayDataModule.Orders.DiningOrders"
+                            ng-click="OrdersDisplayDataModule.SelectOrder(item, HomeDataModule.OrderCategories.DiningOrder)">
+                        <h5>Tables : <span ng-repeat="table in item.Tables track by $index">{{table}},&nbsp</span></h5>
+                        <h5>Guest Name : {{item.GuestName}}</h5>
+                        <!--<h5>Phone No : {{item.GuestID}}</h5>-->
+                        <h5>TimeSlot : {{item.TimeSlot}}</h5>
+                        <h5>Amount : {{item.TotalPrice | currency : 'Rs. ' : 2}}</h5>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="frame">
+            <div class="heading">Takeout Orders</div>
+            <div class="content">
+                <div style="height: 31rem; overflow: auto;">
+                    <button class="button"
+                            style="width: 100%; display: block; text-align: left; height: auto;"
+                            ng-repeat="item in OrdersDisplayDataModule.Orders.TakeoutOrders"
+                            ng-click="OrdersDisplayDataModule.SelectOrder(item, HomeDataModule.OrderCategories.TakeoutOrder)">
+                        <h5>Guest Name : {{item.GuestName}}</h5>
+                        <h5>Phone No : {{item.GuestID}}</h5>
+                        <h5>Amount : {{item.TotalPrice | currency : 'Rs. ' : 2}}</h5>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="frame">
+            <div class="heading">Delivery Orders</div>
+            <div class="content">
+                <div style="height: 31rem; overflow: auto;">
+                    <button class="button"
+                            style="width: 100%; display: block; text-align: left; height: auto;"
+                            ng-repeat="item in OrdersDisplayDataModule.Orders.DeliveryOrders"
+                            ng-click="OrdersDisplayDataModule.SelectOrder(item, HomeDataModule.OrderCategories.DeliveryOrder)">
+                        <h5>Guest Name : {{item.GuestName}}</h5>
+                        <h5>Phone No : {{item.GuestID}}</h5>
+                        <h5>Amount : {{item.TotalPrice | currency : 'Rs. ' : 2}}</h5>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="frame">
+            <div class="heading">Tab Orders</div>
+            <div class="content">
+                <div style="height: 31rem; overflow: auto;">
+                    <button class="button"
+                            style="width: 100%; display: block; text-align: left; height: auto;"
+                            ng-repeat="item in OrdersDisplayDataModule.Orders.TabOrders"
+                            ng-click="OrdersDisplayDataModule.SelectOrder(item, HomeDataModule.OrderCategories.TabOrder)">
+                        <h5>Guest Name : {{item.GuestName}}</h5>
+                        <h5>Phone No : {{item.GuestID}}</h5>
+                        <h5>Amount : {{item.TotalPrice | currency : 'Rs. ' : 2}}</h5>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

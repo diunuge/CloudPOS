@@ -1,0 +1,426 @@
+{
+    "UserPrivileges": {
+        "OrderCancellation": {
+            "PrivilegeId": 0,
+            "ProductId": 0,
+            "Name": "OrderCancellation",
+            "HasPrivilege": false,
+            "PanelTag": ""
+        },
+        "DutyMeal": {
+            "PrivilegeId": 0,
+            "ProductId": 0,
+            "Name": "DutyMeal",
+            "HasPrivilege": false,
+            "PanelTag": ""
+        },
+        "SplitCancellation": {
+            "PrivilegeId": 0,
+            "ProductId": 0,
+            "Name": "SplitCancellation",
+            "HasPrivilege": false,
+            "PanelTag": ""
+        },
+        "DiscountManagement": {
+            "PrivilegeId": 0,
+            "ProductId": 0,
+            "Name": "DiscountManagement",
+            "HasPrivilege": false,
+            "PanelTag": ""
+        },
+        "DayEnd": {
+            "PrivilegeId": 0,
+            "ProductId": 0,
+            "Name": "DayEnd",
+            "HasPrivilege": false,
+            "PanelTag": ""
+        },
+        "ShowDetailedDashboard": {
+            "PrivilegeId": 0,
+            "ProductId": 0,
+            "Name": "ShowDetailedDashboard",
+            "HasPrivilege": false,
+            "PanelTag": ""
+        },
+        "WastageNoteApprove": {
+            "PrivilegeId": 0,
+            "ProductId": 0,
+            "Name": "WastageNoteApprove",
+            "HasPrivilege": false,
+            "PanelTag": ""
+        },
+        "InvoicePrint": {
+            "PrivilegeId": 0,
+            "ProductId": 0,
+            "Name": "InvoicePrint",
+            "HasPrivilege": false,
+            "PanelTag": ""
+        }
+    },
+
+    "Menus": {
+        "Admin": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Admin",
+            "Description": "Admin page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "BankManagement": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Bank Management",
+            "Description": "Bank Management",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "Booking": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Booking",
+            "Description": "Reservation Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "CityLedgerAccounts": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "City Ledger Accounts",
+            "Description": "City Ledger Accounts Management",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "CountryManagement": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Country Management",
+            "Description": "Country Management",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "CreateRecipe": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Create Recipe Inventory",
+            "Description": "Create Recipe Inventory",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "CurrencyConversion": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Currency Conversion",
+            "Description": "Currency Conversion",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "CurrentProduct": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Current Product",
+            "Description": "Current Product Report",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "DeliveryPage": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Delivery",
+            "Description": "Delivery Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "DeliveryModule": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Delivery Module",
+            "Description": "Delivery Module",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "DeliveryZoneRateManagement": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Delivery Zone Rate Management",
+            "Description": "Delivery Zone Rate Management",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "DiscountManagement": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Discount Management",
+            "Description": "Discount Management",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "DutyMeal": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "DutyMeal",
+            "Description": "DutyMeal",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "FloorManagement": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Floor Management",
+            "Description": "Floor Management",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "FoodCategoryManagement": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Food Category Management",
+            "Description": "Food Category Management",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "FoodComments": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Food Comments",
+            "Description": "Food Comments",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "KOTReprint": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "KOT Reprint",
+            "Description": "KOT Reprint Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "OrderCancellationPage": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Order Cancellation Page",
+            "Description": "Order Cancellation Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "OrderCancellationMessages": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Order Cancellation Messages",
+            "Description": "Order Cancellation Messages",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "Payment": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Payment Page",
+            "Description": "Payment Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "PaymentAdvanceCancellationPage": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Payment Advance Cancellation Page",
+            "Description": "Payment Advance Cancellation Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "PaymentCancellationPage": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Payment Cancellation Page",
+            "Description": "Payment Cancellation Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "PaymentCancellationMessages": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Payment Cancellation Messages",
+            "Description": "Payment Cancellation Messages",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "PrinterResetPage": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Printer Reset Page",
+            "Description": "Printer Reset Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "Reports": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Reports",
+            "Description": "Reports Module",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "ReceiptReprint": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Receipt Reprint Page",
+            "Description": "Receipt Reprint Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "ServiceCharge": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "ServiceCharge",
+            "Description": "ServiceChargeMangement",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "TabsPage": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Tabs",
+            "Description": "Tabs Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "TakeOut": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Take Out",
+            "Description": "Take Out Page",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "TaxManagement": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Tax Management",
+            "Description": "Tax Management",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "UnitOfMeasure": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Unit of Measure",
+            "Description": "Unit of Measure",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "WaiterAllocation": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Waiter Allocation",
+            "Description": "Waiter Allocation ",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        },
+        "Wastage": {
+            "MenuId": 0,
+            "ProductId": 0,
+            "ParentId": 0,
+            "MenuLevel": 0,
+            "Text": "Wastage",
+            "Description": "Wastage",
+            "NavigateUrl": "",
+            "PageTask": "",
+            "IsMenu": false
+        }
+    }
+}

@@ -1,0 +1,48 @@
+<div style="height: 385px !important; overflow: auto !important;">
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="sortable-column">C</th>
+            <th class="sortable-column">Name</th>
+            <th class="sortable-column">Qty</th>
+            <th class="sortable-column">Amount</th>
+            <th class="sortable-column"></th>
+            <th class="sortable-column"></th>
+        </tr>
+        <tr ng-repeat="item in HomeDataModule.SelectedOrder.OrderDetails"
+            class="{{(item.OrderDetailID==0) ? 'bg-grayLight' : ''}}">
+            <td>{{(HomeDataModule.SelectedOrder.OrderCategory.Code == HomeDataModule.OrderCategories.DiningOrder.Code) ? ((item.CoverNo == 0) ? "T" : item.CoverNo) : ""}}</td>
+            <!--<td>{{item.CoverNo}}</td>-->
+            <td ng-click="HomeDataModule.FoodRemarksManagement.OpenPopup(item)">{{item.Name}}&nbsp;<span ng-if="item.Remarks!=''" class="mif-bubbles"></span></td>
+            <td>{{item.Quantity}}</td>
+            <td ng-if="item.OrderDetailID != 0">{{(item.Price | currency : 'Rs. '  : 2)}}</td>
+            <td ng-if="item.OrderDetailID == 0">{{(item.Price | currency : 'Rs. '  : 2)}}</td>
+            <td></td>
+            <td ng-click="HomeDataModule.OrderDetailRemoval.RemoveOrderDetail($index)">X</td>
+        </tr>
+        </thead>
+    </table>
+    <!--<permission-retrieval-dialog-box showup="HomeDataModule.OrderDetailRemoval.OpenPermissionRetrieval"
+                                     callback="HomeDataModule.OrderDetailRemoval.PermissionRetrievalCallback">
+    </permission-retrieval-dialog-box>-->
+
+    <order-detail-removal-panel showup="HomeDataModule.OrderDetailRemoval.OpenOrderDetailRemoval"
+                                callback="HomeDataModule.OrderDetailRemoval.OrderDetailRemovalCallback"
+                                options="HomeDataModule.OrderDetailRemoval.OrderDetailRemovalRemarks">
+    </order-detail-removal-panel>
+    <permission-retrieval-directive users="HomeDataModule.OrderDetailRemoval.Users"
+                                    user-levels="HomeDataModule.OrderDetailRemoval.UserLevels"
+                                    callback="HomeDataModule.OrderDetailRemoval.PRCallback"
+                                    show="HomeDataModule.OrderDetailRemoval.OpenPermissionRetrieval">
+    </permission-retrieval-directive>
+    <food-remarks-selection-panel showup="HomeDataModule.FoodRemarksManagement.IsFoodRemarksPopupOpen"
+                                  callback="HomeDataModule.FoodRemarksManagement.Callback"
+                                  options="HomeDataModule.FoodRemarksManagement.FoodRemarksList"
+                                  currentfoodremarks="HomeDataModule.FoodRemarksManagement.CurrentFoodRemarks"
+                                  is-open-food="HomeDataModule.FoodRemarksManagement.IsOpenFood"
+                                  price="HomeDataModule.FoodRemarksManagement.Price"
+                                  currentquantity="HomeDataModule.FoodRemarksManagement.CurrentQuantity">
+    </food-remarks-selection-panel>
+</div>
+<div ng-include="'views/home/leftPanel/mainDisplayPanel/commonSubViews/pricingView.html'">
+</div>

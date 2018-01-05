@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.10/angular.min.js"></script>
+    <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
+</head>
+<body ng-app="app" ng-controller="Ctrl">
+
+<div ng-dropdown-multiselect=""
+     options="example2data"
+     selected-model="example2model"
+     extra-settings="example2settings">
+</div>
+
+</body>
+<script>
+    var app = angular.module('app', ['angularjs-dropdown-multiselect']);
+    app.controller('Ctrl', ["$scope", function(scope) {
+        scope.example2model = [];
+        scope.example2data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"}];
+        scope.example2settings = {displayProp: 'id'};
+    }]);
+
+</script>
+</html>

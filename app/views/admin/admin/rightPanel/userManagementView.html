@@ -1,0 +1,150 @@
+<div class="grid"
+     ng-controller="UserManagementController"
+     style="height: 100%;">
+    <div class="app-bar">
+        <ul class="app-bar-menu">
+            <li ng-click="UserManagementDataModule.UserLevelMgt.OpenPanel()"><a href="">User Level</a></li>
+        </ul>
+    </div>
+    <div class="row cells6">
+        <div class="cell colspan4">
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell">
+                        <h5>First Name :</h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control full-size text" data-role="input">
+                            <input type="text" ng-model="UserManagementDataModule.SelectedUser.FirstName">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell">
+                        <h5>Last Name :</h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control full-size text" data-role="input">
+                            <input type="text" ng-model="UserManagementDataModule.SelectedUser.LastName">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell">
+                        <h5>Title :</h5>
+                    </div>
+                    <div class="cell colspan3">
+                <label class="input-control radio">
+                    <input type="radio"
+                           name="title"
+                           value="1"
+                           ng-model="UserManagementDataModule.SelectedUser.Title"
+                           checked>
+                    <span class="check"></span>
+                    <span class="caption">Mr</span>
+                </label>
+                <label class="input-control radio">
+                    <input type="radio"
+                           name="title"
+                           value="2"
+                           ng-model="UserManagementDataModule.SelectedUser.Title">
+                    <span class="check"></span>
+                    <span class="caption">Miss</span>
+                </label>
+                <label class="input-control radio">
+                    <input type="radio"
+                           name="title"
+                           value="3"
+                           ng-model="UserManagementDataModule.SelectedUser.Title">
+                    <span class="check"></span>
+                    <span class="caption">Mrs</span>
+                </label>
+                <label class="input-control radio">
+                    <input type="radio"
+                           name="title"
+                           value="5"
+                           ng-model="UserManagementDataModule.SelectedUser.Title">
+                    <span class="check"></span>
+                    <span class="caption">Other</span>
+                </label>
+                    </div>
+                    </div>
+            </div>
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell">
+                        <h5>User Level :</h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <md-autocomplete md-selected-item=""
+                                         md-search-text=""
+                                         md-items=""
+                                         md-item-text="">
+                            <md-item-template>
+                                <span md-highlight-text="searchText">{{item.UserLevelName}}</span>
+                            </md-item-template>
+                            <md-not-found>
+                                No matches found.
+                            </md-not-found>
+                        </md-autocomplete>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell">
+                        <h5>Password :</h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control full-size password" data-role="input">
+                            <input type="password">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell">
+                        <h5>Confirm Password :</h5>
+                    </div>
+                    <div class="cell colspan3">
+                        <div class="input-control full-size password" data-role="input">
+                            <input type="password">
+                            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell">
+                    </div>
+                    <div class="cell colspan3">
+                        <button class="button primary">Create User</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell colspan2">
+            <md-list>
+                <md-list-item ng-repeat="user in UserManagementDataModule.SystemUsers track by $index"
+                            ng-click="UserManagementDataModule.SelectUser($event, user)">
+                    <!--<img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />-->
+                    <div class="md-list-item-text">
+                        <h5>{{ user.FirstName + " " + user.LastName }}</h5>
+                        <h5>User Level : {{user.UserLevelID}}</h5>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </div>
+    </div>
+    <div ng-include="'views/admin/admin/rightPanel/userManagement/UserLevelMgt.html'">
+    </div>
+</div>

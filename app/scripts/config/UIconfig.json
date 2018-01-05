@@ -1,0 +1,13 @@
+{
+    "enableUIDisplayConfiguration": false,
+    "uiDisplayConfigurations": {
+        "mainPanel": {
+            "isHiddenField": {},
+            "isHiddenSection": {},
+            "isReadOnlyField": {}
+        },
+        "mainPages": {
+            "adminPage": {}
+        }
+    }
+}

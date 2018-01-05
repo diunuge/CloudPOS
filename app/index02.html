@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app/bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script src="app/bower_components/angular-slick/dist/slick.min.js"></script>
+</head>
+<body>
+<div ng-app="app" ng-controller="Ctrl">
+    <input search-drop-down type="number">
+</div>
+
+<script>
+    var app = angular.module('app', []);
+    app.controller('Ctrl', function($scope, $http) {
+        $scope.options = [1,2,3,4,5];
+    });
+
+    app.directive("searchDropDown", [function() {
+        var DDO = {
+            restrict: "A",
+            scope: {
+                settings: "=?",
+                options: "=?",
+                selections: "=?"
+            },
+            link : function (scope, elem, attrs) {
+                console.log(elem.position());
+            }
+        };
+
+        return DDO;
+    }]);
+</script>
+</body>
+</html>

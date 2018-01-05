@@ -1,0 +1,27 @@
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureDirective.HorizontalCarousel
+{
+
+}
+
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureDirective.HorizontalCarousel .NextButton,.PreviousButton
+{
+    width: 80px !important;
+    background-color: #006666 !important;
+}
+
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureDirective.HorizontalCarousel .MenuItemButton
+{
+    min-width: 140px !important;
+
+}
+
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureDirective.HorizontalCarousel .MainContainer
+{
+
+}
+
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureDirective.HorizontalCarousel .MenuItemContainer
+{
+    width: 420px !important;
+    overflow: hidden;
+}

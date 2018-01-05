@@ -1,0 +1,37 @@
+<div ng-init="PaymentDataModule.AdvanceDeposit.OnAdvanceDeposit()" class="PaymentInfo" style="padding: 0.4rem;">
+    <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+        <input type="number"
+               placeholder="Advance Deposit Amount.."
+               ng-model="PaymentDataModule.AdvanceDeposit.AdvanceAmount"
+               disabled>
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+</div>
+<div class="PaymentOptions">
+    <div ng-include="UrlFactory.UrlHolders.HomeViewMiddlePanelPaymentPanel.RightPanel.PaymentOptionsArea" style="height: 80% !important; padding: 0.4rem !important;">
+
+    </div>
+    <div style="height: 20% !important; position: relative;">
+        <button
+                class="button large-button primary"
+                style="position: absolute; right: 0.4rem; width: 8rem;"
+                ng-click="PaymentDataModule.AdvanceDeposit.AddPayment()">
+            ADD
+        </button>
+        <button class="button large-button primary"
+                style="position: absolute; left: 0.4rem; width: 8rem;"
+                ng-click="PaymentDataModule.AdvanceDeposit.CancelAdvanceDeposit()">
+            Cancel
+        </button>
+    </div>
+</div>
+
+<!-- Key Pad -->
+<div class="KeyPad">
+    <numeric-key-pad-directive value="PaymentDataModule.Payment.PaymentDetailDto.PayAmount" total="335"></numeric-key-pad-directive>
+</div>
+
+<!-- Added payments list -->
+<div class="AddedPayments" ng-include="'views/home/middlePanel/PaymentPanel/AddedPaymentsView.html'">
+</div>
+

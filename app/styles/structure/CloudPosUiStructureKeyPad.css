@@ -1,0 +1,22 @@
+div.CloudPosUiStructureMainContainer div.CloudPosKeyPad {
+
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosKeyPad button.numeric-keys {
+    width: 4.55rem !important;
+    height: 2.88rem !important;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosKeyPad button.numeric-keys-notes {
+    width: 49% !important;
+    height: 2.88rem !important;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosKeyPad button.enter-button {
+    width: 99.5% !important;
+    height: 2.88rem !important;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosKeyPad button.keys-theme {
+    background-color: #5f9ea0;
+}

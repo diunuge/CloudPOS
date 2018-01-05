@@ -1,0 +1,76 @@
+<!-- 
+Developed By HARUN DILUKA HESHAN
+Software Engineer
+Intahub (pvt) ltd.
+-->
+<style>
+    #horizontalMenuBar .btn-success{
+        height: 3.5em;
+        width: 7.58em;
+        margin:0em 0.2em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #horizontalMenuBar .btn-success.active{
+        background-color: darkgreen;
+    }
+
+    #horizontalMenuBar th, td{
+        border-width: 0px;
+    }
+</style>
+<div ng-controller="OrderPanelMiddleSubPanelOrderHorizontalMenuBarController">
+<table id="horizontalMenuBar">
+    <tr>
+        <th><button onclick="scrollBackward()" class="btn btn-success">&lt;&lt;</button></th>
+        <th>
+            <div id="horizontalMenuBarScrollingPart" style="max-width: 24em; overflow: hidden">
+                <table style="border-width: 0px;">
+                    <tr style="">
+                        <th ng-repeat="catItem in orderDataModule.DataStore.FoodCategoriesAr track by $index"><button ng-class="{active: $first}"  ng-click="selectCategory($event, catItem.CategoryId)" class="btn btn-success">{{catItem.CategoryName}}</button></th>
+                    </tr>
+                </table>
+            </div>
+        </th>
+        <th><button onclick="scrollForward()" class="btn btn-success">&gt;&gt;</button></th>
+    </tr>
+</table>
+</div>
+<script>
+    var scr = 0;
+    var scrollingBlock=0;
+    var scrollWidth;
+    var elemW = 200;
+    function scrollForward(){
+        scrollWidth = $('#horizontalMenuBarScrollingPart')[0].scrollWidth - $('#horizontalMenuBarScrollingPart').width();
+        if(scrollWidth>scr) {
+            if((scrollWidth-scr)>elemW){
+                scr += elemW;
+            }else{
+                scr += (scrollWidth-scr);
+            }
+            $('#horizontalMenuBarScrollingPart').animate({
+                scrollLeft: scr
+            }, 600, function () {
+            });
+        }
+    }
+
+    function scrollBackward(){
+        if(scr>0) {
+            if(scr>elemW){
+                scr = (scr - elemW);
+            }else {
+                scr = 0;
+            }
+            $('#horizontalMenuBarScrollingPart').animate({
+                scrollLeft: scr
+            }, 600, function () {
+            });
+        }
+    }
+    $(document).ready(function(){
+        //$($('#horizontalMenuBarScrollingPart button')[0]).addClass('active');
+    });
+</script>

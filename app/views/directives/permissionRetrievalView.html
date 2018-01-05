@@ -1,0 +1,29 @@
+<div style="position: fixed; width: 100%; height: 100%; background-color: rgba(0, 0, 136, 0.3); z-index: 1; left: 0; top: 0; display: flex;">
+    <div style="width: 70%; height: 70%; margin: auto; background-color: #dedede;">
+        <div data-role="group"
+             data-group-type="one-state"
+             style="width: 30%; float: left; height: 100%; padding: 0.5rem;">
+            <button class="button"
+                    style="width: 100%; height: 3rem;"
+                    ng-repeat="user in FilteredUsers"
+                    ng-click="UserClick($event, user)">{{user.FirstName + " " + user.LastName}}</button>
+        </div>
+        <div style="width: 70%; float: left; height: 100%; padding: 0.5rem;">
+            <div style="height: 90%;">
+                <div class="input-control password" data-role="input" style="width: 100%;">
+                    <span class="mif-lock prepend-icon"></span>
+                    <input type="password" placeholder="User Password.." ng-model="Password">
+                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                </div>
+            </div>
+            <div style="height: 10%; position: relative;">
+                <button class="button"
+                        style="width: 30%; height: 80%;"
+                        ng-click="Confirm()">Confirm</button>
+                <button class="button"
+                        style="width: 30%; height: 80%; position: absolute; right: 0;"
+                        ng-click="Cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

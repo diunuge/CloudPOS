@@ -1,0 +1,16 @@
+<div ng-controller="MultipleOptionsPanelController">
+    <div>
+        <button ng-click="MultipleOptionsPanelDataModule.NavigationHandler.ToMultiplePayment()" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="width: 32.5%; height: 40px">
+            <span class="title  CloudFont Small-CloudFont">Multiple Payment</span>
+        </button>
+        <button ng-click="MultipleOptionsPanelDataModule.NavigationHandler.ToAdvanceDeposit()" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="width: 32.5%; height: 40px">
+            <span class="title  CloudFont Small-CloudFont">Advance Deposit</span>
+        </button>
+        <button ng-click="MultipleOptionsPanelDataModule.NavigationHandler.ToDiscount()" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="width: 32.5%; height: 40px">
+            <span class="title  CloudFont Small-CloudFont">Discount</span>
+        </button>
+    </div>
+    <div ng-include="UrlFactory.UrlHolders.HomeViewMiddlePanelMultipleOptionsPanel.BodyArea">
+
+    </div>
+</div>

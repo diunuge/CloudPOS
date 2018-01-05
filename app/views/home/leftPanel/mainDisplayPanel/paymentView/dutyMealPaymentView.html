@@ -1,0 +1,12 @@
+<div>
+<label style="display: block;" class="CloudFont Small-CloudFont">Duty Meal Payment :</label>
+<div style="clear: both; height: 375px;">
+    <label class="CloudFont Small-CloudFont">Pay amount :</label><br/>
+    <input ng-model="Payment.PaymentDetailDto.PayAmount" class="DefaultInputNumber" type="number"><br/>
+    <label class="CloudFont Small-CloudFont">Employee :</label><br/>
+    <input ng-model="Payment.PaymentDetailDto.EmployeeID" class="DefaultInputText" type="text"><br/>
+</div>
+<div>
+    <button ng-click="Payment.AddPayment(Payment.PaymentModes.DutyMealPayment)" style="width: 100%; margin-top: 8px; height: 45px; font-size: 18px;" class="shortcut-button bg-grayLight bg-active-darkBlue fg-white ItemButtons">Add</button>
+</div>
+</div>

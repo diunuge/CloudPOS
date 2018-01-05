@@ -1,0 +1,317 @@
+/*
+Should convert to Saas or Less
+*/
+
+/* Set default settings to div */
+div
+{
+    box-sizing: border-box !important;
+}
+
+/* Override the margins of the body element */
+body
+{
+    margin: 0px !important;
+    padding: 2px !important;
+}
+
+/* Defines the structure of the main container*/
+/* Measuring unit - PX*/
+/* StandardWidth = 1024*/
+/* StandardHeight = 768*/
+/* Width = standardWidth - (body.style.margin.marginLeft + body.style.margin.marginRight)*/
+/* Height = standardHeight - (body.style.margin.marginTop + body.style.margin.marginBottom)*/
+div.CloudPosUiStructureMainContainer
+{
+    width: 1020px !important;
+    height: 764px !important;
+    margin: auto;
+}
+
+/* Define the structure of the top ribbon */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon
+{
+    height: 114px !important;
+    margin: 0px 0px 6px 0px !important;
+}
+
+/* Define the structure of the top ribbon container's left panel */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon>.CloudPosUiStructureRibbonLeftPanel
+ {
+    border-left-width: 0px !important;
+    border-left-style: solid !important;
+    border-right-width: 2px !important;
+    border-right-style: solid !important;
+    border-bottom-width: 2px !important;
+    border-bottom-style: solid !important;
+    width: 299px !important;
+    height: 112px !important;
+    display: flex !important;
+    align-items: center !important;
+    float: left !important;
+}
+
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon>.CloudPosUiStructureRibbonLeftPanel div.CloudPosUiStructureRibbonLeftPanelElementCentralizer
+{
+    width: 154px !important;
+    display: block !important;
+    margin: auto !important;
+}
+
+/* Define the structure of the top ribbon container's left panel */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon>.CloudPosUiStructureRibbonLeftPanel button.CloudPosUiStructureRibbonLeftPanelNavigators
+{
+    width: 75px !important;
+    height: 60px !important;
+}
+
+/* Define the structure of the top ribbon container's left panel */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon>.CloudPosUiStructureRibbonMiddlePanel
+{
+    border-width: 0px !important;
+    border-style: solid !important;
+    width: 408px !important;
+    height: 112px !important;
+    display: inline-block !important;
+    float: left !important;
+    margin:0px 0px 0px 6px !important;
+}
+
+/* Define the structure of the top ribbon container's left panel */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon>.CloudPosUiStructureRibbonRightPanel
+{
+    border-left-width: 2px !important;
+    border-left-style: solid !important;
+    border-right-width: 0px !important;
+    border-right-style: solid !important;
+    border-bottom-width: 2px !important;
+    border-bottom-style: solid !important;
+    width: 299px !important;
+    height: 112px !important;
+    display: flex !important;
+    align-items: center !important;
+    float: left !important;
+    margin:0px 0px 0px 6px !important;
+}
+
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon>.CloudPosUiStructureRibbonRightPanel div.CloudPosUiStructureRibbonRightPanelElementCentralizer
+{
+    width: 276px !important;
+    display: block !important;
+    margin: auto !important;
+}
+
+/* Define the structure of the top ribbon container's left panel */
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureUpperRibbon>.CloudPosUiStructureRibbonRightPanel button.CloudPosUiStructureRibbonRightPanelNavigators
+{
+    width: 66px !important;
+    height: 60px !important;
+}
+
+/* CloudPosUiStructure for controls */
+/* Centralize buttons */
+div.CloudPosUiStructureMainContainer button.CloudPosUiStructureCentralizedButton
+{
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+div.CloudPosUiStructureMainContainer .CloudPosUiStructureHomePage.CloudPosUiStructureHomePageRightPanel .CloudPosUiStructureCentralizedButton
+{
+    width: 75px !important;
+    height: 60px !important;
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+}
+
+/*
+Define the structure of the left panel
+which contain information about order details (ordered food items, tax, payment information)
+*/
+/* height = mainContainerHeight - (ribbonHeight + (border.top + border.bottom) + ) */
+/* 650 = 764 - (114 + ()) */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureLeftPanel
+{
+/*    display: inline-block !important;
+    height: 642px !important;
+    width: 300px !important;
+    border: 1px solid blue !important;
+    float: left !important;
+    margin: 0px !important;*/
+}
+
+/* Define the structure of the middle panel */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureMiddlePanel
+{
+/*    display: inline-block !important;
+    height: 642px !important;
+    width: 590px !important;
+    border: 1px solid blue !important;
+    float: left !important;
+    margin: 0px 0px 0px 6px !important;*/
+}
+
+/* Define the structure of the right panel */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureRightPanel
+{
+/*    display: inline-block !important;
+    height: 642px !important;
+    width: 118px !important;
+    border: 1px solid blue !important;
+    float: left !important;
+    margin: 0px 0px 0px 6px !important;*/
+}
+
+/* Define the UI body's panel structure */
+/* Two Panel Structure */
+/* Menu Panel */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureTwoPanelStructure.CloudPosUiStructureMenuPanel
+{
+    display: inline-block !important;
+    height: 642px !important;
+    width: 300px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    float: left !important;
+    margin: 0px !important;
+    overflow: hidden !important;
+    padding: 4px !important;
+}
+
+/* Two Panel Structure */
+/* Body Panel */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureTwoPanelStructure.CloudPosUiStructureBodyPanel
+{
+    display: inline-block !important;
+    height: 642px !important;
+    width: 714px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    float: left !important;
+    margin: 0px 0px 0px 6px !important;
+    overflow: hidden !important;
+    padding: 4px !important;
+}
+
+/* Three Panel Structure */
+/* Left Panel */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureLeftPanel
+{
+    display: inline-block !important;
+    height: 642px !important;
+    width: 300px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    float: left !important;
+    margin: 0px !important;
+    overflow: hidden !important;
+    padding: 4px !important;
+}
+
+/* Three Panel Structure */
+/* Middle Panel */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel
+{
+    display: inline-block !important;
+    height: 642px !important;
+    width: 590px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    float: left !important;
+    margin: 0px !important;
+    overflow: hidden !important;
+    padding: 4px !important;
+    margin: 0px 0px 0px 6px !important;
+}
+
+/* Three Panel Structure */
+/* Right Panel */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureRightPanel
+{
+    display: inline-block !important;
+    height: 642px !important;
+    width: 118px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    float: left !important;
+    margin: 0px !important;
+    overflow: hidden !important;
+    padding: 4px !important;
+    margin: 0px 0px 0px 6px !important;
+}
+
+/* CloudPOS Predefined Font Settings */
+div.CloudPosUiStructureMainContainer .CloudFont
+{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+div.CloudPosUiStructureMainContainer .CloudFont.Small-CloudFont
+{
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+
+div.CloudPosUiStructureMainContainer .CloudFont.BigHeading-CloudFont
+{
+    font-weight: 500 !important;
+    font-size: 22px !important;
+}
+
+div.CloudPosUiStructureMainContainer .CloudFont.SmallHeading-CloudFont
+{
+    font-weight: 500 !important;
+    font-size: 18px !important;
+}
+
+div.CloudPosUiStructureMainContainer .CloudFont.SmallerHeading-CloudFont
+{
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+
+/* Font colors */
+/* Font color black for input */
+div.CloudPosUiStructureMainContainer Input.FontColorOne {
+    color: #52677a !important;
+}
+
+/* Font colors */
+/* Font color black generic */
+div.CloudPosUiStructureMainContainer .FontColorOne {
+    color: #52677a !important;
+}
+
+/* Form controls structures */
+/* Input[type='text'], Input[type='date'], Input[type='number'] */
+div.CloudPosUiStructureMainContainer Input[type='text'].DefaultInputText,
+Input[type='number'].DefaultInputNumber,Input[type='date'].DefaultInputDate {
+    font-family: sans-serif !important;
+    height: 30px !important;
+    font-weight: bold !important;
+    line-height: 30px !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    margin-left: 2px !important;
+}
+
+/* List box directive */
+/* List box container */
+div.CloudPosUiStructureMainContainer div[side-list-box] {
+
+}
+
+/* List box directive */
+/* List item */
+div.CloudPosUiStructureMainContainer div[side-list-box] .listItem {
+    font-family: Arial, Verdana, "Trebuchet MS", sans-serif;
+    width: 99% !important;
+    cursor: pointer;
+}
+
+/* List box directive */
+/* List item active item*/
+div.CloudPosUiStructureMainContainer div[side-list-box] .listItem.active {
+    background-color: #b9bfbf !important;
+}

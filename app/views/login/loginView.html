@@ -1,0 +1,53 @@
+<style>
+        label.loginFields {
+            display: inline-block;
+            width: 8em;
+            color: antiquewhite;
+            font-family: sans-serif;
+            font-weight: bold;
+            margin:0.2em 0em;
+        }
+
+        input[type='number'], input[type='text'], input[type='password'].loginFields {
+            font-weight: bold;
+            font-size: large;
+        }
+
+        button.submitButton {
+            font-weight: bold;
+            font-size: large;
+            display: block;
+            margin:0.4em auto;
+            width: 15em;
+        }
+        .loginFormInValidClass {
+            background-color: #ff0000;
+            color: white;
+        }
+    </style>
+<div data-ng-controller="LoginController" style="display: flex; align-items: center; width: 1024px; height: 768px; padding-top:0.6em; margin: auto; background-color: rgb(14, 27, 34)">
+  <div style="width: 30em; margin: auto;">
+      <!--<label class="loginFields">Restaurant Id : </label><input class="form-control loginFields" ng-model="Credentials.RestaurantId" type="number" min="0">-->
+      <!--<label class="loginFields">User Name : </label><input class="form-control loginFields" ng-model="Credentials.Username" type="text">-->
+     <!-- <label class="loginFields">Password : </label><input class="form-control loginFields" ng-model="Credentials.Password" type="password">
+      <div><button class="btn btn-default loginFields submitButton" style="" ng-click="LoginDataModule.AttemptLogin()">Login</button></div>-->
+      <div class="input-control number" data-role="input" style="width: 100%;">
+          <input type="number" placeholder="Restaurant ID.." ng-model="Credentials.RestaurantId">
+          <button class="button helper-button clear"><span class="mif-cross"></span></button>
+      </div>
+      <div class="input-control number" style="width: 100%;">
+          <span class="mif-user prepend-icon"></span>
+          <input type="number" placeholder="User ID.." ng-model="Credentials.Username">
+          <button class="button helper-button clear"><span class="mif-cross"></span></button>
+      </div>
+      <div class="input-control password" data-role="input" style="width: 100%;">
+          <span class="mif-lock prepend-icon"></span>
+          <input type="password" placeholder="User Password.." ng-model="Credentials.Password">
+          <button class="button helper-button clear"><span class="mif-cross"></span></button>
+      </div>
+      <div style="margin-top: 0.4rem;">
+          <button class="button" style="width: 30%; margin: auto; display: block;"
+                  ng-click="LoginDataModule.AttemptLogin()">LOGIN</button>
+      </div>
+  </div>
+</div>

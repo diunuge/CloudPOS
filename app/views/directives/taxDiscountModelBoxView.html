@@ -1,0 +1,114 @@
+<div class="bgFrame" style="display: flex; align-items: center; z-index: 1; top: 0; left: 0; background-color: rgba(149, 149, 222, 0.41); width: 100%; height: 100%;">
+    <div style="overflow: hidden; width: 550px; height: 635px; margin: auto; background-color: #d8d8d8; border: 2px solid #d8d8d8;">
+        <div>
+            <table class="table table-striped">
+                <tr>
+                    <td>
+                        <button ng-click="GroupByFoodItem()" class="button primary CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 135px;">
+                            <span class="title  CloudFont Small-CloudFont">Normal</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button ng-click="GroupByFoodType()" class="button primary CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 135px;">
+                            <span class="title  CloudFont Small-CloudFont">Food Type</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button ng-click="GroupByFoodCategory()" class="button primary CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 135px;">
+                            <span class="title  CloudFont Small-CloudFont">Food Category</span>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="max-height: 350px; height: 350px; overflow: auto;">
+            <table class="table table-bordered" style="background-color: aliceblue; margin-top: 6px;">
+                <thead>
+                <tr>
+                    <th style="font-size: 14px;">Food Name</th>
+                    <th style="font-size: 14px;">Qty</th>
+                    <th style="font-size: 14px;">Net Amount</th>
+                    <th style="font-size: 14px;">Discount Amount</th>
+                    <th style="font-size: 14px;">Discount Rate</th>
+                    <th style="font-size: 14px;">Net Price</th>
+                </tr>
+                </thead>
+                <thead>
+                <tr ng-repeat="item in Group.Items track by $index">
+                    <td>{{item.SubGroupName}}</td>
+                    <td>{{item.Items.length}}</td>
+                    <td>{{item.NetPrice}}</td>
+                    <td>{{item.DiscountAmount}}</td>
+                    <td>
+                        <button ng-click="DiscountPopup.OpenPopup(item)" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 60px; height: 35px">
+                            <span class="title  CloudFont Small-CloudFont">%</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button ng-click="NetPriceToggle($event, item)" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 60px; height: 35px">
+                            <span class="title  CloudFont Small-CloudFont">{{(item.IsNetPrice) ? "OFF" : "ON"}}</span>
+                        </button>
+                    </td>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div>
+            <table class="table table-striped" style="text-align: left;">
+                <tr>
+                    <th>Net Total :</th>
+                    <th>{{Group.NetTotal | currency : 'Rs. ' : 2}}</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Service Charge :</th>
+                    <th>{{Group.ServiceCharge | currency : 'Rs. ' : 2}}</th>
+                    <th>
+                        <button ng-click="ToggleServiceCharge($event, Group);" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 60px; height: 35px">
+                            <span class="title  CloudFont Small-CloudFont">SC</span>
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Tax Amount :</th>
+                    <th>{{Group.TaxTotal | currency : 'Rs. ' : 2}}</th>
+                    <th>
+                        <button ng-click="ToggleVAT($event)" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 60px; height: 35px">
+                            <span class="title  CloudFont Small-CloudFont">VAT</span>
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Grand Total :</th>
+                    <th>{{Group.TotalAmount | currency : 'Rs. ' : 2}}</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Full Discount Rate :</th>
+                    <th>0</th>
+                    <th>
+                        <button ng-click="DiscountPopup.OpenPopup(null)" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 60px; height: 35px">
+                            <span class="title  CloudFont Small-CloudFont">%</span>
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Total Discount Price :</th>
+                    <th>{{Group.TotalDiscount | currency : 'Rs. ' : 2}}</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+        <div style="position: relative; height: 40px;">
+            <button ng-click="ConfirmDiscounts()" class="button primary CloudPosUiStructureHomePage" style="position: absolute; left: 0; width:135px; margin-left: 18px; font-weight: bold;">
+                <span class="title  CloudFont Small-CloudFont">Confirm</span>
+            </button>
+           <!-- <button class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage" style="position: absolute; right: 0; width:135px; margin-right: 18px; font-weight: bold;">
+                <span class="title  CloudFont Small-CloudFont">Cancel</span>
+            </button>-->
+        </div>
+    </div>
+</div>
+<users-selection-directive callback="DiscountPopup.Callback"
+                           showup="DiscountPopup.OpenPopupStatus"
+                           options="discounts"></users-selection-directive>

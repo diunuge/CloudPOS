@@ -1,0 +1,20 @@
+<!-- 
+Developed By HARUN DILUKA HESHAN
+Software Engineer
+Intahub (pvt) ltd.
+-->
+<div ng-controller="OrderPanelLeftPaymentMainController">
+<div ng-include="'views/order/panelLeft/panelLeft/subViewOne/payment/paymentOptionsView.html'">
+
+</div>
+<!-- Payment Option Tabs -->
+<div style="height: 18em; color:aliceblue;">
+    <label>{{odrLftPaymentInforText}}</label>
+    <div style="height: 13.4em; max-height: 13.4em;"  ng-include="odrLftPaymentOptionPath">
+
+    </div>
+    <div ng-include="'views/order/panelLeft/panelLeft/subViewOne/payment/addPaymentView.html'">
+
+    </div>
+</div>
+</div>

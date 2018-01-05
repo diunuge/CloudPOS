@@ -1,0 +1,17 @@
+<div style="height: 590px; margin-bottom: 0px; background-color: #ffffff; border-radius: 0.3em; overflow: auto;">
+<table class="list-group">
+    <thead>
+    <tr>
+        <th><span style="display: inline-block; min-width: 220px !important;">Food Name</span></th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="item in wastageDataModule.FoodItemsSelectionPanel.WastedItems track by $index">
+        <td><span style="max-width: 220px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; display: inline-block; padding: 4px;">{{item.Name}}</span></td>
+        <td><span class="badge">1</span></td>
+    </tr>
+</table>
+</div>
+<div>
+    <button style="width: 100%; margin-top: 8px; height: 34px; font-size: 18px;" class="shortcut-button bg-grayLight bg-active-darkBlue fg-white ItemButtons">Save</button>
+</div>

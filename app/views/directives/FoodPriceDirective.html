@@ -1,0 +1,24 @@
+<!-- Used to set food price for open foods -->
+<md-dialog aria-label="Food Price"
+           style="width: 50%;">
+    <h3>Food Price :</h3>
+    <div style="">
+    <md-input-container class="md-block" flex-gt-sm>
+        <label>Price : </label>
+        <input type="number" ng-model="FoodPrice">
+    </md-input-container>
+
+        <div class="grid">
+            <div class="row cells2">
+                <div class="cell">
+                    <md-button class="md-raised md-primary"
+                               ng-click="confirm()">Confirm</md-button>
+                </div>
+                <div class="cell" style="text-align: right;">
+                    <md-button class="md-raised md-primary"
+                               ng-click="cancel('useful')">Cancel</md-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</md-dialog>

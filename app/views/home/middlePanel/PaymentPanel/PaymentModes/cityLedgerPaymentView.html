@@ -1,0 +1,56 @@
+
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells4">
+        <div class="cell">
+            <h5>Pay Amount :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+                <input type="number"
+                       min="0"
+                       placeholder="Pay Amount.."
+                       ng-model="PaymentDataModule.Payment.PaymentDetailDto.PayAmount">
+                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells4">
+        <div class="cell">
+            <h5>City Ledger Accnt :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="dropdown-button full-size">
+                <button class="button dropdown-toggle" 
+                        style="width: 100%;">{{(PaymentDataModule.Payment.CityLedger.SelectedCityLedger == null) ? "Select a city ledger acc" : (PaymentDataModule.Payment.CityLedger.SelectedCityLedger.Name + " : " + PaymentDataModule.Payment.CityLedger.SelectedCityLedger.Organisation)}}</button>
+                <ul class="split-content d-menu" data-role="dropdown">
+                    <li ng-repeat="cityLedger in PaymentDataModule.Payment.CityLedgerAccountsList"
+                        ng-click="PaymentDataModule.Payment.CityLedger.SelectedCityLedger=cityLedger"><a href="#">{{cityLedger.Name + " : " + cityLedger.Organisation}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells4">
+        <div class="cell">
+            <h5>Organization :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="input-control full-size text" data-role="input" style="display: block; width: 100%;">
+                <input type="text"
+                       placeholder="Organization.."
+                       ng-model="PaymentDataModule.Payment.CityLedger.SelectedCityLedger.Organisation"
+                       disabled>
+                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

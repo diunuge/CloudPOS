@@ -1,0 +1,35 @@
+<div ng-controller="HomeController">
+<div ng-controller="HomeLeftPanelController"
+     class="CloudPosUiStructureThreePanelStructure CloudPosUiStructureLeftPanel CloudPosUiStructurePanelsTheme"
+     ng-include="UrlFactory.UrlHolders.HomePageLeftPanelMainBody">
+</div>
+
+<div style="/*overflow-y: auto !important;*/ position: relative !important;"
+     ng-controller="HomeMiddlePanelController"
+     ng-include="UrlFactory.UrlHolders.HomePageMiddlePanelBodyArea"
+     class="CloudPosUiStructureThreePanelStructure CloudPosUiStructureMiddlePanel CloudPosUiStructurePanelsTheme CloudPosUiStructureHomePage CloudPosUiStructureHomePageMiddlePanel">
+
+</div>
+
+<div ng-controller="HomeRightPanelController"
+     class="CloudPosUiStructureThreePanelStructure CloudPosUiStructureRightPanel CloudPosUiStructurePanelsTheme CloudPosUiStructureHomePage CloudPosUiStructureHomePageRightPanel">
+
+    <div ng-include="'views/home/rightPanel/orderCategoryView.html'">
+    </div>
+
+    <div style="margin: 12px 0px 12px 0px !important;"
+         ng-show="false">
+        <button ng-click="HomeDataModule.RightPanel.AddNewOrder()"
+                ng-click="HomeDataModule.MiddlePanel.AddNewOrder()"
+                class="button primary"
+                style="height: 60px !important; width: 80%; display: block; margin: 0.2rem auto;">
+            <span class="title"
+                  style="font-size: 14px; font-weight: bold;">New Order</span>
+        </button>
+    </div>
+
+    <div ng-include="'views/home/rightPanel/filteredOrderListView.html'"
+         ng-show="false">
+    </div>
+</div>
+</div>

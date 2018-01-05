@@ -1,0 +1,47 @@
+<!-- Application Header Area -->
+<div  radio-button-group
+      active-class="CloudPosUiStructureNavigatorsActiveTheme"
+      inactive-class="CloudPosUiStructureNavigatorsTheme"
+      ng-controller="HeaderController"
+      class="CloudPosUiStructureUpperRibbon CloudPosUiThemeUpperRibbon">
+    <div class="CloudPosUiStructureRibbonLeftPanel CloudPosUiStructureUpperRibbonPanelsTheme">
+        <div class="CloudPosUiStructureRibbonLeftPanelElementCentralizer">
+            <button  ng-click="HeaderDataModule.Navigation.ToLoginPanel()"
+                     class="shortcut-button bg-active-darkBlue fg-white CloudPosUiStructureRibbonLeftPanelNavigators CloudPosUiStructureNavigatorsTheme ItemButtons"
+                     ng-disabled="Navigation.DisableNavigationButtons">
+                <span class="mif-exit mif-2x"></span>
+            </button>
+            <button  ng-click="HeaderDataModule.Navigation.ToHomePanel()"
+                     class="shortcut-button bg-active-darkBlue fg-white CloudPosUiStructureRibbonLeftPanelNavigators CloudPosUiStructureNavigatorsActiveTheme ItemButtons"
+                     ng-disabled="Navigation.DisableNavigationButtons">
+                <span class="mif-home mif-2x"></span>
+            </button>
+        </div>
+    </div>
+    <div ng-include="UrlFactory.UrlHolders.HeaderViewMiddlePanel" class="CloudPosUiStructureRibbonMiddlePanel CloudPosUiStructureUpperRibbonPanelsTheme">
+    </div>
+    <div class="CloudPosUiStructureRibbonRightPanel CloudPosUiStructureUpperRibbonPanelsTheme">
+        <div class="CloudPosUiStructureRibbonRightPanelElementCentralizer">
+            <button ng-click="HeaderDataModule.Navigation.ToAdminPanel()"
+                    class="shortcut-button bg-active-darkBlue fg-white CloudPosUiStructureRibbonRightPanelNavigators CloudPosUiStructureNavigatorsTheme ItemButtons"
+                    ng-disabled="Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.Admin.IsMenu">
+                <span class="mif-users mif-2x"></span>
+            </button>
+            <button ng-click="HeaderDataModule.Navigation.ToReportingPanel()"
+                    class="shortcut-button bg-active-darkBlue fg-white CloudPosUiStructureRibbonRightPanelNavigators CloudPosUiStructureNavigatorsTheme ItemButtons"
+                    ng-disabled="Navigation.DisableNavigationButtons  || !SystemInit.AccessControl.AccessControlData.SystemMenus.Reports.IsMenu">
+                <span class="mif-file-text mif-2x"></span>
+            </button>
+            <button ng-click="HeaderDataModule.Navigation.ToReservationPanel()"
+                    class="shortcut-button bg-active-darkBlue fg-white CloudPosUiStructureRibbonRightPanelNavigators CloudPosUiStructureNavigatorsTheme ItemButtons"
+                    ng-disabled="Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.Booking.IsMenu">
+                <span class="mif-calendar mif-2x"></span>
+            </button>
+            <button ng-click="HeaderDataModule.Navigation.ToWastagePanel()"
+                    class="shortcut-button bg-active-darkBlue fg-white CloudPosUiStructureRibbonRightPanelNavigators CloudPosUiStructureNavigatorsTheme ItemButtons"
+                    ng-disabled="Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.Wastage.IsMenu">
+                <span class="mif-bin mif-2x"></span>
+            </button>
+        </div>
+    </div>
+</div>

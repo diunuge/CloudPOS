@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/favicon.ico" ng-if="!isFaviconPath" />
+    <link rel="icon" type="image/png" href="{{faviconPath}}" ng-if="isFaviconPath" />
+    <title>{{ Heading.Label | translate }}</title>
+    <style>[data-ng-cloak] { display: none !important; }</style>
+   <!-- <link href="libraries/Metro-UI-CSS-master/build/css/metro.min.css" rel="stylesheet" type="text/css">-->
+    <!--<link href="libraries/Metro-UI-CSS-master/build/css/metro-icons.css" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" type="text/css" href="app/bower_components/slick-carousel/slick/slick.css"/>
+    <script src="app/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="app/bower_components/slick-carousel/slick/slick.min.js"></script>
+    <!--<script src="libraries/Metro-UI-CSS-master/build/js/metro.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />-->
+</head>
+<script>
+    this.jQuery3 = $.noConflict(true);
+</script>
+<body class="cloudPOStheme1"  data-ng-controller="MainController">
+
+<div id="mainViewsInterchangePanel1" ng-include="UrlFactory.UrlHolders.RootViewUrl" style="margin: auto;">
+
+</div>
+
+<!--Loader -->
+<script type='text/javascript' data-main="scripts/loader.js" src='bower_components/requirejs/require.js'></script>
+
+</body>
+</html>

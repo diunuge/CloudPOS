@@ -1,0 +1,152 @@
+<style>
+
+</style>
+<div id="" class="">
+    <div class="input-control number"
+         data-role="input"
+         style="width: 100%;">
+        <input type="number"
+               input-validation
+               validation-type="phoneNumberValidation"
+               placeholder="Phone Number.."
+               min="0"
+               ng-model="reservationDataModule.GuestPhoneNumber">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <div class="input-control number"
+         data-role="email"
+         style="width: 100%;">
+        <input type="email"
+               input-validation
+               validation-type="emailValidation"
+               placeholder="Email.."
+               ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
+               ng-model="reservationDataModule.ReservationDto.guestDetails.Email">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <div><label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Title :</label>
+<!--        <div class="title" radio-button-group active-class="CloudPosUiStructureButtonsThemeCatThreeActive" inactive-class="CloudPosUiStructureButtonsThemeCatThree">
+            <button ng-click="reservationDataModule.ReservationDto.guestDetails.Title='1'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree">Mr</button>
+            <button ng-click="reservationDataModule.ReservationDto.guestDetails.Title='2'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree">Miss</button>
+            <button ng-click="reservationDataModule.ReservationDto.guestDetails.Title='3'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree">Mrs</button>
+            <button ng-click="reservationDataModule.ReservationDto.guestDetails.Title='4'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree">Dr</button>
+        </div>-->
+        <div>
+            <label class="input-control radio">
+                <input type="radio"
+                       name="title"
+                       ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
+                       ng-model="reservationDataModule.ReservationDto.guestDetails.Title"
+                       value="1"
+                       checked>
+                <span class="check"></span>
+                <span class="caption">Mr</span>
+            </label>
+            <label class="input-control radio">
+                <input type="radio" name="title"
+                       ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
+                       ng-model="reservationDataModule.ReservationDto.guestDetails.Title" value="2">
+                <span class="check"></span>
+                <span class="caption">Mrs</span>
+            </label>
+            <label class="input-control radio">
+                <input type="radio" name="title"
+                       ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
+                       ng-model="reservationDataModule.ReservationDto.guestDetails.Title" value="3">
+                <span class="check"></span>
+                <span class="caption">Miss</span>
+            </label>
+            <label class="input-control radio">
+                <input type="radio" name="title"
+                       ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
+                       ng-model="reservationDataModule.ReservationDto.guestDetails.Title" value="4">
+                <span class="check"></span>
+                <span class="caption">Dr</span>
+            </label>
+        </div>
+    </div>
+    <div class="input-control text"
+         data-role="input"
+         style="width: 100%;">
+        <input type="text"
+               placeholder="First Name.."
+               ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
+               ng-model="reservationDataModule.ReservationDto.guestDetails.FirstName">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <div class="input-control text"
+         data-role="input"
+         style="width: 100%;">
+        <input type="text"
+               placeholder="Last Name.."
+               ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
+               ng-model="reservationDataModule.ReservationDto.guestDetails.LastName">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <div>
+        <label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Customer Type :</label>
+        <div style="display: inline-block" radio-button-group active-class="CloudPosUiStructureButtonsThemeCatThreeActive" inactive-class="CloudPosUiStructureButtonsThemeCatThree">
+<!--            <button ng-click="reservationDataModule.ReservationDto.reservationHeader.ReservationType='Standard'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree" style="margin-right:0.2em; font-weight: 600;">Standard</button>
+            <button ng-click="reservationDataModule.ReservationDto.guestDetails.ReservationType='VIP'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree" style="margin-right:0.2em; font-weight: 600;">VIP</button>
+            <button ng-click="reservationDataModule.ReservationDto.guestDetails.ReservationType='VVIP'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree" style="margin-right:0.2em; font-weight: 600;">VVIP</button>-->
+            <label class="input-control radio">
+                <input type="radio" name="customerType"
+                       ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationType"
+                       value="standard">
+                <span class="check"></span>
+                <span class="caption">Standard</span>
+            </label>
+            <label class="input-control radio">
+                <input type="radio" name="customerType"
+                       ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationType"
+                       value="vip">
+                <span class="check"></span>
+                <span class="caption">VIP</span>
+            </label>
+            <label class="input-control radio">
+                <input type="radio" name="customerType"
+                       ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationType"
+                       value="vvip">
+                <span class="check"></span>
+                <span class="caption">VVIP</span>
+            </label>
+        </div>
+    </div>
+    <div class="input-control text"
+         data-role="input"
+         style="width: 100%;">
+        <input type="text"
+               placeholder="Description.."
+               ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
+               ng-model="reservationDataModule.ReservationDto.reservationHeader.Description">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <div>
+        <label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Reservation Date :</label>
+        <label ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationDate"
+               class=" CloudFont SmallerHeading-CloudFont"></label>
+    </div>
+    <div>
+        <label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Reservation Time :</label>
+        <label class=" CloudFont SmallerHeading-CloudFont">{{reservationDataModule.SelectedTimeSlot.TimeSlotString}}</label>
+    </div>
+    <div style="max-height: 125px; overflow: auto;">
+        <label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Tables :</label>
+        <label class=" CloudFont SmallerHeading-CloudFont">
+            <label ng-repeat="table in reservationDataModule.SelectedTimeSlot.Tables">{{table.TblName}},&nbsp</label>
+        </label>
+    </div>
+    <div class="input-control number"
+         data-role="input"
+         style="width: 100%;">
+        <input type="number"
+               placeholder="No of guests.."
+               min="0"
+               max="16"
+               ng-model="reservationDataModule.ReservationDto.reservationHeader.NoOfGuest">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+    </div>
+    <div>
+        <button style="width: 100%; margin-top: 8px; height: 34px; font-size: 18px;" ng-click="reservationDataModule.CreateReservation()" class="button primary ItemButtons">Confirm</button>
+    </div>
+</div>

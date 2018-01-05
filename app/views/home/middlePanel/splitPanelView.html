@@ -1,0 +1,71 @@
+<div ng-controller="SplitOrderPanelController">
+    <div>
+        <button style="width: 142px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage ">
+            <span class="title  CloudFont Small-CloudFont">Split All</span>
+        </button>
+        <button ng-click="Split()" style="width: 142px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage">
+            <span class="title  CloudFont Small-CloudFont">Split</span>
+        </button>
+        <button style="width: 142px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage ">
+            <span class="title  CloudFont Small-CloudFont">Rollback</span>
+        </button>
+        <button style="width: 142px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage ">
+            <span class="title  CloudFont Small-CloudFont">Confirm</span>
+        </button>
+    </div>
+    <div style="float: left !important; width: 49%; margin-right: 4px;">
+        <table class="table" style="border: 1px solid;">
+            <thead>
+            <tr>
+                <th class="sortable-column">C</th>
+                <td class="sortable-column">Food Name</td>
+                <td class="sortable-column">Qty</td>
+                <td class="sortable-column">Total Amount</td>
+            </tr>
+            </thead>
+
+            <thead>
+            <tr ng-repeat="item in OrderedFoodItems track by $index" ng-click="SelectItem(item)">
+                <td>{{item.CoverNumber}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Quantity}}</td>
+                <td>{{item.Price | currency : 'Rs. ' : 2}}</td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div style="float: left; width: 49%; margin-left: 4px;">
+        <table class="table" style="border: 1px solid;">
+            <thead>
+            <tr>
+                <th class="sortable-column"></th>
+                <th class="sortable-column">Food Name</th>
+                <th class="sortable-column">Qty</th>
+                <th class="sortable-column">C</th>
+                <th class="sortable-column">Total Amount</th>
+            </tr>
+            </thead>
+            <thead ng-repeat="item1 in SplitItems track by $index">
+            <tr>
+                <th>0</th>
+                <th colspan="2">Invoice</th>
+                <th colspan="2">
+                    <!--Print Discount Payment-->
+                </th>
+            </tr>
+            <tr ng-repeat="item2 in item1.Items track by $index">
+                <th></th>
+                <th>{{item2.Name}}</th>
+                <th>{{item2.Quantity}}</th>
+                <th>{{item2.CoverNumber}}</th>
+                <th>{{item2.Price | currency : 'Rs. ' : 2}}</th>
+            </tr>
+            <tr>
+                <th colspan="2">Total Amount : </th>
+                <th colspan="2">{{item1.Items.length}}</th>
+                <th>{{item1.TotalAmount | currency : 'Rs. ' : 2}}</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>

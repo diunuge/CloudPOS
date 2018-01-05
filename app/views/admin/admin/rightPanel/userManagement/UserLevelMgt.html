@@ -1,0 +1,111 @@
+<div>
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2"
+                style="width: 70%;"
+                md-component-id="UserLevelMgtPanel"
+                md-is-locked-open="false">
+        <!--md-is-locked-open="$mdMedia('gt-md')">-->
+
+        <md-content layout-padding>
+            <h3>User Level Management</h3>
+            <div>
+                <div class="grid">
+                    <div class="row cells4">
+                        <div class="cell">
+                            <h5>User Level:</h5>
+                        </div>
+                        <div class="cell colspan3">
+                            <md-autocomplete md-selected-item="UserManagementDataModule.UserLevelMgt.UserLevelsDropDown.SelectedItem"
+                                             md-search-text="UserManagementDataModule.UserLevelMgt.UserLevelsDropDown.SearchText"
+                                             md-items="item in UserManagementDataModule.UserLevelMgt.UserLevelsDropDown.SearchingQuery()"
+                                             md-item-text="item.UserLevelName">
+                                <md-item-template>
+                                    <span md-highlight-text="searchText">{{item.UserLevelName}}</span>
+                                </md-item-template>
+                                <md-not-found>
+                                    No matches found.
+                                </md-not-found>
+                            </md-autocomplete>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid">
+                    <div class="row cells4">
+                        <div class="cell">
+                            <h5>User Level Name :</h5>
+                        </div>
+                        <div class="cell colspan3">
+                            <div class="input-control full-size text" data-role="input">
+                                <input type="text" ng-model="UserManagementDataModule.UserLevelMgt.UserLevelName">
+                                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid">
+                    <div class="row cells4">
+                        <div class="cell">
+                            <h5>User Rules :</h5>
+                        </div>
+                        <div class="cell colspan3">
+                            <md-content class="md-padding autocomplete" layout="column">
+                                <md-contact-chips
+                                        ng-model="UserManagementDataModule.UserLevelMgt.UserLevelPrivilegesChip.MatchedItems"
+                                        md-contacts="UserManagementDataModule.UserLevelMgt.UserLevelPrivilegesChip.querySearch($query)"
+                                        md-contact-name="Name"
+                                        md-contact-image="image"
+                                        md-contact-email="email"
+                                        md-require-match="true"
+                                        md-highlight-flags="i"
+                                        filter-selected=""
+                                        placeholder="Search">
+                                </md-contact-chips>
+                            </md-content>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid">
+                    <div class="row cells4">
+                        <div class="cell">
+                            <h5>User Privileges :</h5>
+                        </div>
+                        <div class="cell colspan3">
+                            <md-content class="md-padding autocomplete" layout="column">
+                                <md-contact-chips
+                                        ng-model="UserManagementDataModule.UserLevelMgt.UserLevelRulesChip.MatchedItems"
+                                        md-contacts="UserManagementDataModule.UserLevelMgt.UserLevelRulesChip.querySearch($query)"
+                                        md-contact-name="Description"
+                                        md-contact-image="image"
+                                        md-contact-email="email"
+                                        md-require-match="true"
+                                        md-highlight-flags="i"
+                                        filter-selected=""
+                                        placeholder="Search">
+                                </md-contact-chips>
+                            </md-content>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid">
+                    <div class="row cells4">
+                        <div class="cell">
+                            <h5></h5>
+                        </div>
+                        <div class="cell colspan3">
+                            <button class="button primary" ng-click="UserManagementDataModule.UserLevelMgt.CreateUserLevel()"
+                                    style="width: 60%;">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </md-content>
+    </md-sidenav>
+</div>

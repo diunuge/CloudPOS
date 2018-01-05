@@ -1,0 +1,13 @@
+<div ng-if="HeaderViewMiddlePanel.Data.OrderData.Order.OrderID > 0">
+<h3 class="CloudFont BigHeading-CloudFont CloudPosUpperRibbonFonts"
+    style="margin: 4px auto; text-shadow: 2px 2px 10px;"
+    ng-if="HeaderViewMiddlePanel.Data.OrderData.Order.ReservationID>0 || HeaderViewMiddlePanel.Data.OrderData.Order.ReservationId>0">Tables :
+    <span ng-repeat="item in HeaderViewMiddlePanel.Data.OrderData.Order.Tables track by $index">{{item + (($last) ? "" : " ,")}}</span></h3>
+<h4 class="CloudFont SmallHeading-CloudFont CloudPosUpperRibbonFonts"
+    ng-if="HeaderViewMiddlePanel.Data.OrderData.Order.OrderID > 0"
+    style="margin: 4px auto; text-shadow: 2px 2px 10px;">Order ID :{{HeaderViewMiddlePanel.Data.OrderData.Order.OrderID}}</h4>
+<h5 style="margin: 4px auto; text-shadow: 2px 2px 10px; padding: 0;"
+    class="CloudFont SmallerHeading-CloudFont CloudPosUpperRibbonFonts">Amount :{{HeaderViewMiddlePanel.Data.PricesSummary.GrandTotal | currency : 'RS. ' : 2}}</h5>
+<h6 style="margin: 4px auto !important; text-shadow: 2px 2px 10px; padding: 0;"
+    class="CloudFont SmallerHeading-CloudFont CloudPosUpperRibbonFonts">No Of Items :{{HeaderViewMiddlePanel.Data.OrderData.OrderDetails.length}}</h6>
+</div>

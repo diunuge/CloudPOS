@@ -1,0 +1,30 @@
+<div ng-controller="HomeLeftPanelPricingController">
+<table class="table pricingTable" style="    border-top: 2px solid #b3abab;">
+    <thead>
+<!--        <tr>
+            <th class="sortable-column">No Of Items :</th>
+            <td class="sortable-column">{{HomeDataModule.SelectedOrder.PricesSummary.NoOfItems}}</td>
+        </tr>-->
+        <tr>
+            <th>Net Total :</th>
+            <td>{{HomeDataModule.SelectedOrder.PricesSummary.NetTotal | currency : 'Rs. ' : 2}}</td>
+        </tr>
+        <tr>
+            <th>Service Charge :</th>
+            <td>{{HomeDataModule.SelectedOrder.PricesSummary.ServiceCharge | currency : 'Rs. ' : 2}}</td>
+        </tr>
+        <tr>
+            <th>Tax Total :</th>
+            <td>{{HomeDataModule.SelectedOrder.PricesSummary.TaxTotal | currency : 'Rs. ' : 2}}</td>
+        </tr>
+        <tr>
+            <th>Discount Total :</th>
+            <td>{{HomeDataModule.SelectedOrder.PricesSummary.DiscountTotal | currency : 'Rs. ' : 2}}</td>
+        </tr>
+        <tr>
+            <th><h3>Grand Total :</h3></th>
+            <td><h3>{{HomeDataModule.SelectedOrder.PricesSummary.GrandTotal | currency : 'Rs. ' : 2}}</h3></td>
+        </tr>
+    </thead>
+</table>
+</div>

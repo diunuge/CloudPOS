@@ -1,0 +1,68 @@
+<!--<div class="dropdown-button">
+    <button class="button dropdown-toggle">Guest</button>
+    <ul class="split-content d-menu" data-role="dropdown">
+        <li ng-repeat="item in PaymentDataModule.Payment.GuestList"
+            ng-click="PaymentDataModule.Payment.FilterAdvanceDeposits(item.GuestId)"><a href="#">{{item.GuestId}}</a></li>
+    </ul>
+</div>-->
+
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells4">
+        <div class="cell">
+            <h5>Advance Deposits :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="dropdown-button full-size">
+                <button class="button dropdown-toggle" style="width: 100%;">{{(PaymentDataModule.Payment.AdvancePayment.SelectedAdvanceDeposit == null) ? "Select an advance deposit" : ("Guest Phone No : " + PaymentDataModule.Payment.AdvancePayment.SelectedAdvanceDeposit.GuestId)}}</button>
+                <ul class="split-content d-menu" data-role="dropdown">
+                    <li ng-repeat="item in PaymentDataModule.Payment.AdvanceDepositList"
+                        style=""
+                        ng-if="!PaymentDataModule.Payment.AdvancePayment.IsAdvanceDepositAlreadyAdded(item)"
+                        ng-click="PaymentDataModule.Payment.AdvancePayment.SetAdvanceDeposit(item)"><a href="#">{{"Guest Phone No : " + item.GuestId}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells4">
+        <div class="cell">
+            <h5>Avai Balance :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+                <input type="number"
+                       placeholder="Available Balance.."
+                       min="0"
+                       disabled
+                       ng-model="PaymentDataModule.Payment.AdvancePayment.SelectedAdvanceDeposit.BalanceAmount">
+                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells4">
+        <div class="cell">
+            <h5>Amount :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+                <input type="number"
+                       placeholder="Amount.."
+                       min="0"
+                       disabled
+                       ng-model="PaymentDataModule.Payment.AdvancePayment.SelectedAdvanceDeposit.BalanceAmount">
+                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

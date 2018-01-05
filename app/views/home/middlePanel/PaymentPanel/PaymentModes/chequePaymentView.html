@@ -1,0 +1,101 @@
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells4">
+        <div class="cell">
+            <h5>Cheque No :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+                <input type="number"
+                       placeholder="Check No.."
+                       ng-model="PaymentDataModule.Payment.PaymentDetailDto.ChequeNo">
+                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells4">
+        <div class="cell">
+            <h5>Pay Amount :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="input-control text" data-role="input" style="display: block; width: 100%;">
+                <input type="text"
+                       placeholder="Pay Amount.."
+                       min="0"
+                       ng-model="PaymentDataModule.Payment.PaymentDetailDto.PayAmount">
+                <button class="button helper-button clear"><span class="mif-cross"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells8">
+        <div class="cell colspan1">
+            <h5>Bank :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="dropdown-button full-size">
+                <button class="button dropdown-toggle"
+                        style="width: 100%;">{{(PaymentDataModule.Payment.Cheque.SelectedBank == null) ? "Select a bank" : PaymentDataModule.Payment.Cheque.SelectedBank.BankName}}</button>
+                <ul class="split-content d-menu" data-role="dropdown">
+                    <li ng-repeat="bank in PaymentDataModule.Payment.BanksList"
+                        ng-click="PaymentDataModule.Payment.LoadBranches(bank)"><a href="#">{{bank.BankName}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="cell colspan1">
+            <h5>Branch :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3">
+            <div class="dropdown-button full-size">
+                <button class="button dropdown-toggle"
+                        style="width: 100%;">{{(PaymentDataModule.Payment.Cheque.SelectedBranch == null) ? "Select a branch" : PaymentDataModule.Payment.Cheque.SelectedBranch.BranchName}}</button>
+                <ul class="split-content d-menu" data-role="dropdown">
+                    <li ng-repeat="branch in PaymentDataModule.Payment.BranchesList"
+                        ng-click="PaymentDataModule.Payment.BranchClick(branch)"><a href="#">{{branch.BranchName}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="grid" style="margin: 0;">
+    <div class="row cells8">
+        <div class="cell colspan1">
+            <h5>Cheque Date :&nbsp;</h5>
+        </div>
+        <div class="cell colspan3" style="overflow: hidden;">
+            <!--<div class="input-control full-size text" data-role="datepicker" data-position="left">
+                <input type="text"
+                       placeholder="Cheque Date.."
+                       ng-model="PaymentDataModule.Payment.PaymentDetailDto.ChequeDate">
+                <button class="button"><span class="mif-calendar"></span></button>
+            </div>-->
+                        <md-datepicker ng-model="PaymentDataModule.Payment.PaymentDetailDto.ChequeDate"
+                                       md-placeholder="Enter date"></md-datepicker>
+
+        </div>
+        <div class="cell colspan1">
+            <h5>Realized Date</h5>
+        </div>
+        <div class="cell colspan3"
+             style="overflow: hidden;">
+            <!--<div class="input-control full-size text"
+                 data-role="datepicker">
+                <input type="text"
+                       placeholder="Realized Date.."
+                       ng-model="PaymentDataModule.Payment.PaymentDetailDto.ChequeRealizedDate">
+                <button class="button"><span class="mif-calendar"></span></button>
+            </div>-->
+            <md-datepicker ng-model="PaymentDataModule.Payment.PaymentDetailDto.ChequeRealizedDate"
+                           md-placeholder="Enter date"
+                           md-min-date="PaymentDataModule.Payment.Cheque.MinimumRealizedDate"></md-datepicker>
+        </div>
+    </div>
+</div>

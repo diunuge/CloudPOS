@@ -1,0 +1,20 @@
+<div>
+    <ul class="breadcrumbs2"
+        style="font-size: 14px; height: auto;">
+        <li ng-repeat="item in floorsList track by $index" ng-click="FilterTables(item.FloorId)"><a style="padding: 0.8em 1em;" href="#">{{item.FloorName}}</a></li>
+    </ul>
+</div>
+<div style="height: 542px !important; overflow: auto !important;">
+<!--    <div ng-click="" class="bg-active-darkBlue" style="width: 80px !important; height: 60px !important; display: inline-block !important; margin: 4px 10px !important; background-color: cornflowerblue !important;">
+        <h3 style="text-align: center;">{{item.TblName}}</h3>
+    </div>-->
+    <button draggable="true"
+            ng-click="callback(item)"
+            style="width: 100px; height: 80px; font-size: 18px; margin: 4px;"
+            class="shortcut-button {{(item.ReservedTable !== undefined) ? 'bg-blue' : 'bg-gray'}} bg-active-crimson fg-white {{UiHandlers.TablesClass}}"
+            ng-repeat="item in FilteredTables track by $index"
+            is-reserved="{{(item.ReservedTable !== undefined)}}"
+            table-index="{{$index}}">
+        <span class="title">{{item.TblName}}{{UiHandlers.RepeatComplete($last)}}</span>
+    </button>
+</div>

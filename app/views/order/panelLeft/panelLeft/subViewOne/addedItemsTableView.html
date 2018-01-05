@@ -1,0 +1,19 @@
+<div style="max-height: 33em; overflow: auto; padding-bottom:0.4em;">
+<table class="addedItemsTable table table-bordered" style="">
+    <tr>
+        <th>C</th>
+        <th>Food Name</th>
+        <th>Q</th>
+        <th>Amount</th>
+        <th colspan="2"></th>
+    </tr>
+    <tr ng-repeat="item in orderDataModule.DataStore.SelectedFoodItemsAr track by $index">
+        <td>{{item.cover}}</td>
+        <td>{{item.FoodName}}</td>
+        <td>{{item.cover}}</td>
+        <td>{{item.Price}}</td>
+        <td>DD</td>
+        <td ng-click="orderDataModule.removeFoodItem($index)" style="cursor: pointer; text-align: center;">X</td>
+    </tr>
+</table>
+</div>

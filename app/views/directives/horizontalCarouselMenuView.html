@@ -1,0 +1,21 @@
+
+<div class="HorizontalCarouselMenu">
+    <div style="float: left;">
+        <button  id="carouselLeftArrowBtn" class="CarouselNavButtons button primary">
+            <span class="icon mif-chevron-left"></span>
+        </button>
+    </div>
+    <div id="carouselBody" style="float: left; width: 424px; padding-right: 2px !important;">
+        <button ng-repeat="item in items track by $index"
+                ng-click="ItemClick(item.FoodCatId)"
+                style="margin-left: 2px !important; margin-right: 2px !important;"
+                class="CarouselItemButtons button primary">
+            <span class="title  CloudFont Small-CloudFont">{{item.Description}}</span>
+        </button>
+    </div>
+    <div style="float: left;">
+        <button  id="carouselRightArrowBtn" class="CarouselNavButtons button primary">
+            <span class="icon mif-chevron-right"></span>
+        </button>
+    </div>
+</div>

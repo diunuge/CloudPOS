@@ -1,0 +1,10 @@
+<div ng-controller="OrderPanelMiddleSubPanelSplitLeftPanelController" style="margin-top:1em; height: 518px; overflow: auto;">
+    <table class="order-split-table">
+        <tr>
+            <th>C</th><th>Food Name</th><th>Qty</th><th>Total Amount</th>
+        </tr>
+        <tr ng-repeat="item in addedItems track by $index" ng-click="odrSubPanelSplitLeftPanel_clickRow($event, $index)">
+            <td>{{item.cover}}</td><td>{{item.foodName}}</td><td></td><td>{{item.price}}</td>
+        </tr>
+    </table>
+</div>

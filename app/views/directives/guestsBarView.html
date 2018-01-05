@@ -1,0 +1,20 @@
+<div>
+    <div style="float: left;"><table><tr><td><button onclick="btnOpenWindowNoOfGuests()" style="margin:0em 0.1em;" class="btn btn-default">+</button></td><td><button class="scrollLeft btn btn-default">&Lt;</button></td></tr></table></div>
+    <div id="horizontalGuestsBarScrollingPart" class="scrollingArea" style="float: left; overflow: hidden; max-width: 262px;"><table><tr><td><button ng-click="selectGuestClick($event ,'T')" style="margin:0em 0.1em;" class="guestT btn btn-default">T</button></td><td ng-repeat="guest in itemsAr track by $index" ><button ng-click="selectGuestClick($event, $index+1)" style="margin:0em 0.1em;"  class="guest{{$index+1}} btn btn-default">{{$index+1}}</button></td></tr></table></div>
+    <div style="float: left;"><table><tr><td><button  class="scrollRight btn btn-default">&Gt;</button></td></td></tr></table></div>
+</div>
+<div id="addNoOfGuestsDiv" style="display:none; align-items: center; position: fixed; left:0px; top:0px; width:100vw; height: 100vh; background-color: rgba(255, 255, 255, 0.31);">
+  <div style="width:40vw; height:18vh; background-color: antiquewhite; margin:auto; padding:1em; border-radius: 0.2em;">
+      <label for="noOfGuests">No Of Guests :</label><input ng-model="noOfItems" id="noOfGuests" class="form-control" type="number" min="1">
+      <div style="position: relative"><button onclick="btnCloseWindowNoOfGuests()" ng-click="addNoOfGuests()" style="margin:0.2em;" class="btn btn-success">Add</button><button onclick="btnCloseWindowNoOfGuests()" style="margin:0.2em;"  class="btn btn-default">Cancel</button></div>
+  </div>
+</div>
+<script>
+    function btnCloseWindowNoOfGuests(){
+        $('#addNoOfGuestsDiv').css('display', 'none');
+    }
+
+    function btnOpenWindowNoOfGuests(){
+        $('#addNoOfGuestsDiv').css('display', 'flex');
+    }
+</script>

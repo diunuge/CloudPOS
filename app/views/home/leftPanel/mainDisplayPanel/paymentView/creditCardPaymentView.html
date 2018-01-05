@@ -1,0 +1,23 @@
+<div class="CreditCardPaymentView">
+    <label style="display: block;" class="CloudFont Small-CloudFont">Credit Card Payment :</label>
+    <div radio-button-group active-class="CloudPosUiStructureButtonsThemeCatThreeActive" inactive-class="CloudPosUiStructureButtonsThemeCatThree" class="toolbar-section group-of-buttons radio-buttons-group">
+        <button ng-click="Payment.PaymentDetailDto.CreditCardTypeID = 1" style="" class="shortcut-button bg-lightBlue bg-active-darkBlue fg-white ItemButtons CloudFont SmallerHeading-CloudFont">Visa</button>
+        <button ng-click="Payment.PaymentDetailDto.CreditCardTypeID = 2" style=""  class="shortcut-button bg-lightBlue bg-active-darkBlue fg-white ItemButtons CloudFont SmallerHeading-CloudFont">Master Card</button>
+        <button ng-click="Payment.PaymentDetailDto.CreditCardTypeID = 3" style="" class="shortcut-button bg-lightBlue bg-active-darkBlue fg-white ItemButtons CloudFont SmallerHeading-CloudFont">American Express</button>
+    </div>
+    <div style="clear: both;">
+        <label class="CloudFont Small-CloudFont">Holder Name :</label><br/>
+        <input ng-model="Payment.PaymentDetailDto.CreditCardHolderName" class="DefaultInputText" type="text"><br/>
+        <label class="CloudFont Small-CloudFont">Card No :</label><br/>
+        <input ng-model="Payment.PaymentDetailDto.CreditCardNo" class="DefaultInputNumber" type="number"><br/>
+        <label class="CloudFont Small-CloudFont">Pay Amount :</label><br/>
+        <input ng-model="Payment.PaymentDetailDto.PayAmount" class="DefaultInputNumber" type="number"><br/>
+        <label class="CloudFont Small-CloudFont">Issue Date :</label><br/>
+        <input ng-model="Payment.PaymentDetailDto.CreditCardIssueDate" class="DefaultInputDate" type="date"><br/>
+        <label class="CloudFont Small-CloudFont">Expiry Date :</label><br/>
+        <input ng-model="Payment.PaymentDetailDto.CreditCardExpiryDate" class="DefaultInputDate" type="date"><br/>
+    </div>
+    <div>
+        <button ng-click="Payment.AddPayment(Payment.PaymentModes.CreditCardPayment)" style="width: 100%; margin-top: 8px; height: 45px; font-size: 18px;" class="shortcut-button bg-grayLight bg-active-darkBlue fg-white ItemButtons">Add</button>
+    </div>
+</div>

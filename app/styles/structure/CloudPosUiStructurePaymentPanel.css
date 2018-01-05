@@ -1,0 +1,63 @@
+/* Contains style properties of the payment view in the middle panel of the 3 panel structure */
+
+/* DO NOT CHANGE THE MAIN STRUCTURE */
+/* MAIN STRUCTURE */
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView {
+    border: 1px solid #d8caca !important;
+    height: 632px !important;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView>div.MainPanels.LeftPanel {
+    float: left;
+    width: 18% !important;
+    height: 632px !important;
+    border: 1px solid #d8caca !important;
+    position: relative;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView>div.MainPanels.RightPanel {
+    border: 1px solid #d8caca;
+    float: left;
+    width: 82%;
+    height: 632px;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView>div.MainPanels.LeftPanel button.PaymentOptionsButton {
+    width: 94% !important;
+    height: 3.3rem !important;
+    margin: 0.2rem !important;
+    font-size: large !important;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView>div.MainPanels.RightPanel>div.PaymentInfo {
+    border: 1px solid #d8caca;
+    height: 10% !important;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView>div.MainPanels.RightPanel>div.PaymentInfo>button.PaymentInfoButtons {
+    padding: 0 !important;
+    height: 3.45rem !important;
+    width: 32.5% !important;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView>div.MainPanels.RightPanel>div.PaymentInfo>button.PaymentInfoButtons>h5,h6 {
+    margin: 0.4rem !important;
+    text-align: left;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView>div.MainPanels.RightPanel>div.PaymentOptions {
+    border: 1px solid #d8caca;
+    height: 38% !important;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView>div.MainPanels.RightPanel>div.KeyPad {
+    border: 1px solid #d8caca;
+    height: 33% !important;
+}
+
+div.CloudPosUiStructureMainContainer div.CloudPosUiStructureThreePanelStructure.CloudPosUiStructureMiddlePanel div.PaymentPanelView>div.MainPanels.RightPanel>div.AddedPayments {
+    border: 1px solid #d8caca;
+    height: 19% !important;
+}
+
+/* MAIN STRUCTURE */
