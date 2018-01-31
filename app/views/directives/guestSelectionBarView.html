@@ -1,22 +1,65 @@
-<div style="">
-    <div style="display: inline-block; float: left;">
+<style>
+    .guestSelectionBarViewButtonContainer{
+        display: inline-block; float: left;
+    }
+    .guestSelectionBarViewButton{
+        height: 65px; width: 60px;
+    }
+    .guestSelectionBarViewContainer{
+        display: inline-block;
+        max-width: 456px !important;
+        float: left; overflow: auto;
+    }
+    .guestSelectionBarViewBottomTbutton{
+        height: 65px; width: 60px;
+        position:absolute;
+    }
+    .guestCountChangeContainer{
+        display: none;
+        align-items: center;
+        position:absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0px;
+        left: 0px;
+        background-color: rgba(149, 149, 222, 0.41);
+    }
+    .guestCountChangeBottomPanel{
+        width: 300px !important;  margin: auto;
+    }
+    .guestSelectionBarGuestNumber{
+        width: 100%; font-size: x-large;
+    }
+    .guestCountChangeBottomPanelButtonHolder{
+        height: 100px; padding: 4px; position:relative;
+    }
+    .guestCountChangeBottomPanelPopUpButtonAdd{
+        position: absolute; left: 0px; font-size: 16px; height: 40px; width: 120px; font-weight: bold;
+    }
+    .guestCountChangeBottomPanelPopUpButtonCancel{
+        position: absolute; right: 0px; font-size: 16px; height: 40px; width: 120px; font-weight: bold;
+    }
+</style>
+
+<div>
+    <div class="guestSelectionBarViewButtonContainer">
         <button ng-click="OpenPopup()"
-                class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureButtonsThemeCatThreeActive ItemButtons"
-                style="height: 65px; width: 60px;">
+                class="guestSelectionBarViewButton shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureButtonsThemeCatThreeActive ItemButtons"
+                >
             <span class="icon mif-plus"></span>
         </button>
    <!--     <button disabled style="margin-right: 4px; font-size: 22px; border:4px solid #777373 !important; background-color: #92b9da !important;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureButtonsThemeCatThreeActive ItemButtons">
         {{gCount.length}}
         </button>-->
     </div>
-    <div style="display: inline-block; max-width: 456px !important; float: left; overflow: auto;">
+    <div class="guestSelectionBarViewContainer">
         <table>
             <tr>
                 <td class="">
                     <button ng-class="inactiveClass"
                             ng-click="SelectItem($event)"
-                            class="ItemButtons shortcut-button bg-cyan bg-active-darkBlue fg-white ItemButtons"
-                            style="height: 65px; width: 60px;">
+                            class="guestSelectionBarViewBottomTbutton ItemButtons shortcut-button bg-cyan bg-active-darkBlue fg-white ItemButtons"
+                           >
                         <span class="CloudFont BigHeading-CloudFont">T</span>
                     </button>
                 </td>
@@ -24,25 +67,25 @@
                     <button ng-class="inactiveClass"
                             ng-click="SelectItem($event)"
                             class="ItemButtons shortcut-button bg-cyan bg-active-darkBlue fg-white ItemButtons"
-                            style="height: 65px; width: 60px;">
+                            >
                         <span class="CloudFont BigHeading-CloudFont">{{$index + 1}}</span>
                     </button>
                 </td>
             </tr>
         </table>
     </div>
-    <div id="GuestCountChangePopup" style="display: none; align-items: center; position:absolute; width: 100vw; height: 100vh; top: 0px; left: 0px; background-color: rgba(149, 149, 222, 0.41);" >
-        <div style="width: 300px !important;  margin: auto;">
+    <div id="GuestCountChangePopup" class="guestCountChangeContainer"  >
+        <div class="guestCountChangeBottomPanel">
             <input type="number"
                    min="1"
                    max="16"
                    ng-model="numberOfGuestsTemp"
-                   style="width: 100%; font-size: x-large;">
-            <div style="height: 100px; padding: 4px; position:relative;">
-                <button ng-click="AddGuestCount()" style="position: absolute; left: 0px; font-size: 16px; height: 40px; width: 120px; font-weight: bold;" class="ItemButtons shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureButtonsThemeCatThree">
+                   class="guestSelectionBarGuestNumber">
+            <div class="guestCountChangeBottomPanelButtonHolder">
+                <button ng-click="AddGuestCount()" class=" guestCountChangeBottomPanelPopUpButtonAdd ItemButtons shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureButtonsThemeCatThree">
                     <span class="CloudFont BigHeading-CloudFont">Add</span>
                 </button>
-                <button ng-click="ClosePopup()" style="position: absolute; right: 0px; font-size: 16px; height: 40px; width: 120px; font-weight: bold;" class="ItemButtons shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureButtonsThemeCatThree">
+                <button ng-click="ClosePopup()" style="" class=" guestCountChangeBottomPanelPopUpButtonCancel ItemButtons shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureButtonsThemeCatThree">
                     <span class="CloudFont BigHeading-CloudFont">Cancel</span>
                 </button>
             </div>

@@ -1,6 +1,18 @@
+<style>
+    .advancePaymentViewlable{
+        display: block;
+    }
+    .advancePaymentContainer{
+        clear: both; height: 375px;
+    }
+    .advancePaymentaddButton{
+        width: 100%; margin-top: 8px; height: 45px; font-size: 18px;
+    }
+</style>
+
 <div>
-    <label style="display: block;" class="CloudFont Small-CloudFont">Advance Payment :</label>
-    <div style="clear: both; height: 375px;">
+    <label class=" advancePaymentViewlable CloudFont Small-CloudFont">Advance Payment :</label>
+    <div class="advancePaymentContainer">
         <label class="CloudFont Small-CloudFont">Guest :</label><br/>
         <input ng-model="Payment.AdvanceDepositHandler.GuestPhoneNumber" class="DefaultInputText" type="number"><br/>
         <label class="CloudFont Small-CloudFont">Advance :</label><br/>
@@ -11,6 +23,6 @@
         <input ng-model="Payment.PaymentDetailDto.PayAmount" class="DefaultInputNumber" type="number"><br/>
     </div>
     <div>
-        <button ng-click="Payment.AddPayment(Payment.PaymentModes.AdvancePayment)" style="width: 100%; margin-top: 8px; height: 45px; font-size: 18px;" class="shortcut-button bg-grayLight bg-active-darkBlue fg-white ItemButtons">Add</button>
+        <button ng-click="Payment.AddPayment(Payment.PaymentModes.AdvancePayment)"  class=" advancePaymentaddButton shortcut-button bg-grayLight bg-active-darkBlue fg-white ItemButtons">Add</button>
     </div>
 </div>

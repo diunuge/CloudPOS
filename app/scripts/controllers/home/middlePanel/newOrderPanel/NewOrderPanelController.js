@@ -395,7 +395,7 @@
                     }
 
                     if (scope.HomeDataModule.SelectedOrder.OrderCategory === scope.HomeDataModule.OrderCategories.DeliveryOrder) {
-                        if (!Validation.AddressValidation()) {
+                        /*if (!Validation.AddressValidation()) {
                             comSingleButtonErrorAlert("Guest", "Please provide valid address details", "Got it!");
                             return false;
                         }
@@ -403,7 +403,7 @@
                         if (scope.HomeDataModule.MiddlePanel.NewOrderPanel.SelectedDeliveryZone == null) {
                             comSingleButtonErrorAlert("Guest", "Please provide delivery charges", "Got it!");
                             return false;
-                        }
+                        }*/
                     }
 
                     var guestDto = this.GuestsInformationFilter.GuestDto;
@@ -546,7 +546,7 @@
                     var guestsList = [];
 
                     /// Properties
-                    guestInformationFilter.PhoneNumber = 0;
+                    //guestInformationFilter.PhoneNumber = 0;
 
                     /// Contains a particular address of a guest
                     guestInformationFilter.GuestAddress = {};

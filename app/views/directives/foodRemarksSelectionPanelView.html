@@ -1,33 +1,88 @@
-<div class="bgFrame" style="top: 0; left: 0; z-index: 32; display: none; align-items: center; position: fixed; background-color: rgba(149, 149, 222, 0.41);; width: 100%; height: 100%;">
-    <div style="display: inline-block; position: relative; width: 350px; height: auto; margin: auto; background-color: #7f9494; border: 4px solid gray;">
-        <div class="listview" style="height: 260px; overflow: auto;">
+<style>
+    .foodRemarksSelectionPanelVewBackground{
+        top: 0;
+        left: 0;
+        z-index: 32;
+        display: none;
+        align-items: center;
+        position: fixed;
+        background-color: rgba(149, 149, 222, 0.41);
+        width: 100%;
+        height: 100%;
+    }
+    .foodRemarksSelectionPanelVewContainer{
+        display: inline-block;
+        position: relative;
+        width: 350px;
+        height: auto;
+        margin: auto;
+        background-color: #7f9494;
+        border: 4px solid gray;
+    }
+    .foodRemarksSelectionPanelVewListView{
+        height: 260px; overflow: auto;
+    }
+    .foodRemarksSelectionPanelVewtextArea{
+        width: 100%; height: 120px;
+    }
+    .foodRemarksSelectionPanelVewContainer2{
+        height: 100px;
+    }
+    .foodRemarksSelectionPanelVewQty{
+        height: auto; width: auto; padding: 1rem;
+
+    }
+    .foodRemarksSelectionPanelVewCell{
+        text-align: right;
+    }
+    .foodRemarksSelectionPanelVewCell_h3{
+        text-align: center;
+    }
+    .foodRemarksSelectionPanelVewgrid{
+        display: none;
+    }
+    .foodRemarksSelectionPanelVewCellContain{
+        text-align: right;
+    }
+    .foodRemarksSelectionPanelInputNum{
+        font-size: large;
+    }
+
+    .foodRemarksSelectionPanelVewButton{
+        width: 120px; height: 50px;
+    }
+</style>
+
+<div class="bgFrame foodRemarksSelectionPanelVewBackground">
+    <div class="foodRemarksSelectionPanelVewContainer">
+        <div class="listview foodRemarksSelectionPanelVewListView">
             <div ng-click="AddFoodRemark(item.Name)" class="list" ng-repeat="item in options track by $index">
                 <span class="list-title">{{item.Name}}</span>
             </div>
         </div>
         <div>
-            <textarea ng-model="FoodRemarks" style="width: 100%; height: 120px;"></textarea>
+            <textarea ng-model="FoodRemarks" class="foodRemarksSelectionPanelVewtextArea"></textarea>
         </div>
-        <div style="height: 100px;">
+        <div class="foodRemarksSelectionPanelVewContainer2">
             <div>
 
                 <div class="grid">
                     <div class="row cells3">
                         <div class="cell">
                             <button ng-click="IncrementQty()"
-                                    class="button primary"
-                                    style="height: auto; width: auto; padding: 1rem;">
+                                    class="button primary foodRemarksSelectionPanelVewQty"
+                                    >
                                 <span class="mif-plus mif-2x"></span>
                             </button>
                         </div>
                         <div class="cell">
-                            <h3 style="text-align: center;">{{currentquantity}}</h3>
+                            <h3  class="foodRemarksSelectionPanelVewCell_h3">{{currentquantity}}</h3>
                         </div>
-                        <div class="cell"
-                             style="text-align: right;">
+                        <div class="cell foodRemarksSelectionPanelVewCell"
+                             >
                             <button ng-click="DecrementQty()"
-                                    class="button primary"
-                                    style="height: auto; width: auto; padding: 1rem;">
+                                    class="button primary foodRemarksSelectionPanelVewQty"
+                                    >
                                 <span class="mif-minus mif-2x"></span>
                             </button>
                         </div>
@@ -35,18 +90,18 @@
                 </div>
             </div>
         </div>
-        <div class="grid"
-             style="display: none;"
+        <div class="grid foodRemarksSelectionPanelVewgrid"
+
              ng-show="isOpenFood">
             <div class="row cells4">
                 <div class="cell">
                     <h5>Food Price :</h5>
                 </div>
-                <div class="cell colspan3"
-                     style="text-align: right;">
+                <div class="cell colspan3 foodRemarksSelectionPanelVewCellContain"
+                     >
                     <div class="input-control full-size number">
                         <input type="number"
-                               style="font-size: large;"
+                               class="foodRemarksSelectionPanelInputNum"
                                placeholder="Input price here...">
                     </div>
                 </div>
@@ -56,16 +111,16 @@
             <div class="row cells2">
                 <div class="cell">
                     <button ng-click="ClosePopup(true)"
-                            style="width: 120px; height: 50px;"
-                            class="button primary">
+
+                            class="button primary foodRemarksSelectionPanelVewButton">
                         Confirm
                     </button>
                 </div>
-                <div class="cell"
-                     style="text-align: right;">
+                <div class="cell foodRemarksSelectionPanelVewCellContain"
+                     >
                     <button ng-click="ClosePopup(false)"
-                            style="width: 120px; height: 50px;"
-                            class="button primary">
+
+                            class="button primary foodRemarksSelectionPanelVewButton">
                         Cancel
                     </button>
                 </div>

@@ -4,9 +4,15 @@
         margin: 0.3em 0em;
         height: 4em;
     }
+    .OrderPanel_SavePaymentPrintMenuViewSaveBtn{
+        background-color: darkcyan;
+    }
 </style>
+
 <div id="savePaymentPrintDiv" ng-controller="SavePaymentPrintMenuController">
-    <button ng-class="buttonDisableHandler.DisableLeftPanelSaveBtn" ng-click="saveOrderOnClick()" class="btn btn-primary" style="background-color: darkcyan;">Save</button>
-    <button ng-class="buttonDisableHandler.DisableLeftPanelPaymentBtn" ng-click="odrLftToggleContentTab()" class="btn btn-primary">{{odrLftPaymentAddedListBtnText}}</button>
+    <button ng-class="buttonDisableHandler.DisableLeftPanelSaveBtn" ng-click="saveOrderOnClick()"
+            class="btn btn-primary OrderPanel_SavePaymentPrintMenuViewSaveBtn">Save</button>
+    <button ng-class="buttonDisableHandler.DisableLeftPanelPaymentBtn" ng-click="odrLftToggleContentTab()"
+            class="btn btn-primary">{{odrLftPaymentAddedListBtnText}}</button>
     <button class="btn btn-primary">Print</button>
 </div>

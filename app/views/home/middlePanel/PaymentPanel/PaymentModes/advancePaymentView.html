@@ -1,20 +1,24 @@
-<!--<div class="dropdown-button">
-    <button class="button dropdown-toggle">Guest</button>
-    <ul class="split-content d-menu" data-role="dropdown">
-        <li ng-repeat="item in PaymentDataModule.Payment.GuestList"
-            ng-click="PaymentDataModule.Payment.FilterAdvanceDeposits(item.GuestId)"><a href="#">{{item.GuestId}}</a></li>
-    </ul>
-</div>-->
+<style>
+    .advancePayemtView_grid{
+        margin: 0;
+    }
+    .advancePayemtView_dropdown{
+        width: 100%;
+    }
+    .advancePayemtView_input_holder{
+        display: block; width: 100%;
+    }
+</style>
 
-
-<div class="grid" style="margin: 0;">
+<div class="grid advancePayemtView_grid">
     <div class="row cells4">
         <div class="cell">
             <h5>Advance Deposits :&nbsp;</h5>
         </div>
         <div class="cell colspan3">
             <div class="dropdown-button full-size">
-                <button class="button dropdown-toggle" style="width: 100%;">{{(PaymentDataModule.Payment.AdvancePayment.SelectedAdvanceDeposit == null) ? "Select an advance deposit" : ("Guest Phone No : " + PaymentDataModule.Payment.AdvancePayment.SelectedAdvanceDeposit.GuestId)}}</button>
+                <button class="button dropdown-toggle advancePayemtView_dropdown">
+                    {{(PaymentDataModule.Payment.AdvancePayment.SelectedAdvanceDeposit == null) ? "Select an advance deposit" : ("Guest Phone No : " + PaymentDataModule.Payment.AdvancePayment.SelectedAdvanceDeposit.GuestId)}}</button>
                 <ul class="split-content d-menu" data-role="dropdown">
                     <li ng-repeat="item in PaymentDataModule.Payment.AdvanceDepositList"
                         style=""
@@ -28,13 +32,13 @@
 
 
 
-<div class="grid" style="margin: 0;">
+<div class="grid advancePayemtView_grid">
     <div class="row cells4">
         <div class="cell">
-            <h5>Avai Balance :&nbsp;</h5>
+            <h5>Available Balance :&nbsp;</h5>
         </div>
         <div class="cell colspan3">
-            <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+            <div class="input-control number advancePayemtView_input_holder" data-role="input">
                 <input type="number"
                        placeholder="Available Balance.."
                        min="0"
@@ -47,13 +51,13 @@
 </div>
 
 
-<div class="grid" style="margin: 0;">
+<div class="grid advancePayemtView_grid">
     <div class="row cells4">
         <div class="cell">
             <h5>Amount :&nbsp;</h5>
         </div>
         <div class="cell colspan3">
-            <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+            <div class="input-control number advancePayemtView_input_holder" data-role="input" >
                 <input type="number"
                        placeholder="Amount.."
                        min="0"

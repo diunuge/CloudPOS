@@ -1,27 +1,56 @@
-<div style="position: fixed; width: 100%; height: 100%; background-color: rgba(0, 0, 136, 0.3); z-index: 1; left: 0; top: 0; display: flex;">
-    <div style="width: 70%; height: 70%; margin: auto; background-color: #dedede;">
+<style>
+    .permitionRetrivelView{
+        position: fixed; width: 100%; height: 100%; background-color: rgba(0, 0, 136, 0.3); z-index: 1; left: 0; top: 0; display: flex;
+    }
+    .permitionRetrivelViewContainer{
+        width: 70%; height: 70%; margin: auto; background-color: #dedede;
+    }
+    .permitionRetrivelViewButtonContainer{
+        width: 30%!important; float: left; height: 100%; padding: 0.5rem;
+    }
+    .permitionRetrivelViewButtonFilterUser{
+        width: 100%; height: 3rem;
+    }
+    .permitionRetrivelViewPasswordTextContainer{
+       height: 90%;
+    }
+    .permitionRetrivelViewPasswordText{
+        width: 100%;
+    }
+    .permitionRetrivelViewBottomButtonContainer{
+        height: 10%; position: relative;
+    }
+    .permitionRetrivelViewConfirmBtn{
+        width: 30%; height: 80%;
+    }
+    .permitionRetrivelViewCancelButton{
+        width: 30%; height: 80%; position: absolute; right: 0;
+    }
+</style>
+
+<div class="permitionRetrivelView">
+    <div class="permitionRetrivelViewContainer">
         <div data-role="group"
              data-group-type="one-state"
-             style="width: 30%; float: left; height: 100%; padding: 0.5rem;">
-            <button class="button"
-                    style="width: 100%; height: 3rem;"
+             class="permitionRetrivelViewButtonContainer">
+            <button class="button permitionRetrivelViewButtonFilterUser"
+
                     ng-repeat="user in FilteredUsers"
                     ng-click="UserClick($event, user)">{{user.FirstName + " " + user.LastName}}</button>
         </div>
-        <div style="width: 70%; float: left; height: 100%; padding: 0.5rem;">
-            <div style="height: 90%;">
-                <div class="input-control password" data-role="input" style="width: 100%;">
+        <div class="permitionRetrivelViewButtonContainer">
+            <div class="permitionRetrivelViewPasswordTextContainer">
+                <div class="input-control password permitionRetrivelViewPasswordText" data-role="input">
                     <span class="mif-lock prepend-icon"></span>
                     <input type="password" placeholder="User Password.." ng-model="Password">
                     <button class="button helper-button clear"><span class="mif-cross"></span></button>
                 </div>
             </div>
-            <div style="height: 10%; position: relative;">
-                <button class="button"
-                        style="width: 30%; height: 80%;"
+            <div class="permitionRetrivelViewBottomButtonContainer">
+                <button class="button permitionRetrivelViewConfirmBtn"
+
                         ng-click="Confirm()">Confirm</button>
-                <button class="button"
-                        style="width: 30%; height: 80%; position: absolute; right: 0;"
+                <button class="button permitionRetrivelViewCancelButton"
                         ng-click="Cancel()">Cancel</button>
             </div>
         </div>

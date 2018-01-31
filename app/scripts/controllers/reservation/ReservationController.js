@@ -19,7 +19,7 @@
                 DataModule.MinDate = new Date();
                 DataModule.ReservationDto = {};
                 DataModule.Guests = [];
-                DataModule.GuestPhoneNumber = 0;
+                DataModule.GuestPhoneNumber = "";
 
                 (function () {
                     var isFirstTime = false;
@@ -50,6 +50,7 @@
                                 guest.IsNewGuest = false;
                                 DataModule.ReservationDto.guestDetails = guest;
                                 DataModule.SelectedGuest = guest;
+                                DataModule.ReservationDto.reservationHeader.ReservationType = "standard";
                             }
                             else {
                                 DataModule.ReservationDto.guestDetails = ObjectFactoryService.Objects.Admin.GetGuestDto().guest;
@@ -62,6 +63,7 @@
                                 DataModule.ReservationDto.guestDetails.FirstName = "";
                                 DataModule.ReservationDto.guestDetails.LastName = "";
                                 DataModule.ReservationDto.guestDetails.Email = "";
+                                DataModule.ReservationDto.reservationHeader.ReservationType = "standard";
                                 DataModule.SelectedGuest = null;
                             }
                         }
@@ -108,7 +110,8 @@
 
                             DateToTimeSlotString(outerThis.arResTimeSlots, "TimeLoadDate");
 
-                            /// console.log(response.TimeLoadDTOs);
+                            console.log("Time Slots");
+                            console.log(response.TimeLoadDTOs);
                             NoOfSuccessResponse++;
                             Callback();
                         }
@@ -329,7 +332,7 @@
                     /// Throw the control out of the function if isTimePassed is true
                     if (isTimePassed) {
                         /// alert("Cannot selected a passed time slots");
-                        comSingleButtonInfoAlert("Reservation", "Cannot select a passed type slot", "Got it!");
+                        comSingleButtonInfoAlert("Reservation", "Can not select a passed time slot", "Got it!");
                         return false;
                     }
 
@@ -440,7 +443,8 @@
                                         if (response2.IsSuccessFull) {
                                             comSingleButttonSuccessAlert("Reservation Creation", "Reservation created successfully!", "Got it!");
                                             DataModule.ReservationDto.guestDetails = ObjectFactoryService.Objects.Admin.GetGuestDto().guest;
-                                            DataModule.GuestPhoneNumber = 0;
+                                            DataModule.GuestPhoneNumber = "";
+                                            DataModule.ReservationDto.reservationHeader.NoOfGuest = 1;
                                             resLoader.LoadAllResources(()=> {
                                                 DataModule.Reservations = dataModule.FilterReservations(new Date(Date.now()), dataModule.Reservations);
                                                 DataModule.FillCalendar(dataModule.Reservations, dataModule.TimeSlots);
@@ -457,7 +461,8 @@
                             TransactionHandler.Execute.Reservations.Create(function (response) {
                                 comSingleButttonSuccessAlert("Reservation Panel", "Reservation created successfully!", "Got it!");
                                 DataModule.ReservationDto.guestDetails = ObjectFactoryService.Objects.Admin.GetGuestDto().guest;
-                                DataModule.GuestPhoneNumber = 0;
+                                DataModule.GuestPhoneNumber = "";
+                                DataModule.ReservationDto.reservationHeader.NoOfGuest = 1;
                                 resLoader.LoadAllResources(()=> {
                                     DataModule.Reservations = dataModule.FilterReservations(new Date(Date.now()), dataModule.Reservations);
                                     DataModule.FillCalendar(dataModule.Reservations, dataModule.TimeSlots);
@@ -485,6 +490,7 @@
                         DataModule.FillCalendar(DataModule.Reservations, DataModule.TimeSlots);
                     });
                     dataModule.ReservationDto = ObjectFactoryService.Objects.Reservations.GetReservationDto();
+                    dataModule.ReservationDto.reservationHeader.NoOfGuest = 1;
                 })(DataModule, resourceLoader);
 
                 return DataModule;

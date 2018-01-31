@@ -11,15 +11,25 @@
         width:8.3333%;
         display: inline-block;
     }
+    .orderPanel_orderView_leftPaneldiv{
+        width:33.333%;height: 696px;
+    }
+    .orderPanel_orderView_middlePaneldiv{
+        width:58.333%;height: 696px;
+    }
+    .orderPanel_orderView_rightPaneldiv{
+        width:8.333%;height: 696px;
+    }
 </style>
+
 <div ng-controller="OrderController" id="orderMainView">
-    <div id="leftPanelDiv" ng-include="'views/order/panelLeft/panelLeftView.html'" class="border col-sm-4" style=";width:33.333%;height: 696px;">
+    <div id="leftPanelDiv" ng-include="'views/order/panelLeft/panelLeftView.html '" class="border col-sm-4 orderPanel_orderView_leftPaneldiv">
 
     </div>
-    <div id="middlePanelDiv" ng-include="'views/order/panelMiddle/panelMiddleView.html'" class="border col-sm-7" style="width:58.333%;height: 696px;">
+    <div id="middlePanelDiv" ng-include="'views/order/panelMiddle/panelMiddleView.html'" class="border col-sm-7 orderPanel_orderView_middlePaneldiv">
 
     </div>
- <div id="rightPanelDiv" ng-include="'views/order/panelRight/panelRightView.html'" class="border col-sm-1" style="width:8.333%;height: 696px;">
+ <div id="rightPanelDiv" ng-include="'views/order/panelRight/panelRightView.html'" class="border col-sm-1 orderPanel_orderView_rightPaneldiv" >
 
  </div>
 </div>

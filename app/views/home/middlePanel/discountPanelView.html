@@ -1,4 +1,48 @@
-<div ng-controller="DiscountPanelController" style="height: 100%;">
+<style>
+    .discountPanelController{
+        height: 100%;
+    }
+    .discount_cell{
+        text-align: center !important;
+    }
+    .discount_primary_button{
+        width: 10rem !important;
+        height: 2.5rem !important;
+    }
+    .discount_foodItem{
+        height: 47%;
+        overflow: auto;
+        border: 1px solid #d8caca;
+    }
+    .discount_subgroupName{
+        text-indent: 2rem;
+    }
+    .discount_orderSummery{
+        height: 36%;
+        border: 1px solid #d8caca;
+    }
+    .discount_ordersummery_lable{
+        margin: 0.3rem 0;
+    }
+    .discount_ordersummery_value{
+        margin: 0.3rem 0; width: 10rem;
+    }
+    .discount_successController{
+        position: relative; border: 1px solid #d8caca;
+    }
+    .discount_success_button{
+        width: 10rem;
+        height: 2.5rem;
+    }
+    .discount_cancel_button{
+        width: 10rem;
+        height: 2.5rem;
+        position: absolute;
+        right: 0; top: 0;
+    }
+</style>
+
+<div ng-controller="DiscountPanelController" class="discountPanelController">
   <!--  <tax-discount-model-box
             taxes="Taxes"
             discounts="Discounts"
@@ -8,30 +52,30 @@
             callback="Callback"
             style="display: block;">
             </tax-discount-model-box>-->
-    <div class="grid" style="">
+    <div class="grid" >
         <div class="row cells3"
              data-role="group"
              data-group-type="one-state"
              data-button-style="class">
-            <div class="cell" style="text-align: center;">
-                <button class="button primary active"
-                        style="width: 10rem; height: 2.5rem;"
+            <div class="cell discount_cell">
+                <button class="button primary active discount_primary_button"
+
                         ng-click="DiscountPanelDataModule.FilterByFoodItems()">Normal</button>
             </div>
-            <div class="cell" style="text-align: center;">
-                <button class="button primary"
-                        style="width: 10rem; height: 2.5rem;"
+            <div class="cell discount_cell" >
+                <button class="button primary discount_primary_button"
+
                         ng-click="DiscountPanelDataModule.FilterBySubCategory()">Food Type</button>
             </div>
-            <div class="cell" style="text-align: center;">
-                <button class="button primary"
-                        style="width: 10rem; height: 2.5rem;"
+            <div class="cell discount_cell">
+                <button class="button primary discount_primary_button"
+
                         ng-click="DiscountPanelDataModule.FilterByCategory()">Food Category</button>
             </div>
         </div>
     </div>
     <!-- Food items -->
-    <div style="height: 47%; overflow: auto; border: 1px solid #d8caca;">
+    <div class="discount_foodItem">
         <table class="table">
             <thead>
             <tr>
@@ -47,7 +91,7 @@
             <thead ng-repeat="item in DiscountPanelDataModule.Group.SubGroups"
                    ng-if="DiscountPanelDataModule.Group.GroupName!=='FoodItem'">
             <tr>
-                <th class="" colspan="5"><h4 style="text-indent: 2rem;">{{item.SubGroupName}}</h4></th>
+                <th class="" colspan="5"><h4 class="discount_subgroupName">{{item.SubGroupName}}</h4></th>
                 <th class=""><button class="button"
                                      ng-click="DiscountPanelDataModule.DiscountSelection.OpenDiscountPopup(item)">%</button></th>
                 <th class=""></th>
@@ -83,55 +127,59 @@
         </table>
     </div>
     <!-- Order summary -->
-    <div style="height: 36%; border: 1px solid #d8caca;">
+    <div class="discount_orderSummery">
         <table class="table">
             <thead>
                 <tr>
-                    <th class=""><h4 style="margin: 0.3rem 0;">Net Total : </h4></th>
-                    <th class=""><h4 style="margin: 0.3rem 0; width: 10rem;">{{DiscountPanelDataModule.Order.OrderHeader.NetPrice | currency : 'Rs. ' : 2}}</h4></th>
+                    <th class=""><h4 class ="discount_ordersummery_lable" >Net Total </h4></th>
+                    <td>: </td>
+                    <th class=""><h4 class ="discount_ordersummery_value">{{DiscountPanelDataModule.Order.OrderHeader.NetPrice | currency : 'Rs. ' : 2}}</h4></th>
                     <th class=""></th>
                 </tr>
                 <tr>
-                    <th class=""><h4 style="margin: 0.3rem 0;">Service Charge : </h4></th>
-                    <th class=""><h4 style="margin: 0.3rem 0; width: 10rem;">{{DiscountPanelDataModule.Order.OrderHeader.ServiceChargePrice | currency : 'Rs. ' : 2}}</h4></th>
+                    <th class=""><h4 class ="discount_ordersummery_lable">Service Charge </h4></th>
+                    <td>: </td>
+                    <th class=""><h4 class ="discount_ordersummery_value">{{DiscountPanelDataModule.Order.OrderHeader.ServiceChargePrice | currency : 'Rs. ' : 2}}</h4></th>
                     <th class="">
                         <button class="button"
                                 ng-click="DiscountPanelDataModule.ServiceChargeToggle()">{{(DiscountPanelDataModule.Order.OrderHeader.IsHeaderServiceChargeOn) ? 'SC ON' : 'SC OFF'}}</button>
                     </th>
                 </tr>
                 <tr>
-                    <th class=""><h4 style="margin: 0.3rem 0;">Tax Total : </h4></th>
-                    <th class=""><h4 style="margin: 0.3rem 0; width: 10rem;">{{DiscountPanelDataModule.Order.OrderHeader.TaxPrice | currency : 'Rs. ' : 2}}</h4></th>
+                    <th class=""><h4 class ="discount_ordersummery_lable">Tax Total  </h4></th>
+                    <td>: </td>
+                    <th class=""><h4 class ="discount_ordersummery_value">{{DiscountPanelDataModule.Order.OrderHeader.TaxPrice | currency : 'Rs. ' : 2}}</h4></th>
                     <th class="">
                         <button class="button"
                                 ng-click="DiscountPanelDataModule.VAT.VatToggle()">{{(DiscountPanelDataModule.VAT.IsVatOn==false) ? 'VAT OFF' : 'VAT ON'}}</button>
                     </th>
                 </tr>
                 <tr>
-                    <th class=""><h4 style="margin: 0.3rem 0;">Grand Total : </h4></th>
-                    <th class=""><h4 style="margin: 0.3rem 0; width: 10rem;">{{DiscountPanelDataModule.Order.OrderHeader.TotalPrice | currency : 'Rs. ' : 2}}</h4></th>
+                    <th class=""><h4 class ="discount_ordersummery_lable">Grand Total  </h4></th>
+                    <td>: </td>
+                    <th class=""><h4 class ="discount_ordersummery_value">{{DiscountPanelDataModule.Order.OrderHeader.TotalPrice | currency : 'Rs. ' : 2}}</h4></th>
                     <th class=""></th>
                 </tr>
                 <tr>
-                    <th class=""><h4 style="margin: 0.3rem 0;">Discount (%) : </h4></th>
-                    <th class=""><h4 style="margin: 0.3rem 0; width: 10rem;">{{DiscountPanelDataModule.DiscountSelection.GetDiscountRate(DiscountPanelDataModule.Order.OrderHeader.DiscountID)}}&percnt;</h4></th>
+                    <th class=""><h4 class ="discount_ordersummery_lable">Discount (%)  </h4></th>
+                    <td>: </td>
+                    <th class=""><h4 class ="discount_ordersummery_value">{{DiscountPanelDataModule.DiscountSelection.GetDiscountRate(DiscountPanelDataModule.Order.OrderHeader.DiscountID)}}&percnt;</h4></th>
                     <th class=""><button class="button"
                                          ng-click="DiscountPanelDataModule.DiscountSelection.OpenDiscountPopup({}, true)">%</button></th>
                 </tr>
                 <tr>
-                    <th class=""><h4 style="margin: 0.4rem 0;">Discount : </h4></th>
-                    <th class=""><h4 style="margin: 0.3rem 0; width: 10rem;">{{(DiscountPanelDataModule.Order.OrderHeader.DiscountPrice + DiscountPanelDataModule.Order.OrderHeader.LineDiscountPrice) | currency : 'Rs. ' : 2}}</h4></th>
+                    <th class=""><h4 class ="discount_ordersummery_lable">Discount  </h4></th>
+                    <td>: </td>
+                    <th class=""><h4 class ="discount_ordersummery_value">{{(DiscountPanelDataModule.Order.OrderHeader.DiscountPrice + DiscountPanelDataModule.Order.OrderHeader.LineDiscountPrice) | currency : 'Rs. ' : 2}}</h4></th>
                     <th class=""></th>
                 </tr>
             </thead>
         </table>
     </div>
-    <div style="position: relative; border: 1px solid #d8caca;">
-        <button class="button primary"
-                style="width: 10rem; height: 2.5rem;"
+    <div class="discount_successController">
+        <button class="button primary discount_success_button"
                 ng-click="DiscountPanelDataModule.PermissionRetrieval.OpenPopup()">Confirm</button>
-        <button class="button primary"
-                style="width: 10rem; height: 2.5rem; position: absolute; right: 0; top: 0;"
+        <button class="button primary discount_cancel_button"
                 ng-click="DiscountPanelDataModule.ReloadOrder()">Cancel</button>
     </div>
     <users-selection-directive callback="DiscountPanelDataModule.DiscountSelection.DiscountCallback"

@@ -1,12 +1,24 @@
+<style>
+    .order_panelRightView_orderPanelRight{
+        margin-top: 2.3em;
+    }
+    .order_panelRightView_orderPanelOptionview{
+        margin-top:1em;
+    }
+    .order_panelRightView_orderPanelCategory{
+        margin-top:1em;
+    }
+</style>
+
 <div ng-controller="OrderPanelRightController">
-    <div ng-include="'views/order/panelRight/panelRight/newOrderView.html'" style=" margin-top: 2.3em;">
+    <div ng-include="'views/order/panelRight/panelRight/newOrderView.html'" class="order_panelRightView_orderPanelRight">
 
     </div>
 
-<div ng-include="'views/order/panelRight/panelRight/optionsView.html'" id="odrSelectOrders" style="margin-top:1em;">
+<div ng-include="'views/order/panelRight/panelRight/optionsView.html'" id="odrSelectOrders" class="order_panelRightView_orderPanelOptionview">
 
 </div>
-    <div ng-include="'views/order/panelRight/panelRight/filteredItemsView.html'" id="odrDisplaySelectedCategoryItems" style="margin-top:1em;">
+    <div ng-include="'views/order/panelRight/panelRight/filteredItemsView.html'" id="odrDisplaySelectedCategoryItems" class="order_panelRightView_orderPanelCategory">
 
     </div>
 </div>

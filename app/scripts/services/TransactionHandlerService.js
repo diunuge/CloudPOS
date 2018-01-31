@@ -10,7 +10,8 @@
                 /// this.Host = "http://45.35.4.156:3232";
 
                 /// CloudPOS Dev
-                this.Host = "http://45.35.4.156:3333";
+                //this.Host = "http://45.35.4.156:3333";
+                this.Host = "http://localhost:45698"
 
                 /// CloudPOS Local
                 /// this.Host = "http://192.168.1.25:5555";

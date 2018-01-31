@@ -5,6 +5,10 @@
                                   BrowserSessionManager, UrlFactory, CommonAlertsService,
                                   SystemSettings, ReferenceDataService, SystemInit) {
 
+            scope.phoneNumberPattern = /^(\+\d{2}|0|0\d{2})\d{9}$/;
+            scope.emailPattern = /^(\w[-._+\w]*\w@\w[-._\w]*\w\.\w{2,3})$/;
+            scope.intahubText = "intahub";
+
             /// Log the version information to the console.
             $http.get('release.json').success(function (data) {
                 scope.version = data.version;

@@ -1,21 +1,23 @@
-<!-- 
-Developed By HARUN DILUKA HESHAN
-Software Engineer
-Intahub (pvt) ltd.
--->
 <style>
     #orderPaymentTab .btn-primary.active{
         font-weight: bolder;
         background-color: cadetblue;
     }
+    .OrderPanel_payementOptionView{
+        max-height: 20em; overflow: auto; padding-bottom:0.4em;
+    }
+    .OrderPanel_payementOptionViewButtonContainer{
+        margin-top: 0.2em;
+    }
 </style>
-<div id="orderPaymentTab" style="max-height: 20em; overflow: auto; padding-bottom:0.4em;">
+
+<div id="orderPaymentTab" class="OrderPanel_payementOptionView">
     <div>
         <button ng-click="odrLftPaymentSelectOption($event, 'cashPayment')" class="btn btn-primary active">Cash</button>
         <button ng-click="odrLftPaymentSelectOption($event, 'creditCardPayment')"  class="btn btn-primary">Credit Card</button>
         <button ng-click="odrLftPaymentSelectOption($event, 'chequePayment')"  class="btn btn-primary">Cheque</button>
     </div>
-    <div style="margin-top: 0.2em;">
+    <div class="OrderPanel_payementOptionViewButtonContainer">
         <button ng-click="odrLftPaymentSelectOption($event, 'dutyMealPayment')"  class="btn btn-primary">Duty Meal</button>
         <button ng-click="odrLftPaymentSelectOption($event, 'cityLedgerPayment')"  class="btn btn-primary">City Ledger</button>
         <button ng-click="odrLftPaymentSelectOption($event, 'advancePayment')"  class="btn btn-primary">Advance</button>

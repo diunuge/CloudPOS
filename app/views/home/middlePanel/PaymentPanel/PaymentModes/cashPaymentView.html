@@ -1,4 +1,15 @@
-<div class="input-control text" data-role="input" style="width: 100% !important;">
+<style>
+    .cashPaymentView_inputController{
+        width: 100% !important;
+    }
+    .cashPaymentView_input_holder{
+        display: block; width: 100%;
+    }
+</style>
+
+
+
+<div class="input-control text cashPaymentView_inputController" data-role="input">
 
     <div class="grid">
         <div class="row cells4">
@@ -6,12 +17,11 @@
                 <h5>Pay Amount :&nbsp;</h5>
             </div>
             <div class="cell colspan3">
-                <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+                <div class="number cashPaymentView_input_holder" data-role="input" >
                     <input type="number"
                            placeholder="Pay Amount.."
                            min="0"
                            ng-model="PaymentDataModule.Payment.PaymentDetailDto.PayAmount">
-                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
                 </div>
             </div>
         </div>

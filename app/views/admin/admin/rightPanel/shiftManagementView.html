@@ -1,20 +1,48 @@
-<div>
-    <div style="color: white;">
-        <div>
-            <label style="font-size: large; font-weight: bold;">Shift Type :</label><button style="margin-left: 0.3em; margin-bottom: 0.4em; border-radius: 0.2em;" type="button" class="btn btn-default">Morning Shift</button>
-            <button style="margin-left: 0.3em; margin-bottom: 0.4em; border-radius: 0.2em;" type="button" class="btn btn-default">Evening Shift</button>
-            <button style="margin-left: 0.3em; margin-bottom: 0.4em; border-radius: 0.2em;" type="button" class="btn btn-default">Night Shift</button><br/>
+<style>
+    .shiftManagementView{
+        color: white;
+    }
+    .shiftManagementViewLable{
+        font-size: large; font-weight: bold;
+    }
+    .shiftManagementViewBtn{
+        margin-left: 0.3em; margin-bottom: 0.4em; border-radius: 0.2em;
+    }
+    .shiftManagementViewInput{
+        font-size: large;" type="text
+    }
+    .shiftManagementViewSpace{
+        display: inline-block;
+    }
+    .shiftManagementViewTable{
+        background-color: #ffffff; color: black; margin-top: 0.4em;
+    }
+    .shiftManagementViewTableContainer{
+        margin-top: 0.5em;
+    }
+    .shiftManagementViewTableBorderd{
+        background-color: #ffffff;
+    }
+</style>
 
-            <button style="margin-left: 0.3em; margin-bottom: 0.4em; border-radius: 0.2em;" type="button" class="btn btn-primary">Open Shift</button>
-            <button style="margin-left: 0.3em; margin-bottom: 0.4em; border-radius: 0.2em;" class="btn btn-primary">Close Shift</button>
+<div>
+    <div class="shiftManagementView">
+        <div>
+            <label class="shiftManagementViewLable">Shift Type :</label>
+            <button  type="button" class="btn btn-default shiftManagementViewBtn">Morning Shift</button>
+            <button  type="button" class="btn btn-default shiftManagementViewBtn">Evening Shift</button>
+            <button  type="button" class="btn btn-default shiftManagementViewBtn">Night Shift</button><br/>
+
+            <button  type="button" class="btn btn-primary shiftManagementViewBtn">Open Shift</button>
+            <button  class="btn btn-primary shiftManagementViewBtn">Close Shift</button>
         </div>
         <div>
-            <label style="font-size: large; font-weight: bold;">Open Float :</label><br/>
-            <input style="font-size: large;" type="text">
-            <div style="display: inline-block;">
+            <label class="shiftManagementViewLable" >Open Float :</label><br/>
+            <input class="shiftManagementViewInput">
+            <div class="shiftManagementViewSpace">
 
             </div>
-            <table style="background-color: #ffffff; color: black; margin-top: 0.4em;" class="table table-striped table-bordered table-list">
+            <table  class="shiftManagementViewTable table table-striped table-bordered table-list">
                 <thead>
                 <tr>
                     <th>Order Type</th>
@@ -30,8 +58,8 @@
             </table>
         </div>
     </div>
-    <div style="margin-top: 0.5em;">
-        <table style="background-color: #ffffff;" class="table table-striped table-bordered table-list">
+    <div class="shiftManagementViewTableContainer">
+        <table style="" class="table table-striped table-bordered table-list shiftManagementViewTableBorderd">
             <thead>
             <tr>
                 <th>Shift ID</th>

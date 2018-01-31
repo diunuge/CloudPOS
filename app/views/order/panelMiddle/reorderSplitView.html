@@ -1,2 +1,8 @@
-<button style="width: 25%; height: 4em; margin: 0.3em 0em;" ng-class="buttonDisableHandler.DisableMiddlePanelReorderBtn" class="btn btn-primary">Re-Order</button>
-<button style="width: 25%; height: 4em; margin: 0.3em 0em;" ng-class="buttonDisableHandler.DisableMiddlePanelSplitBtn"  ng-click="odrToggleMiddleView()" class="btn btn-primary">{{odrBtnViewSplitOrderVal}}</button>
+<style>
+    .orderPanel_recoderSplitViewButton{
+        width: 25%; height: 4em; margin: 0.3em 0em;
+    }
+</style>
+
+<button ng-class="buttonDisableHandler.DisableMiddlePanelReorderBtn" class="btn btn-primary orderPanel_recoderSplitViewButton">Re-Order</button>
+<button  ng-class="buttonDisableHandler.DisableMiddlePanelSplitBtn"  ng-click="odrToggleMiddleView()" class="btn btn-primary orderPanel_recoderSplitViewButton">{{odrBtnViewSplitOrderVal}}</button>

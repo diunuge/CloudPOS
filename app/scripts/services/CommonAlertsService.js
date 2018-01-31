@@ -18,7 +18,7 @@
                 options.type = alertType;
                 options.width = "50%";
                 if (isWaitTimeOn) {
-                    options.hide = 2000;
+                    options.hide = 20000;
                 }
 
                 $.Dialog({
@@ -58,7 +58,7 @@
                     ],
                     options: {
                         type: alertType,
-                        hide: 2000,
+                        hide: 20000,
                         width: "50%"
                     }
                 });

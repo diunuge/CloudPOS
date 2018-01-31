@@ -1,97 +1,117 @@
-<div><label>Phone No :</label></div>
-<!--<div>
-    <input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.PhoneNumber" type="number" class="form-control">
-</div>-->
-<div class="input-control text" data-role="input" style="width: 100%;">
-    <input type="number"
-           input-validation
-           validation-type="phoneNumberValidation"
-           ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.PhoneNumber">
-    <button class="button helper-button clear"><span class="mif-cross"></span></button>
-</div>
-<div><label>Email :</label></div>
-<!--<div><input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Email" type="text" class="form-control"></div>-->
-<div class="input-control text" data-role="input" style="width: 100%;">
-    <input type="text"
-           input-validation
-           validation-type="emailValidation"
-           ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
-           ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Email">
-    <button class="button helper-button clear"><span class="mif-cross"></span></button>
-</div>
-<div><label>Title :</label></div>
-<div>
-<!--    <button ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto='1'" style="width:5em;" class="btn btn-default">Mr</button>
-    <button ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto='2'" style="width:5em;"  class="btn btn-default">Mrs</button>
-    <button ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto='3'" style="width:5em;"  class="btn btn-default">Miss</button>
-    <button ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto='4'" style="width:5em;"  class="btn btn-default">Dr</button>-->
-    <label class="input-control radio">
-        <input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Title"
+<style>
+    .tabOrderView_input_holder {
+        width: 100%;
+    }
+
+    .tabOrderView_button_main {
+        width: 100%;
+    }
+</style>
+<ng-form name="tabForm">
+    <div>
+        <label>Phone No :</label>
+    </div>
+
+    <div class="input-control text tabOrderView_input_holder" data-role="input">
+
+        <input type="text"
+               placeholder="+94xxxxxxxx"
+               name="phoneNo"
+               ng-pattern="phoneNumberPattern"
+               ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.PhoneNumber"
+               required>
+        <br>
+        <span class="error" ng-show="tabForm.phoneNo.$error.pattern">
+            Please Enter valid phone number [+94711234567, 094711234567, 0711234567 ]
+        </span>
+    </div>
+    <div>
+        <label>Email :</label>
+    </div>
+
+    <div class="input-control text tabOrderView_input_holder" data-role="input">
+        <input type="email"
+               placeholder="user@example.com"
+               name="email"
+               ng-pattern="emailPattern"
                ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
-               type="radio"
-               value="1">
-        <span class="check"></span>
-        <span class="caption">Mr</span>
-    </label>
-    <label class="input-control radio">
-        <input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Title"
+               ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Email">
+        <br>
+        <span class="error" ng-show="tabForm.email.$error.pattern">
+            Please Enter valid email address
+        </span>
+    </div>
+    <div>
+        <label>Title :</label>
+    </div>
+    <div>
+        <label class="input-control radio">
+            <input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Title"
+                   ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
+                   type="radio"
+                   value="1">
+            <span class="check"></span>
+            <span class="caption">Mr</span>
+        </label>
+        <label class="input-control radio">
+            <input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Title"
+                   ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
+                   type="radio"
+                   value="2">
+            <span class="check"></span>
+            <span class="caption">Mrs</span>
+        </label>
+        <label class="input-control radio">
+            <input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Title"
+                   ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
+                   type="radio"
+                   value="3">
+            <span class="check"></span>
+            <span class="caption">Miss</span>
+        </label>
+        <label class="input-control radio">
+            <input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Title"
+                   ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
+                   type="radio"
+                   value="4">
+            <span class="check"></span>
+            <span class="caption">Dr</span>
+        </label>
+    </div>
+    <div><label>First Name :</label></div>
+    <div class="input-control text tabOrderView_input_holder" data-role="input">
+        <input type="text"
                ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
-               type="radio"
-               value="2">
-        <span class="check"></span>
-        <span class="caption">Mrs</span>
-    </label>
-    <label class="input-control radio">
-        <input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Title"
+               ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.FirstName">
+    </div>
+    <div><label>Last Name :</label></div>
+    <div class="input-control text tabOrderView_input_holder" data-role="input">
+        <input type="text"
                ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
-               type="radio"
-               value="3">
-        <span class="check"></span>
-        <span class="caption">Miss</span>
-    </label>
-    <label class="input-control radio">
-        <input ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.Title"
-               ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
-               type="radio"
-               value="4">
-        <span class="check"></span>
-        <span class="caption">Dr</span>
-    </label>
-</div>
-<div><label>First Name :</label></div>
-<!--<div><input type="text" ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.FirstName" class="form-control"></div>-->
-<div class="input-control text" data-role="input" style="width: 100%;">
-    <input type="text"
-           ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
-           ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.FirstName">
-    <button class="button helper-button clear"><span class="mif-cross"></span></button>
-</div>
-<div><label>Last Name :</label></div>
-<!--<div><input type="text" ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.LastName" class="form-control"></div>-->
-<div class="input-control text" data-role="input" style="width: 100%;">
-    <input type="text"
-           ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.GuestId>0"
-           ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.LastName">
-    <button class="button helper-button clear"><span class="mif-cross"></span></button>
-</div>
-<div class="grid">
-    <div class="row cells3">
-        <div class="cell">
-            <button class="button success"
-                    ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.CreateOrder()"
-                    ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.IsConfirmed"
-                    style="width: 100%;">Confirm</button>
-        </div>
-        <div class="cell">
-            <button class="button success"
-                    ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.GoToPayment()"
+               ng-model="HomeDataModule.MiddlePanel.NewOrderPanel.GuestsInformationFilter.GuestDto.LastName">
+    </div>
+    <div class="grid">
+        <div class="row cells3">
+            <div class="cell">
+                <button class="button success tabOrderView_button_main"
+                        ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.CreateOrder()"
+                        ng-disabled="HomeDataModule.MiddlePanel.NewOrderPanel.IsConfirmed">
+                    Confirm
+                </button>
+            </div>
+            <div class="cell">
+                <button class="button success tabOrderView_button_main"
+                        ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.GoToPayment()">
                     ng-hide="true"
-                    style="width: 100%;">Payment</button>
-        </div>
-        <div class="cell">
-            <button class="button success"
-                    ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.GoToOrderPanel()"
-                    style="width: 100%;">Back</button>
+                    Payment
+                </button>
+            </div>
+            <div class="cell">
+                <button class="button success tabOrderView_button_main"
+                        ng-click="HomeDataModule.MiddlePanel.NewOrderPanel.GoToOrderPanel()">
+                    Back
+                </button>
+            </div>
         </div>
     </div>
-</div>
+</ng-form>

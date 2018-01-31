@@ -1,42 +1,48 @@
+<style>
+    .leftpanelViewBtn{
+        width: 100%; text-align: left; height: 3rem;
+    }
+</style>
+
 <div data-role="group"
      data-group-type="one-state">
-    <button style="width: 100%; text-align: left; height: 3rem;"
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'cancelAdvDepositView')"
-            class="button primary">Cancel Adv. Deposit</button>
-    <button style="width: 100%; text-align: left; height: 3rem;"
+            class="button primary leftpanelViewBtn">Cancel Adv. Deposit</button>
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'cancelPaymentView')"
-            class="button primary">Cancel Payment</button>
+            class="button primary leftpanelViewBtn">Cancel Payment</button>
     <!--<button style="" ng-click="uiHandlers.adminSubPanelOnClick($event, 'userUnlockView')" class="list-group-item listItem">User Unlock</button>-->
-    <button style="width: 100%; text-align: left; height: 3rem;"
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'waiterAllocationView')"
-            class="button primary">Waiter Allocation</button>
-    <button style="width: 100%; text-align: left; height: 3rem;"
+            class="button primary leftpanelViewBtn">Waiter Allocation</button>
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'printerResetView')"
-            class="button primary">Printer Reset</button>
-    <button style="width: 100%; text-align: left; height: 3rem;"
+            class="button primary leftpanelViewBtn">Printer Reset</button>
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'dayEndView')"
-            class="button primary">Day End</button>
-    <button style="width: 100%; text-align: left; height: 3rem;"
+            class="button primary leftpanelViewBtn">Day End</button>
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'receiptReprintView')"
-            class="button primary">Receipt Reprint</button>
-    <button style="width: 100%; text-align: left; height: 3rem;"
+            class="button primary leftpanelViewBtn">Receipt Reprint</button>
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'kotReprintView')"
-            class="button primary">KOT Reprint</button>
-    <button style="width: 100%; text-align: left; height: 3rem;"
+            class="button primary leftpanelViewBtn">KOT Reprint</button>
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'shiftManagementView')"
-            class="button primary">Shift Management</button>
+            class="button primary leftpanelViewBtn">Shift Management</button>
    <!-- <button style="" ng-click="uiHandlers.adminSubPanelOnClick($event, 'reportReprintView')" class="list-group-item listItem">Report Reprint</button>-->
-    <button style="width: 100%; text-align: left; height: 3rem;"
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'cashDropView')"
-            class="button primary">Cash Drop</button>
-    <button style="width: 100%; text-align: left; height: 3rem;"
+            class="button primary leftpanelViewBtn">Cash Drop</button>
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'inventoryManagement')"
             ng-disabled="!SystemInit.AccessControl.AccessControlData.SystemMenus.CreateRecipe.IsMenu"
-            class="button primary">Master Data Management</button>
-    <button style="width: 100%; text-align: left; height: 3rem;"
+            class="button primary leftpanelViewBtn">Master Data Management</button>
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'userManagement')"
-            class="button primary">User Management</button>
-    <button style="width: 100%; text-align: left; height: 3rem;"
+            class="button primary leftpanelViewBtn">User Management</button>
+    <button
             ng-click="uiHandlers.adminSubPanelOnClick($event, 'taxManagement')"
-            class="button primary">Tax Management</button>
+            class="button primary leftpanelViewBtn">Tax Management</button>
 </div>

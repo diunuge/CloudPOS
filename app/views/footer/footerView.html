@@ -5,8 +5,12 @@
         font-family: sans-serif;
         padding:0.4em 3em;
     }
+    .footerViewFooterController{
+        clear: both; width: 100%;
+    }
 </style>
-<div ng-controller="FooterController" class="nav-bar" style="clear: both; width: 100%;">
+
+<div ng-controller="FooterController" class="nav-bar footerViewFooterController">
     <button class="btn btn-primary active" ng-click="navBtnClick($event, 'order')">Home</button>
     <button class="btn btn-primary" ng-click="navBtnClick($event, 'reservation')">Reservation</button>
     <button class="btn btn-primary" ng-click="navBtnClick($event, 'report')">Report</button>

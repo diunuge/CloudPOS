@@ -1,19 +1,35 @@
+<style>
+    .horizontalcaruselMenuViewleftArrow{
+        float: left;
+        z-index: 100 !important;
+    }
+    .horizontalcaruselMenuViewrightArrow{
+           float: right;
+           z-index: 100 !important;
+       }
+    .horizontalcaruselBody{
+        float: left; width: 424px; padding-right: 2px !important;
+    }
+    .horizontalcaruselButton{
+        margin-left: 2px !important; margin-right: 2px !important;
+    }
+</style>
 
 <div class="HorizontalCarouselMenu">
-    <div style="float: left;">
+    <div class="horizontalcaruselMenuViewleftArrow" >
         <button  id="carouselLeftArrowBtn" class="CarouselNavButtons button primary">
             <span class="icon mif-chevron-left"></span>
         </button>
     </div>
-    <div id="carouselBody" style="float: left; width: 424px; padding-right: 2px !important;">
+    <div id="carouselBody" class="horizontalcaruselBody">
         <button ng-repeat="item in items track by $index"
                 ng-click="ItemClick(item.FoodCatId)"
-                style="margin-left: 2px !important; margin-right: 2px !important;"
-                class="CarouselItemButtons button primary">
+
+                class="horizontalcaruselButton CarouselItemButtons button primary">
             <span class="title  CloudFont Small-CloudFont">{{item.Description}}</span>
         </button>
     </div>
-    <div style="float: left;">
+    <div class="horizontalcaruselMenuViewrightArrow">
         <button  id="carouselRightArrowBtn" class="CarouselNavButtons button primary">
             <span class="icon mif-chevron-right"></span>
         </button>

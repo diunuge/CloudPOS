@@ -1,28 +1,46 @@
-<div class="bgFrame" style="display: flex; align-items: center; z-index: 1; top: 0; left: 0; background-color: rgba(149, 149, 222, 0.41); width: 100%; height: 100%;">
-    <div style="overflow: hidden; width: 550px; height: 635px; margin: auto; background-color: #d8d8d8; border: 2px solid #d8d8d8;">
+<style>
+    .taxDiscountModeBoxView{
+        display: flex; align-items: center; z-index: 1; top: 0; left: 0; background-color: rgba(149, 149, 222, 0.41); width: 100%; height: 100%;
+    }
+    .taxDiscountModeBoxViewContainer{
+        overflow: hidden; width: 550px; height: 635px; margin: auto; background-color: #d8d8d8; border: 2px solid #d8d8d8;
+    }
+    .taxDiscountModeBoxViewButton{
+        display: block; margin: auto; width: 135px;
+    }
+    .taxDiscountModeBoxViewTableContainer{
+        max-height: 350px; height: 350px; overflow: auto;
+    }
+    .taxDiscountModeBoxViewTable{
+        background-color: aliceblue; margin-top: 6px;
+    }
+</style>
+
+<div class="bgFrame" class="taxDiscountModeBoxView">
+    <div class="taxDiscountModeBoxViewContainer">
         <div>
             <table class="table table-striped">
                 <tr>
                     <td>
-                        <button ng-click="GroupByFoodItem()" class="button primary CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 135px;">
+                        <button ng-click="GroupByFoodItem()" class="button primary CloudPosUiStructureHomePage taxDiscountModeBoxViewButton" >
                             <span class="title  CloudFont Small-CloudFont">Normal</span>
                         </button>
                     </td>
                     <td>
-                        <button ng-click="GroupByFoodType()" class="button primary CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 135px;">
+                        <button ng-click="GroupByFoodType()" class="button primary CloudPosUiStructureHomePage taxDiscountModeBoxViewButton" >
                             <span class="title  CloudFont Small-CloudFont">Food Type</span>
                         </button>
                     </td>
                     <td>
-                        <button ng-click="GroupByFoodCategory()" class="button primary CloudPosUiStructureHomePage" style="display: block; margin: auto; width: 135px;">
+                        <button ng-click="GroupByFoodCategory()" class="button primary CloudPosUiStructureHomePage taxDiscountModeBoxViewButton">
                             <span class="title  CloudFont Small-CloudFont">Food Category</span>
                         </button>
                     </td>
                 </tr>
             </table>
         </div>
-        <div style="max-height: 350px; height: 350px; overflow: auto;">
-            <table class="table table-bordered" style="background-color: aliceblue; margin-top: 6px;">
+        <div class="taxDiscountModeBoxViewTableContainer">
+            <table class="table table-bordered taxDiscountModeBoxViewTable">
                 <thead>
                 <tr>
                     <th style="font-size: 14px;">Food Name</th>

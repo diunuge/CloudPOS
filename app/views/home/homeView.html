@@ -1,13 +1,30 @@
+<style>
+    .homeView_middlePanel{
+        position: relative !important;
+    }
+    .homeView_RightPanel_newOrder_button_holder{
+        margin: 12px 0px 12px 0px !important;
+    }
+    .homeView_RightPanel_newOrder_button{
+        height: 60px !important; width: 80%;
+        display: block; margin: 0.2rem auto;
+    }
+    .homeView_RightPanel_newOrder_button_title{
+        font-size: 14px;
+        font-weight: bold;
+    }
+</style>
+
 <div ng-controller="HomeController">
 <div ng-controller="HomeLeftPanelController"
      class="CloudPosUiStructureThreePanelStructure CloudPosUiStructureLeftPanel CloudPosUiStructurePanelsTheme"
      ng-include="UrlFactory.UrlHolders.HomePageLeftPanelMainBody">
 </div>
 
-<div style="/*overflow-y: auto !important;*/ position: relative !important;"
+<div
      ng-controller="HomeMiddlePanelController"
      ng-include="UrlFactory.UrlHolders.HomePageMiddlePanelBodyArea"
-     class="CloudPosUiStructureThreePanelStructure CloudPosUiStructureMiddlePanel CloudPosUiStructurePanelsTheme CloudPosUiStructureHomePage CloudPosUiStructureHomePageMiddlePanel">
+     class="homeView_middlePanel CloudPosUiStructureThreePanelStructure CloudPosUiStructureMiddlePanel CloudPosUiStructurePanelsTheme CloudPosUiStructureHomePage CloudPosUiStructureHomePageMiddlePanel">
 
 </div>
 
@@ -17,14 +34,11 @@
     <div ng-include="'views/home/rightPanel/orderCategoryView.html'">
     </div>
 
-    <div style="margin: 12px 0px 12px 0px !important;"
-         ng-show="false">
+    <div class="homeView_RightPanel_newOrder_button_holder" ng-show="false">
         <button ng-click="HomeDataModule.RightPanel.AddNewOrder()"
                 ng-click="HomeDataModule.MiddlePanel.AddNewOrder()"
-                class="button primary"
-                style="height: 60px !important; width: 80%; display: block; margin: 0.2rem auto;">
-            <span class="title"
-                  style="font-size: 14px; font-weight: bold;">New Order</span>
+                class="button primary homeView_RightPanel_newOrder_button">
+            <span class="title homeView_RightPanel_newOrder_button_title">New Order</span>
         </button>
     </div>
 

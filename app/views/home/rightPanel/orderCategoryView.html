@@ -1,35 +1,45 @@
+<style>
+    .Order_category_view_button_holder{
+        margin-top: 0px !important;
+    }
+    .Order_category_view_button{
+        height: 60px !important;
+        width: 80%;
+        display: block;
+        margin: 0.2rem auto;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+</style>
+
 <div data-role="group"
-     data-group-type="one-state"
-     style="margin-top: 0px !important;">
+     data-group-type="one-state" class="Order_category_view_button_holder">
+
     <!-- Dining Order Filter -->
     <button ng-click="HomeDataModule.RightPanel.FilterOrders.DiningOrders($event)"
-            class="button {{(Navigation.DisableNavigationButtons) ? '' : 'primary'}}"
-            ng-disabled="Navigation.DisableNavigationButtons"
-            style="height: 60px !important; width: 80%; display: block; margin: 0.2rem auto; font-size: 1rem; font-weight: 700;">
+            class="Order_category_view_button button {{(Navigation.DisableNavigationButtons) ? '' : 'primary'}}"
+            ng-disabled="Navigation.DisableNavigationButtons">
         Dining
     </button>
 
     <!-- Takeout Order Filter -->
     <button ng-click="HomeDataModule.RightPanel.FilterOrders.TakeoutOrders($event)"
-            class="button {{(Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.TakeOut.IsMenu) ? '' : 'primary'}}"
-            ng-disabled="Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.TakeOut.IsMenu"
-            style="height: 60px !important; width: 80%; display: block; margin: 0.2rem auto; font-size: 1rem; font-weight: 700;">
+            class="button  Order_category_view_button {{(Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.TakeOut.IsMenu) ? '' : 'primary'}}"
+            ng-disabled="Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.TakeOut.IsMenu">
         Takeout
     </button>
 
     <!-- Delivery Order Filter -->
     <button ng-click="HomeDataModule.RightPanel.FilterOrders.DeliveryOrders($event)"
-            class="button {{(Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.DeliveryPage.IsMenu) ? '' : 'primary'}}"
-            ng-disabled="Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.DeliveryPage.IsMenu"
-            style="height: 60px !important; width: 80%; display: block; margin: 0.2rem auto; font-size: 1rem; font-weight: 700;">
+            class="button Order_category_view_button {{(Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.DeliveryPage.IsMenu) ? '' : 'primary'}}"
+            ng-disabled="Navigation.DisableNavigationButtons || !SystemInit.AccessControl.AccessControlData.SystemMenus.DeliveryPage.IsMenu">
         Delivery
     </button>
 
     <!-- Tab Order Filter -->
     <button ng-click="HomeDataModule.RightPanel.FilterOrders.TabOrders($event)"
-            class="button {{(Navigation.DisableNavigationButtons || !SystemSettings.SettingsDto.SystemSettings.TabAllowed.Value || !SystemInit.AccessControl.AccessControlData.SystemMenus.TabsPage.IsMenu) ? '' : 'primary'}}"
-            ng-disabled="Navigation.DisableNavigationButtons || !SystemSettings.SettingsDto.SystemSettings.TabAllowed.Value || !SystemInit.AccessControl.AccessControlData.SystemMenus.TabsPage.IsMenu"
-            style="height: 60px !important; width: 80%; display: block; margin: 0.2rem auto; font-size: 1rem; font-weight: 700;">
+            class="button Order_category_view_button {{(Navigation.DisableNavigationButtons || !SystemSettings.SettingsDto.SystemSettings.TabAllowed.Value || !SystemInit.AccessControl.AccessControlData.SystemMenus.TabsPage.IsMenu) ? '' : 'primary'}}"
+            ng-disabled="Navigation.DisableNavigationButtons || !SystemSettings.SettingsDto.SystemSettings.TabAllowed.Value || !SystemInit.AccessControl.AccessControlData.SystemMenus.TabsPage.IsMenu">
         Tab
     </button>
 </div>

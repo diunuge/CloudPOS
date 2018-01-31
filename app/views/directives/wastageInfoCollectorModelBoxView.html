@@ -1,15 +1,39 @@
-<div style="background-color: rgba(255, 255, 255, 0.31); position: fixed; z-index: 1; top: 0px; left: 0px; width: 100vw; height: 100vh; align-items: center; display: flex;">
-    <div style="width:400px; height: 500px; border:2px solid black; margin:auto; background-color: #ffffff;">
-        <div class="list-group" style="height: 24.4em; overflow: auto;">
+<style>
+    .wastageInfoCollectorModelBoxView{
+        background-color: rgba(255, 255, 255, 0.31); position: fixed; z-index: 1; top: 0px; left: 0px; width: 100vw; height: 100vh; align-items: center; display: flex;
+    }
+    .wastageInfoCollectorModelBoxViewContainer{
+        width:400px; height: 500px; border:2px solid black; margin:auto; background-color: #ffffff;
+    }
+    .wastageInfoCollectorModelBoxViewListGroup{
+        height: 24.4em; overflow: auto;
+    }
+    .wastageInfoCollectorModelBoxViewBtn{
+        width: 80%; display: block; margin:0.4em auto;
+    }
+    .wastageInfoCollectorModelBoxViewAddBtn{
+        width: 10em; left: 0.4em; position: absolute; margin-top: 0.8em;
+    }
+    .wastageInfoCollectorModelBoxViewCancelBtn{
+        width: 10em; right: 0.4em; position: absolute; margin-top: 0.8em;
+    }
+    .wastageInfoBtnContainer{
+        position: relative;
+    }
+</style>
+
+<div class="wastageInfoCollectorModelBoxView">
+    <div class="wastageInfoCollectorModelBoxViewContainer">
+        <div class="list-group wastageInfoCollectorModelBoxViewListGroup">
             <a ng-repeat="item in reasonsAr track by $index" href="#" class="list-group-item">{{item.reasonName}}</a>
         </div>
         <div>
-            <button class="btn btn-primary active" style="width: 80%; display: block; margin:0.4em auto">Served</button>
-            <button class="btn btn-primary" style="width: 80%; display: block; margin:0.4em auto">Not Served</button>
+            <button class="btn btn-primary active wastageInfoCollectorModelBoxViewBtn" >Served</button>
+            <button class="btn btn-primary wastageInfoCollectorModelBoxViewBtn">Not Served</button>
         </div>
-        <div style="position: relative;">
-            <button class="btn btn-default" style="width: 10em; left: 0.4em; position: absolute; margin-top: 0.8em;">Add</button>
-            <button class="btn btn-default" style="width: 10em; right: 0.4em; position: absolute; margin-top: 0.8em;">Cancel</button>
+        <div class="wastageInfoBtnContainer">
+            <button class="btn btn-default wastageInfoCollectorModelBoxViewAddBtn">Add</button>
+            <button class="btn btn-default wastageInfoCollectorModelBoxViewCancelBtn">Cancel</button>
         </div>
     </div>
 </div>

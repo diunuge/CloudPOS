@@ -1,30 +1,51 @@
 <style>
-
+    .leftPanelViewInputContainer{
+        width: 100%;
+    }
+    .leftPanelViewLableTile{
+        display: block;
+    }
+    .leftPanelViewLableInputContainer{
+        display: inline-block
+    }
+    .leftPanelViewTable{
+        max-height: 125px; overflow: auto;
+    }
+    .leftPanelViewConfirmBtn{
+        width: 100%; margin-top: 8px; height: 34px; font-size: 18px;
+    }
 </style>
+<ng-form name="calenderForm">
 <div id="" class="">
-    <div class="input-control number"
+    <div class="input-control number leftPanelViewInputContainer"
          data-role="input"
-         style="width: 100%;">
-        <input type="number"
-               input-validation
-               validation-type="phoneNumberValidation"
-               placeholder="Phone Number.."
-               min="0"
-               ng-model="reservationDataModule.GuestPhoneNumber">
-        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+         style="">
+        <input  type="text"
+                placeholder="+94xxxxxxxx"
+                name="phoneNo"
+                ng-pattern="phoneNumberPattern"
+                ng-model="reservationDataModule.GuestPhoneNumber"
+                required>
+        <br>
+        <span class="error" ng-show="calenderForm.phoneNo.$error.pattern">
+            Please Enter valid phone number [+94711234567, 094711234567, 0711234567 ]
+        </span>
     </div>
-    <div class="input-control number"
+    <div class="input-control number leftPanelViewInputContainer"
          data-role="email"
-         style="width: 100%;">
+         >
         <input type="email"
-               input-validation
-               validation-type="emailValidation"
-               placeholder="Email.."
+               placeholder="user@example.com"
+               name="email"
+               ng-pattern="emailPattern"
                ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
                ng-model="reservationDataModule.ReservationDto.guestDetails.Email">
-        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+        <br>
+        <span class="error" ng-show="calenderForm.email.$error.pattern">
+            Please Enter valid email address
+        </span>
     </div>
-    <div><label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Title :</label>
+    <div><label class=" CloudFont SmallerHeading-CloudFont leftPanelViewLableTile">Title :</label>
 <!--        <div class="title" radio-button-group active-class="CloudPosUiStructureButtonsThemeCatThreeActive" inactive-class="CloudPosUiStructureButtonsThemeCatThree">
             <button ng-click="reservationDataModule.ReservationDto.guestDetails.Title='1'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree">Mr</button>
             <button ng-click="reservationDataModule.ReservationDto.guestDetails.Title='2'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree">Miss</button>
@@ -37,8 +58,7 @@
                        name="title"
                        ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
                        ng-model="reservationDataModule.ReservationDto.guestDetails.Title"
-                       value="1"
-                       checked>
+                       value="1">
                 <span class="check"></span>
                 <span class="caption">Mr</span>
             </label>
@@ -65,88 +85,91 @@
             </label>
         </div>
     </div>
-    <div class="input-control text"
+    <div class="input-control text leftPanelViewInputContainer"
          data-role="input"
-         style="width: 100%;">
+        >
         <input type="text"
                placeholder="First Name.."
                ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
                ng-model="reservationDataModule.ReservationDto.guestDetails.FirstName">
-        <button class="button helper-button clear"><span class="mif-cross"></span></button>
     </div>
-    <div class="input-control text"
+    <div class="input-control text leftPanelViewInputContainer"
          data-role="input"
-         style="width: 100%;">
+        >
         <input type="text"
                placeholder="Last Name.."
                ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
                ng-model="reservationDataModule.ReservationDto.guestDetails.LastName">
-        <button class="button helper-button clear"><span class="mif-cross"></span></button>
     </div>
     <div>
-        <label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Customer Type :</label>
-        <div style="display: inline-block" radio-button-group active-class="CloudPosUiStructureButtonsThemeCatThreeActive" inactive-class="CloudPosUiStructureButtonsThemeCatThree">
+        <label class=" CloudFont SmallerHeading-CloudFont leftPanelViewLableTile">Customer Type :</label>
+        <div class="leftPanelViewLableInputContainer" radio-button-group active-class="CloudPosUiStructureButtonsThemeCatThreeActive" inactive-class="CloudPosUiStructureButtonsThemeCatThree">
 <!--            <button ng-click="reservationDataModule.ReservationDto.reservationHeader.ReservationType='Standard'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree" style="margin-right:0.2em; font-weight: 600;">Standard</button>
             <button ng-click="reservationDataModule.ReservationDto.guestDetails.ReservationType='VIP'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree" style="margin-right:0.2em; font-weight: 600;">VIP</button>
             <button ng-click="reservationDataModule.ReservationDto.guestDetails.ReservationType='VVIP'" class="btn btn-default ItemButtons CloudPosUiStructureButtonsThemeCatThree" style="margin-right:0.2em; font-weight: 600;">VVIP</button>-->
             <label class="input-control radio">
-                <input type="radio" name="customerType"
-                       ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationType"
-                       value="standard">
+                <input  type="radio" name="customerType"
+                        ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationType"
+                        value="standard" >
                 <span class="check"></span>
                 <span class="caption">Standard</span>
             </label>
             <label class="input-control radio">
-                <input type="radio" name="customerType"
-                       ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationType"
-                       value="vip">
+                <input  type="radio" name="customerType"
+                        ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationType"
+                        value="vip">
                 <span class="check"></span>
                 <span class="caption">VIP</span>
             </label>
             <label class="input-control radio">
-                <input type="radio" name="customerType"
-                       ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationType"
-                       value="vvip">
+                <input  type="radio" name="customerType"
+                        ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationType"
+                        value="vvip">
                 <span class="check"></span>
                 <span class="caption">VVIP</span>
             </label>
         </div>
     </div>
-    <div class="input-control text"
+    <div class="input-control text leftPanelViewInputContainer"
          data-role="input"
-         style="width: 100%;">
+         >
         <input type="text"
                placeholder="Description.."
                ng-disabled="reservationDataModule.ReservationDto.guestDetails.GuestId>0"
                ng-model="reservationDataModule.ReservationDto.reservationHeader.Description">
-        <button class="button helper-button clear"><span class="mif-cross"></span></button>
     </div>
     <div>
-        <label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Reservation Date :</label>
+        <label class=" CloudFont SmallerHeading-CloudFont leftPanelViewLableTile">Reservation Date :</label>
         <label ng-model="reservationDataModule.ReservationDto.reservationHeader.ReservationDate"
                class=" CloudFont SmallerHeading-CloudFont"></label>
     </div>
     <div>
-        <label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Reservation Time :</label>
+        <label class=" CloudFont SmallerHeading-CloudFont leftPanelViewLableTile">Reservation Time :</label>
         <label class=" CloudFont SmallerHeading-CloudFont">{{reservationDataModule.SelectedTimeSlot.TimeSlotString}}</label>
     </div>
-    <div style="max-height: 125px; overflow: auto;">
-        <label class=" CloudFont SmallerHeading-CloudFont" style="display: block;">Tables :</label>
+    <div class="leftPanelViewTable">
+        <label class=" CloudFont SmallerHeading-CloudFont leftPanelViewLableTile" >Tables :</label>
         <label class=" CloudFont SmallerHeading-CloudFont">
             <label ng-repeat="table in reservationDataModule.SelectedTimeSlot.Tables">{{table.TblName}},&nbsp</label>
         </label>
     </div>
-    <div class="input-control number"
+    <div class="input-control number leftPanelViewInputContainer"
          data-role="input"
-         style="width: 100%;">
+         >
         <input type="number"
                placeholder="No of guests.."
                min="0"
-               max="16"
+               max="4"
                ng-model="reservationDataModule.ReservationDto.reservationHeader.NoOfGuest">
-        <button class="button helper-button clear"><span class="mif-cross"></span></button>
     </div>
     <div>
-        <button style="width: 100%; margin-top: 8px; height: 34px; font-size: 18px;" ng-click="reservationDataModule.CreateReservation()" class="button primary ItemButtons">Confirm</button>
+        <button
+
+                ng-click="reservationDataModule.CreateReservation()"
+                class="button primary ItemButtons leftPanelViewConfirmBtn"
+                ng-disabled="calenderForm.$invalid">
+            Confirm
+        </button>
     </div>
 </div>
+</ng-form>

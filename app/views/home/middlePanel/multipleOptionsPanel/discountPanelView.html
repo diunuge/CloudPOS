@@ -1,3 +1,9 @@
+<style>
+    .discount_panel_view_modelBox{
+        display: block;
+    }
+</style>
+
 <div ng-controller="DiscountPanelController">
     <tax-discount-model-box
             taxes="Taxes"
@@ -6,6 +12,6 @@
             order-header="OrderHeader"
             service-charge="ServiceCharge"
             callback="Callback"
-            style="display: block;">
+            class="discount_panel_view_modelBox">
     </tax-discount-model-box>
 </div>

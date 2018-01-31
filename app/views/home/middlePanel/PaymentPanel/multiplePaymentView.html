@@ -1,3 +1,15 @@
+
+<style>
+    .multiPaymentView_block_button{
+        width: 100%;
+        display: block;
+        height: auto;
+        text-align: left;
+    }
+
+</style>
+
+
 <div class="accordion"
      data-role="accordion"
      data-close-any="true"
@@ -5,8 +17,7 @@
     <div class="frame active">
         <div class="heading">Dining Orders</div>
         <div class="content" data-role="group" data-group-type="multi-state" data-button-style="class">
-            <button class="button large-button"
-                    style="width: 100%; display: block; height: auto; text-align: left;"
+            <button class="button large-button multiPaymentView_block_button"
                     ng-repeat="order in PaymentDataModule.MultiplePayment.Orders.DiningOrders"
                     ng-click="PaymentDataModule.MultiplePayment.AddOrder($event, order)">
                 <h5>Order ID : {{order.OrderID}}</h5>
@@ -20,8 +31,8 @@
     <div class="frame">
         <div class="heading">Takeout Orders</div>
         <div class="content" data-role="group" data-group-type="multi-state" data-button-style="class">
-            <button class="button large-button"
-                    style="width: 100%; display: block; height: auto; text-align: left;"
+            <button class="button large-button multiPaymentView_block_button"
+
                     ng-repeat="order in PaymentDataModule.MultiplePayment.Orders.TakeoutOrders"
                     ng-click="PaymentDataModule.MultiplePayment.AddOrder($event, order)">
                 <h5>Order ID : {{order.OrderID}}</h5>
@@ -46,8 +57,7 @@
     <div class="frame">
         <div class="heading">Tab Orders</div>
         <div class="content" data-role="group" data-group-type="multi-state" data-button-style="class">
-            <button class="button large-button"
-                    style="width: 100%; display: block; height: auto; text-align: left;"
+            <button class="button large-button multiPaymentView_block_button"
                     ng-repeat="order in PaymentDataModule.MultiplePayment.Orders.TabOrders"
                     ng-click="PaymentDataModule.MultiplePayment.AddOrder($event, order)">
                 <h5>Order ID : {{order.OrderID}}</h5>

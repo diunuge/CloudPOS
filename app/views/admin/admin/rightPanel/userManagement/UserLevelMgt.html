@@ -1,6 +1,15 @@
+<style>
+    .userLevelManagementsidenav{
+        width: 70%;
+    }
+    .userLevelManagementConfirmBtn{
+        width: 60%;
+    }
+</style>
+
 <div>
-    <md-sidenav class="md-sidenav-right md-whiteframe-z2"
-                style="width: 70%;"
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2 userLevelManagementsidenav"
+
                 md-component-id="UserLevelMgtPanel"
                 md-is-locked-open="false">
         <!--md-is-locked-open="$mdMedia('gt-md')">-->
@@ -99,8 +108,8 @@
                             <h5></h5>
                         </div>
                         <div class="cell colspan3">
-                            <button class="button primary" ng-click="UserManagementDataModule.UserLevelMgt.CreateUserLevel()"
-                                    style="width: 60%;">Confirm</button>
+                            <button class="button primary userLevelManagementConfirmBtn" ng-click="UserManagementDataModule.UserLevelMgt.CreateUserLevel()"
+                                    >Confirm</button>
                         </div>
                     </div>
                 </div>

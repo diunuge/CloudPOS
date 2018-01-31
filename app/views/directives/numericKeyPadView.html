@@ -1,5 +1,14 @@
+<style>
+    .numarixKeyPadViewNumButtonCntainer{
+        float: left; padding-left: 0.4rem;
+    }
+    .numarixKeyPadViewCurrencyButtonContainer{
+        float: left; width: 48% !important; margin-left: 0.5rem;
+    }
+</style>
+
 <div class="CloudPosKeyPad">
-    <div style="float: left; padding-left: 0.4rem;">
+    <div class="numarixKeyPadViewNumButtonCntainer">
         <div>
             <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(1)">1</button>
             <button class="button large-button numeric-keys keys-theme" ng-click="KeyPress(2)">2</button>
@@ -21,7 +30,7 @@
             <button class="button large-button numeric-keys keys-theme" ng-click="Clear()">CLS</button>
         </div>
     </div>
-    <div style="float: left; width: 48% !important; margin-left: 0.5rem;">
+    <div class="numarixKeyPadViewCurrencyButtonContainer">
         <div>
             <button class="button large-button numeric-keys-notes keys-theme" ng-click="AddValue(50)">
                 <span class="badge">50</span>

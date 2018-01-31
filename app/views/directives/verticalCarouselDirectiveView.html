@@ -1,8 +1,20 @@
-<div style="display: inline-block !important; width: 100%;">
+<style>
+    .verticleCarouselDerectiveView{
+        display: inline-block !important; width: 100%;
+    }
+    .verticleCarouselDerectiveViewDownBtn{
+        width: 126px !important; height: 60px !important;
+    }
+    .verticleCarouselDerectiveViewUpBtn{
+        width: 126px !important; height: 60px !important;
+    }
+</style>
+
+<div class="verticleCarouselDerectiveView">
     <div>
         <button  id="carouselDown"
-                 style="width: 126px !important; height: 60px !important;"
-                 class="CarouselNavButtons button primary">
+
+                 class="CarouselNavButtons button primary verticleCarouselDerectiveViewDownBtn">
             <span class="icon mif-expand-less"></span>
         </button>
     </div>
@@ -11,7 +23,7 @@
     </div>
     <div>
         <button  id="carouselUp"
-                 style="width: 126px !important; height: 60px !important;"
+
                  class="CarouselNavButtons button primary">
             <span class="icon mif-expand-more"></span>
         </button>

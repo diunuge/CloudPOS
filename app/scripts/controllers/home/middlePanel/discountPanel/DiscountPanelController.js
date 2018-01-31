@@ -207,8 +207,10 @@
                     billCalculation.SetDiscounts(DataModule.Discounts);
                     /// billCalculation.SetTaxes(DataModule.Taxes);
                     billCalculation.SetTaxes(DataModule.TaxCodes);
+                    billCalculation.setVATStatus(DataModule.VAT.IsVatOn);
                     billCalculation.SetServiceCharge(DataModule.ServiceCharge);
                     /// billCalculation.SetSelectedTax();
+
                     billCalculation.Execute();
                 };
 
@@ -427,7 +429,7 @@
                 };
 
                 DataModule.VAT = {
-                    IsVatOn: false,
+                    IsVatOn: true,
 
                     VatToggle: function () {
                         DataModule.VAT.Init();
@@ -436,6 +438,7 @@
                         });
 
                         DataModule.VAT.IsVatOn = !DataModule.VAT.IsVatOn;
+
                         CalculateTheBill();
                     },
 

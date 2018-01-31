@@ -1,92 +1,93 @@
 (function (module) {
     cloudPOS.controllers = _.extend(module, {
         GuestCreationController: function (scope, sessionManager, $rootScope, localStorageService, $idle, uiConfigService,
-                                              $http, filterFilter, MasterDataStorageHandler,
-                                              CommonMessages, TransactionHandler, ObjectFactoryService, ValidationService) {
-          scope.GuestCreationDataModule = (function () {
-              var DataModule = {};
-              var GuestsList = [];
+                                           $http, filterFilter, MasterDataStorageHandler,
+                                           CommonMessages, TransactionHandler, ObjectFactoryService, ValidationService) {
 
-              DataModule.FilterGuests = function (phoneNumber) {
-                  let guest = GuestsList.find(function (elem) {
-                      return (elem.GuestId.toString().indexOf(phoneNumber) != -1);
-                  });
+            scope.GuestCreationDataModule = (function () {
+                var DataModule = {};
+                var GuestsList = [];
 
-                  scope.LeftPanelDataModule.AdvanceDeposit.SelectedGuest = (guest === undefined) ? null : guest;
-              };
+                DataModule.FilterGuests = function (phoneNumber) {
+                    let guest = GuestsList.find(function (elem) {
+                        return (elem.GuestId.toString().indexOf(phoneNumber) != -1);
+                    });
 
-              var LoadGuests = function (callback) {
+                    scope.LeftPanelDataModule.AdvanceDeposit.SelectedGuest = (guest === undefined) ? null : guest;
+                };
 
-                  TransactionHandler.Execute.Guests.ReadAll(function (response) {
-                      GuestsList = response;
-                      if (callback !== undefined) {
-                          callback(response);
-                      }
-                  });
-              };
+                var LoadGuests = function (callback) {
 
-              DataModule.CreateGuest = function () {
-                  scope.LeftPanelDataModule.AdvanceDeposit.CreateGuest(function (response) {
-                      if (response.IsSuccessFull) {
-                          LoadGuests(function () {
-                              DataModule.FilterGuests(response.Id);
-                          });
-                      }
-                  });
-              };
+                    TransactionHandler.Execute.Guests.ReadAll(function (response) {
+                        GuestsList = response;
+                        if (callback !== undefined) {
+                            callback(response);
+                        }
+                    });
+                };
 
-              /// Watches
-              scope.$watch("LeftPanelDataModule.AdvanceDeposit.GuestID", function (newVal) {
-                  console.log(newVal);
-                  let number = Number(newVal);
+                DataModule.CreateGuest = function () {
+                    scope.LeftPanelDataModule.AdvanceDeposit.CreateGuest(function (response) {
+                        if (response.IsSuccessFull) {
+                            LoadGuests(function () {
+                                DataModule.FilterGuests(response.Id);
+                            });
+                        }
+                    });
+                };
 
-                  if (newVal===undefined) {
-                      return false;
-                  }
+                /// Watches
+                scope.$watch("LeftPanelDataModule.AdvanceDeposit.GuestID", function (newVal) {
+                    console.log(newVal);
+                    let number = Number(newVal);
 
-                  if (isNaN(number)) {
-                      newVal = 0;
-                  }
-                  else {
-                      if (ValidationService.PhoneNumberValidation(newVal)) {
-                          DataModule.FilterGuests(newVal);
-                      }
-                      else {
-                          scope.LeftPanelDataModule.AdvanceDeposit.SelectedGuest = null;
-                      }
-                  }
-              });
+                    if (newVal === undefined) {
+                        return false;
+                    }
 
-              scope.$watch("LeftPanelDataModule.AdvanceDeposit.SelectedGuest", function (newVal) {
-                  if (newVal === undefined) {
-                      return false;
-                  }
+                    if (isNaN(number)) {
+                        newVal = 0;
+                    }
+                    else {
+                        if (ValidationService.PhoneNumberValidation(newVal)) {
+                            DataModule.FilterGuests(newVal);
+                        }
+                        else {
+                            scope.LeftPanelDataModule.AdvanceDeposit.SelectedGuest = null;
+                        }
+                    }
+                });
 
-                  if (newVal == null) {
-                      /// scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.GuestID = 0;
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Email = "";
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.FirstName = "";
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.LastName = "";
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Remarks = "";
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Title = 1;
-                  }
-                  else {
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.GuestID = newVal.GuestId;
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Email = newVal.Email;
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.FirstName = newVal.FirstName;
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.LastName = newVal.LastName;
-                      scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Title = newVal.Title;
-                  }
+                scope.$watch("LeftPanelDataModule.AdvanceDeposit.SelectedGuest", function (newVal) {
+                    if (newVal === undefined) {
+                        return false;
+                    }
 
-              });
+                    if (newVal == null) {
+                        /// scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.GuestID = 0;
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Email = "";
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.FirstName = "";
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.LastName = "";
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Remarks = "";
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Title = 1;
+                    }
+                    else {
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.GuestID = newVal.GuestId;
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Email = newVal.Email;
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.FirstName = newVal.FirstName;
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.LastName = newVal.LastName;
+                        scope.HomeDataModule.LeftPanelDataModule.AdvanceDeposit.Title = newVal.Title;
+                    }
 
-              /// Initializes the module
-              (function () {
-                  LoadGuests();
-              })();
+                });
 
-              return DataModule;
-          })();
+                /// Initializes the module
+                (function () {
+                    LoadGuests();
+                })();
+
+                return DataModule;
+            })();
         }
     });
     cloudPOS.ng.application.controller('GuestCreationController', [

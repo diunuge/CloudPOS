@@ -1,16 +1,24 @@
+<style>
+    .verticleCaruselMenuView{
+        width: 120px; display: inline-block;
+    }
+    .verticleCaruselBody{
+        max-height: 300px !important;
+    }
+</style>
 
-<div style="width: 120px; display: inline-block;" class="VerticalCarouselMenu">
-    <div style="">
+<div class="VerticalCarouselMenu">
+    <div class="verticleCaruselMenuView">
         <button  id="carouselLeftArrowBtn" class="CarouselNavButtons shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureCentralizedButton CloudPosUiStructureHomePage CloudPosUiStructureButtonsThemeCatTwo">
             <span class="icon mif-expand-less"></span>
         </button>
     </div>
-    <div id="carouselBody" style="max-height: 300px !important;">
+    <div id="carouselBody" class="verticleCaruselBody">
         <button ng-repeat="item in items track by $index" class="CarouselItemButtons shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureCentralizedButton CloudPosUiStructureHomePage CloudPosUiStructureButtonsThemeCatOne">
             <span class="title CloudFont Small-CloudFont">{{item.Name}}</span>
         </button>
     </div>
-    <div style="">
+    <div>
         <button  id="carouselRightArrowBtn" class="CarouselNavButtons shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureCentralizedButton CloudPosUiStructureHomePage CloudPosUiStructureButtonsThemeCatTwo">
             <span class="icon mif-expand-more"></span>
         </button>

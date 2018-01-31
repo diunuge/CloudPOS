@@ -1,14 +1,29 @@
-<div ng-if="orderDataModule.DataStore.SelectedOrderType == 'N'" style="position: relative; top: 2.4em;">
+<style>
+    .OrderPanel_subViewTwoView{
+        position: relative; top: 2.4em;
+    }
+    .OrderPanel_subViewTwoViewButton{
+        width: 49%; font-size: large; font-family: sans-serif; height: 44px;
+    }
+    .OrderPanel_subViewTwoViewMidDivSpace{
+        height: 37.7em;
+    }
+    .OrderPanel_subViewTwoViewButtonBottom{
+        font-size: large; font-family: sans-serif; width: 32%; height: 3em;
+    }
+</style>
+
+<div ng-if="orderDataModule.DataStore.SelectedOrderType == 'N'" class="OrderPanel_subViewTwoView">
     <div>
-        <button style="width: 49%; font-size: large; font-family: sans-serif; height: 44px;" class="btn btn-primary">Reservations</button>
-        <button style="width: 49%; font-size: large; font-family: sans-serif; height: 44px;" class="btn btn-primary">Tabs</button>
+        <button  class="btn btn-primary OrderPanel_subViewTwoViewButton">Reservations</button>
+        <button  class="btn btn-primary OrderPanel_subViewTwoViewButton">Tabs</button>
     </div>
-    <div style="height: 37.7em;">
+    <div class="OrderPanel_subViewTwoViewMidDivSpace">
 
     </div>
     <div>
-        <button style="font-size: large; font-family: sans-serif; width: 32%; height: 3em;" class="btn btn-primary">Cancel</button>
-        <button style="font-size: large; font-family: sans-serif; width: 32%; height: 3em;"  class="btn btn-primary"></button>
-        <button style="font-size: large; font-family: sans-serif; width: 33%; height: 3em;" class="btn btn-primary">Check-in</button>
+        <button class="btn btn-primary OrderPanel_subViewTwoViewButtonBottom">Cancel</button>
+        <button class="btn btn-primary OrderPanel_subViewTwoViewButtonBottom"></button>
+        <button class="btn btn-primary OrderPanel_subViewTwoViewButtonBottom">Check-in</button>
     </div>
 </div>

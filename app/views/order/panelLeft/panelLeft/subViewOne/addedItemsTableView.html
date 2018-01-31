@@ -1,5 +1,14 @@
-<div style="max-height: 33em; overflow: auto; padding-bottom:0.4em;">
-<table class="addedItemsTable table table-bordered" style="">
+<style>
+    .OrderPanelAddedItemsTableView{
+        max-height: 33em; overflow: auto; padding-bottom:0.4em;
+    }
+    .OrderPanelAddedItemsTableViewXtd{
+        cursor: pointer; text-align: center;
+    }
+</style>
+
+<div style="">
+<table class="addedItemsTable table table-bordered OrderPanelAddedItemsTableView">
     <tr>
         <th>C</th>
         <th>Food Name</th>
@@ -13,7 +22,7 @@
         <td>{{item.cover}}</td>
         <td>{{item.Price}}</td>
         <td>DD</td>
-        <td ng-click="orderDataModule.removeFoodItem($index)" style="cursor: pointer; text-align: center;">X</td>
+        <td ng-click="orderDataModule.removeFoodItem($index)" class="OrderPanelAddedItemsTableViewXtd" >X</td>
     </tr>
 </table>
 </div>

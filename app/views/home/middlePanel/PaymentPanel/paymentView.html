@@ -1,3 +1,22 @@
+<style>
+    .paymentView_RightPanel_PaymentOptionsArea{
+        height: 80% !important;
+        padding: 0.4rem !important;
+    }
+    .paymentView_payementOption_addButton_holder{
+        height: 20% !important;
+        position: relative;
+    }
+    .paymentView_payementOption_addButton{
+        position: absolute;
+        right: 0.4rem;
+        width: 8rem;
+    }
+    .paymentView_addedPaymentList{
+        overflow: auto;
+    }
+</style>
+
 <!-- Payment Info -->
 <div class="PaymentInfo">
     <!-- Grand Total -->
@@ -17,12 +36,12 @@
 
 <!-- Payment options -->
 <div class="PaymentOptions">
-    <div ng-include="UrlFactory.UrlHolders.HomeViewMiddlePanelPaymentPanel.RightPanel.PaymentOptionsArea" style="height: 80% !important; padding: 0.4rem !important;">
+    <div ng-include="UrlFactory.UrlHolders.HomeViewMiddlePanelPaymentPanel.RightPanel.PaymentOptionsArea" class="paymentView_RightPanel_PaymentOptionsArea" >
 
     </div>
-    <div style="height: 20% !important; position: relative;">
-        <button class="button large-button primary"
-                style="position: absolute; right: 0.4rem; width: 8rem;" ng-click="PaymentDataModule.Payment.AddPayment()">
+    <div class="paymentView_payementOption_addButton_holder">
+        <button class="button large-button primary paymentView_payementOption_addButton"
+                 ng-click="PaymentDataModule.Payment.AddPayment()">
             ADD
         </button>
     </div>
@@ -35,9 +54,8 @@
                                due-amount="PaymentDataModule.Payment.PaymentSummary.DueAmount">
                                </numeric-key-pad-directive>
 </div>
-
 <!-- Added payments list -->
-<div class="AddedPayments"
+<div class="AddedPayments paymentView_addedPaymentList"
      ng-include="'views/home/middlePanel/PaymentPanel/AddedPaymentsView.html'"
-     style="overflow: auto;">
+     >
 </div>

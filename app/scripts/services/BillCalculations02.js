@@ -48,6 +48,11 @@
                 }
             };
 
+            billCalculations.setVATStatus = function(isVATon){
+
+                billCalculations.IsVatOn = isVATon;
+            };
+
             billCalculations.SetSelectedTax = function (tax) {
                 if (tax !== undefined) {
                     SelectedTax = tax;
@@ -119,6 +124,7 @@
                 let serviceChargeAmount = 0;
                 let serviceChargePercentage = Number(ServiceCharge.Rate);
                 let totalOtherTax = 0;
+                let vatTax=0;
                 let taxAmount = 0;
                 let vatClaimID = 0;
                 let vatClaimAmount = 0;
@@ -143,34 +149,38 @@
                 });
                 billDiscountPercentage = (billDiscountPercentage === undefined) ? 0 : billDiscountPercentage.DisRate;
 
-                if (isNetOn == false) {
+                //if (isNetOn == false) {
+                //    lineDiscountAmount = netTotal * lineDiscountPercentage / 100;
+                //}
+
+                //billDiscountAmount = ((netTotal - lineDiscountAmount) * billDiscountPercentage / 100);
+                //netAmount = netTotal - billDiscountAmount - lineDiscountAmount;
+                //let currentAmount = netAmount;
+
+                if (!isNetOn && netTotal > 0) {
+
                     lineDiscountAmount = netTotal * lineDiscountPercentage / 100;
-                }
+                    billDiscountAmount = ((netTotal - lineDiscountAmount) * billDiscountPercentage / 100);
 
-                billDiscountAmount = ((netTotal - lineDiscountAmount) * billDiscountPercentage / 100);
-                netAmount = netTotal - billDiscountAmount - lineDiscountAmount;
-                let currentAmount = netAmount;
+                    let amountAfterDiscount = netTotal - billDiscountAmount - lineDiscountAmount;
 
-                if (isNetOn == false) {
-                    if (isServiceChargeOn) {
-
-                        if (lineItemServiceChargeOn) {
-
-                            serviceChargeAmount = netAmount * serviceChargePercentage / 100;
-                        }
-                        else {
-                            serviceChargeAmount = 0;
-                        }
+                    if (isServiceChargeOn && lineItemServiceChargeOn) {
+                        serviceChargeAmount = amountAfterDiscount * serviceChargePercentage / 100;
                     }
                     else {
                         serviceChargeAmount = 0;
                     }
 
+                    let amountToCalculateOtherTaxes = amountAfterDiscount + serviceChargeAmount;
+
                     if (isLineOtherTaxOn) {
-                        /// For all taxes except VAT
+
                         Taxes.forEach(function (taxItem) {
                             if (taxItem.Name.toUpperCase() != "VAT") {
-                                totalOtherTax = (currentAmount + serviceChargeAmount) * taxItem.Rate / 100;
+                                totalOtherTax += amountToCalculateOtherTaxes * taxItem.Rate / 100;
+
+                                console.log("  other charges");
+                                console.log(taxItem.Rate);
                             }
                         });
                     }
@@ -178,75 +188,37 @@
                         totalOtherTax = 0;
                     }
 
-                    currentAmount = currentAmount + totalOtherTax + serviceChargeAmount;
-
-                    let vatTax = 0;
-                    let peoVat = 0;
-
-                    if (SelectedTax != null) {
-                        vatTax = (currentAmount * SelectedTax.Rate / 100);
-                        peoVat = ((currentAmount - totalOtherTax) * SelectedTax.Rate / 100);
-                    }
+                    let amountToCalculateVAT = amountToCalculateOtherTaxes + totalOtherTax;
 
                     if (billCalculations.IsVatOn) {
-                        if (isLineVatOn && isLineOtherTaxOn) {
-                            vatClaimID = 0;
-                            taxAmount = totalOtherTax + vatTax;
-                        }
-                        else if (isLineVatOn == true) {
-                            vatClaimID = 0;
-                            taxAmount = peoVat;
-                        }
-                        else if (isLineOtherTaxOn == false && isLineVatOn == false) {
-                            vatClaimID = 0;
-                            taxAmount = 0;
-                        }
-                        else {
-                            vatClaimID = 0;
-                            vatClaimAmount = 0;
-                            taxAmount = totalOtherTax;
-                        }
 
-                    }
-                    else if (billDiscountPercentage == 100) {
-                        vatClaimID = 0;
-                        vatClaimAmount = 0;
-                        taxAmount = totalOtherTax;
-                    }
-                    else {
-                        vatClaimID = SelectedTax.TaxID;
-                        vatClaimAmount = vatTax;
-                        taxAmount = totalOtherTax;
+                        Taxes.forEach(function (taxItem) {
+                            if (taxItem.Name.toUpperCase() == "VAT") {
+                                vatTax = amountToCalculateVAT * taxItem.Rate / 100;
+                                console.log("  vat");console.log(taxItem.Rate);
+                            }
+                        });
                     }
 
-                    // Grand Total calculations.
-                    grandTotal = netAmount + serviceChargeAmount + taxAmount;
+                    taxAmount = totalOtherTax + vatTax;
+
+                    grandTotal = amountToCalculateOtherTaxes + taxAmount;
                 }
                 else {
-                    NetPrice = netTotal;
-                    serviceChargeAmount = 0;
-                    taxAmount = 0;
-                    grandTotal = netAmount;
-
-                    if (billCalculations.IsVatOn) {
-                        vatClaimID = SelectedTax.TaxID;
-                    }
-                    else {
-                        vatClaimID = 0;
-                    }
-                }
-
-                if (netTotal == 0) {
                     lineDiscountAmount = 0;
+                    billDiscountAmount = 0;
                     serviceChargeAmount = 0;
                     taxAmount = 0;
-                    grandTotal = 0;
+                    grandTotal = netTotal;
                 }
 
-             /*   console.log("____________________________________");
+/*
+                console.log("________Line_______________");
                 console.log("Net Total : " + netTotal);
                 console.log("Service Charge : " + serviceChargeAmount);
                 console.log("Discount Total : " + (billDiscountAmount + lineDiscountAmount));
+                console.log("Other Tax : " + (totalOtherTax));
+                console.log("VAT : " + (taxAmount-totalOtherTax));
                 console.log("Tax Total : " + (taxAmount));
                 console.log("Grand Total : " + grandTotal);*/
 

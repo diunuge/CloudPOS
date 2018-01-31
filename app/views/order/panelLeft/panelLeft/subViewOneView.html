@@ -1,10 +1,19 @@
 <!-- added Items -->
-<div id="odrContentTab" ng-include="odrLftContentTab" style="padding-top:0.5em;">
+<style>
+    .OrderPanel_subViewOneViewContainTab{
+        padding-top:0.5em;
+    }
+    .OrderPanel_subViewOneViewPrice{
+        position: absolute; bottom: 30px; width:93%;
+    }
+</style>
+
+<div id="odrContentTab" class="OrderPanel_subViewOneViewContainTab" ng-include="odrLftContentTab">
 
 </div>
 
 <!-- Pricing -->
-<div style="position: absolute; bottom: 30px; width:93%;">
+<div class="OrderPanel_subViewOneViewPrice">
     <div ng-include="'views/order/panelLeft/panelLeft/subViewOne/priceListTableView.html'">
 
     </div>

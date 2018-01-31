@@ -1,5 +1,28 @@
-<div ng-controller="OrderPanelRightFilteredItemsController">
-    <div class="btn-new-order" style="display: flex; align-items: center;width: 50px; height:50px; border: 1px solid black; border-radius: 0.4em;" ng-click="newButtonAction(orderDataModule.DataStore.SelectedOrderType)"><span style="display: block; text-align: center; margin:auto; color: black;">NEW</span></div>
-    <div ng-repeat="item in filteredOrders" ng-if="IsOrder" ng-click="selectOrderedItem($event, item.OrderID)" class="btn-new-order" style="width: 50px; height:50px; border: 1px solid black; border-radius: 0.4em;">Odr {{item.OrderID}}</div>
-    <div ng-repeat="item in filteredOrders" ng-if="!IsOrder" ng-click="selectOrderedItem($event, item.OrderID)" class="btn-new-order" style="width: 50px; height:50px; border: 1px solid black; border-radius: 0.4em;">Res{{item.ReservationID}}</div>
+<style>
+    .OrderPanel_filterdItemView_OrderPanelRightFilter{
+        display: flex;
+        align-items: center;
+        width: 50px;
+        height:50px;
+        border: 1px solid black;
+        border-radius: 0.4em;
+    }
+    .OrderPanel_filterdItemView_OrderPanelRightFilterSpan{
+        display: block; text-align: center; margin:auto; color: black;
+    }
+    .OrderPanel_filterdItemView_OrderPanel{
+        width: 50px; height:50px; border: 1px solid black; border-radius: 0.4em;
+    }
+    .OrderPanel_filterdItemView_ResButton{
+        width: 50px; height:50px; border: 1px solid black; border-radius: 0.4em;
+    }
+</style>
+
+<div ng-controller="OrderPanelRightFilteredItemsController" class="OrderPanel_filterdItemView_OrderPanelRightFilter">
+    <div class="btn-new-order filterdItemView_OrderPanelRightFilter" ng-click="newButtonAction(orderDataModule.DataStore.SelectedOrderType)">
+        <span class="OrderPanel_filterdItemView_OrderPanelRightFilterSpan" >NEW</span></div>
+    <div ng-repeat="item in filteredOrders" ng-if="IsOrder" ng-click="selectOrderedItem($event, item.OrderID)"
+         class="btn-new-order OrderPanel_filterdItemView_OrderPanel">Odr {{item.OrderID}}</div>
+    <div ng-repeat="item in filteredOrders" ng-if="!IsOrder" ng-click="selectOrderedItem($event, item.OrderID)"
+         class="btn-new-order OrderPanel_filterdItemView_ResButton">Res{{item.ReservationID}}</div>
 </div>

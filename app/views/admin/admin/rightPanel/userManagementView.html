@@ -1,6 +1,11 @@
-<div class="grid"
-     ng-controller="UserManagementController"
-     style="height: 100%;">
+<style>
+    .userManagementViewGrid{
+        height: 100%;
+    }
+</style>
+
+<div class="grid userManagementViewGrid"
+     ng-controller="UserManagementController">
     <div class="app-bar">
         <ul class="app-bar-menu">
             <li ng-click="UserManagementDataModule.UserLevelMgt.OpenPanel()"><a href="">User Level</a></li>

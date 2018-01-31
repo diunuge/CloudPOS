@@ -1,8 +1,3 @@
-<!-- 
-Developed By HARUN DILUKA HESHAN
-Software Engineer
-Intahub (pvt) ltd.
--->
 <style>
     #orderPaymentTab .btn-primary{
         width:32.333%;
@@ -17,11 +12,16 @@ Intahub (pvt) ltd.
         font-weight: bold;
         color:white;
     }
-
+    .OrderPanel_paymentModelListView{
+        max-height: 9.1em; overflow: auto; padding-bottom:0.4em;
+    }
+    .OrderPanel_paymentModelListViewTable{
+        width:100%; color:aliceblue;
+    }
 </style>
 
-<div style="max-height: 9.1em; overflow: auto; padding-bottom:0.4em;">
-    <table id="odrPaymentMode" style="width:100%; color:aliceblue;">
+<div class="OrderPanel_paymentModelListView">
+    <table id="odrPaymentMode" class="OrderPanel_paymentModelListViewTable">
         <tr><th>Payment Mode</th><th>Currency</th><th>Amount</th></tr>
         <tr><td>Cash</td><td>LKR</td><td>1500</td></tr>
     </table>

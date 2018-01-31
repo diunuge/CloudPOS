@@ -1,4 +1,16 @@
-<div style="height: 100%;"
+<style>
+    .ordersDisplayView_DisplayPanel{
+        height: 100%;
+    }
+    .ordersDisplayView_DisplayPanel_button_holder{
+        height: 31rem; overflow: auto;
+    }
+    .ordersDisplayView_DisplayPanel_button{
+        width: 100%; display: block; text-align: left; height: auto;
+    }
+</style>
+
+<div class="ordersDisplayView_DisplayPanel"
      ng-controller="OrdersDisplayPanel"
      data-role="group"
      data-group-type="one-state"
@@ -9,9 +21,8 @@
         <div class="frame active">
             <div class="heading">Dining Orders</div>
             <div class="content">
-                <div style="height: 31rem; overflow: auto;">
-                    <button class="button"
-                            style="width: 100%; display: block; text-align: left; height: auto;"
+                <div class="ordersDisplayView_DisplayPanel_button_holder">
+                    <button class="button ordersDisplayView_DisplayPanel_button"
                             ng-repeat="item in OrdersDisplayDataModule.Orders.DiningOrders"
                             ng-click="OrdersDisplayDataModule.SelectOrder(item, HomeDataModule.OrderCategories.DiningOrder)">
                         <h5>Tables : <span ng-repeat="table in item.Tables track by $index">{{table}},&nbsp</span></h5>
@@ -27,9 +38,9 @@
         <div class="frame">
             <div class="heading">Takeout Orders</div>
             <div class="content">
-                <div style="height: 31rem; overflow: auto;">
-                    <button class="button"
-                            style="width: 100%; display: block; text-align: left; height: auto;"
+                <div class="ordersDisplayView_DisplayPanel_button_holder">
+                    <button class="button ordersDisplayView_DisplayPanel_button"
+
                             ng-repeat="item in OrdersDisplayDataModule.Orders.TakeoutOrders"
                             ng-click="OrdersDisplayDataModule.SelectOrder(item, HomeDataModule.OrderCategories.TakeoutOrder)">
                         <h5>Guest Name : {{item.GuestName}}</h5>
@@ -43,9 +54,9 @@
         <div class="frame">
             <div class="heading">Delivery Orders</div>
             <div class="content">
-                <div style="height: 31rem; overflow: auto;">
-                    <button class="button"
-                            style="width: 100%; display: block; text-align: left; height: auto;"
+                <div class="ordersDisplayView_DisplayPanel_button_holder">
+                    <button class="button ordersDisplayView_DisplayPanel_button"
+
                             ng-repeat="item in OrdersDisplayDataModule.Orders.DeliveryOrders"
                             ng-click="OrdersDisplayDataModule.SelectOrder(item, HomeDataModule.OrderCategories.DeliveryOrder)">
                         <h5>Guest Name : {{item.GuestName}}</h5>
@@ -59,9 +70,8 @@
         <div class="frame">
             <div class="heading">Tab Orders</div>
             <div class="content">
-                <div style="height: 31rem; overflow: auto;">
-                    <button class="button"
-                            style="width: 100%; display: block; text-align: left; height: auto;"
+                <div class="ordersDisplayView_DisplayPanel_button_holder">
+                    <button class="button ordersDisplayView_DisplayPanel_button"
                             ng-repeat="item in OrdersDisplayDataModule.Orders.TabOrders"
                             ng-click="OrdersDisplayDataModule.SelectOrder(item, HomeDataModule.OrderCategories.TabOrder)">
                         <h5>Guest Name : {{item.GuestName}}</h5>

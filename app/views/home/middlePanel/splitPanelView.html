@@ -1,20 +1,33 @@
+<style>
+    .splitPanelView_OrderController_button{
+        width: 142px;
+    }
+    .splitPanelView_OrderController_table_holder{
+        float: left !important; width: 49%; margin-right: 4px;
+
+    }
+    .splitPanelView_OrderController_table{
+        border: 1px solid;
+    }
+</style>
+
 <div ng-controller="SplitOrderPanelController">
     <div>
-        <button style="width: 142px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage ">
+        <button  class="splitPanelView_OrderController_button shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage ">
             <span class="title  CloudFont Small-CloudFont">Split All</span>
         </button>
-        <button ng-click="Split()" style="width: 142px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage">
+        <button ng-click="Split()"  class="splitPanelView_OrderController_button shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage">
             <span class="title  CloudFont Small-CloudFont">Split</span>
         </button>
-        <button style="width: 142px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage ">
+        <button class="splitPanelView_OrderController_button shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage ">
             <span class="title  CloudFont Small-CloudFont">Rollback</span>
         </button>
-        <button style="width: 142px;" class="shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage ">
+        <button  class="splitPanelView_OrderController_button shortcut-button bg-cyan bg-active-darkBlue fg-white CloudPosUiStructureHomePage ">
             <span class="title  CloudFont Small-CloudFont">Confirm</span>
         </button>
     </div>
-    <div style="float: left !important; width: 49%; margin-right: 4px;">
-        <table class="table" style="border: 1px solid;">
+    <div  class="splitPanelView_OrderController_table_holder">
+        <table class="table splitPanelView_OrderController_table">
             <thead>
             <tr>
                 <th class="sortable-column">C</th>
@@ -34,8 +47,8 @@
             </thead>
         </table>
     </div>
-    <div style="float: left; width: 49%; margin-left: 4px;">
-        <table class="table" style="border: 1px solid;">
+    <div class="splitPanelView_OrderController_table_holder">
+        <table class="table splitPanelView_OrderController_table">
             <thead>
             <tr>
                 <th class="sortable-column"></th>

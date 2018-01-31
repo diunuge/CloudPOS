@@ -33,7 +33,7 @@
                         /// comSingleButttonSuccessAlert("Login", "")
                     }
                     else {
-                        comSingleButttonSuccessAlert("Login", "Either username or password is incorrect", "Got it!");
+                        comSingleButttonSuccessAlert("Login", "Either username, password or restaurant ID is incorrect", "Got it!");
                     }
                 } else {
                     console.error("Login Failed");
@@ -46,9 +46,9 @@
             /// Credentials
             /// Binds with the login form in two-way binding to get values from the form.
             scope.Credentials = {
-                Username: "",
-                Password: "",
-                RestaurantId: ""
+                RestaurantId: 2000,
+                Username: 1,
+                Password: 1
             };
 
             /// Handles login operations

@@ -1,31 +1,40 @@
-
-<div class="grid" style="margin: 0;">
+<style>
+    .dutyMealPaymentView_grid{
+        margin: 0;
+    }
+    .dutyMealPaymentView_payAmount_input{
+        display: block; width: 100%;
+    }
+    .dutyMealPaymentView_employeeSelectordropdown{
+        width: 100%;
+    }
+</style>
+<div class="grid dutyMealPaymentView_grid" >
     <div class="row cells4">
         <div class="cell">
             <h5>Pay Amount :&nbsp;</h5>
         </div>
         <div class="cell colspan3">
-            <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+            <div class="input-control number dutyMealPaymentView_payAmount_input" data-role="input" >
                 <input type="number"
                        placeholder="Amount.."
                        min="0"
                        ng-model="PaymentDataModule.Payment.PaymentDetailDto.PayAmount">
-                <button class="button helper-button clear"><span class="mif-cross"></span></button>
             </div>
         </div>
     </div>
 </div>
 
 
-<div class="grid" style="margin: 0;">
+<div class="grid dutyMealPaymentView_grid">
     <div class="row cells4">
         <div class="cell">
             <h5>Employees :&nbsp;</h5>
         </div>
         <div class="cell colspan3">
-            <div class="dropdown-button full-size">
-                <button class="button dropdown-toggle"
-                        style="width: 100%;">{{(PaymentDataModule.Payment.DutyMeal.SelectedEmployee == null) ? "Select an employee" : (PaymentDataModule.Payment.DutyMeal.SelectedEmployee.FirstName + " " + PaymentDataModule.Payment.DutyMeal.SelectedEmployee.LastName)}}</button>
+            <div class="dropdown-button full-size dutyMealPaymentView_employeeSelectordropdown">
+                <button class="button dropdown-toggle" >
+                       {{(PaymentDataModule.Payment.DutyMeal.SelectedEmployee == null) ? "Select an employee" : (PaymentDataModule.Payment.DutyMeal.SelectedEmployee.FirstName + " " + PaymentDataModule.Payment.DutyMeal.SelectedEmployee.LastName)}}</button>
                 <ul class="split-content d-menu" data-role="dropdown">
                     <li ng-repeat="item in PaymentDataModule.Payment.EmployeeList"
                         ng-click="PaymentDataModule.Payment.DutyMeal.SelectedEmployee=item"><a href="#">{{item.FirstName + " " + item.LastName}}</a></li>

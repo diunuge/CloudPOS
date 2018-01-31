@@ -5,7 +5,20 @@
         text-align: center;
         border:1px solid grey;
     }
+    .Resavation_rightPanelViewTableContainer{
+        display: inline-block; float: left; margin-right: 4px;
+    }
+    .Resavation_rightPanelViewTableResavationPanelSlot{
+        display: inline-block; width: 550px; overflow: hidden; height: 60px; float: left;
+    }
+    .Resavation_rightPanelViewRightPanelTable{
+        display: inline-block; float: left; max-height: 505px; overflow: hidden; margin-right: 4px;
+    }
+    .Resavation_rightPanelViewRightPanelTableSroll{
+        display: inline-block; float: left; width: 550px; height: 505px; overflow: auto;
+    }
 </style>
+
 <div id="reservation-datepicker">
     <md-datepicker ng-model="reservationDataModule.FilterDateString"
                    md-placeholder="Enter a date"
@@ -28,14 +41,14 @@
 
     <!-- Top Div -->
     <div>
-        <div style="display: inline-block; float: left; margin-right: 4px;">
+        <div class="Resavation_rightPanelViewTableContainer">
             <table>
                 <tr>
                     <th class="CloudFont SmallerHeading-CloudFont">Tables</th>
                 </tr>
             </table>
         </div>
-        <div id="resRightPanelTableTimeSlots" style="display: inline-block; width: 550px; overflow: hidden; height: 60px; float: left; ">
+        <div id="resRightPanelTableTimeSlots" class="Resavation_rightPanelViewTableResavationPanelSlot">
             <table>
                 <tr>
                     <th class="CloudFont SmallerHeading-CloudFont"
@@ -46,13 +59,13 @@
             </table>
         </div>
   </div>
-    <div id="resRightPanelTableTables" style="display: inline-block; float: left; max-height: 505px; overflow: hidden; margin-right: 4px;">
+    <div id="resRightPanelTableTables" class="Resavation_rightPanelViewRightPanelTable">
         <table>
             <tr class="CloudFont SmallerHeading-CloudFont"
                 ng-repeat="item in reservationDataModule.arResTables"><th>Floor {{item.FloorId}} : Table {{item.TblNo}}</th></tr>
         </table>
     </div>
-    <div id="resRightPanelTableScrolling" onscroll="scrollingFunc()" style="display: inline-block; float: left; width: 550px; height: 505px; overflow: auto;">
+    <div id="resRightPanelTableScrolling" onscroll="scrollingFunc()" class="Resavation_rightPanelViewRightPanelTableSroll">
         <table>
             <tr ng-repeat="row in reservationDataModule.arResTables">
                 <th class="CloudFont SmallerHeading-CloudFont"

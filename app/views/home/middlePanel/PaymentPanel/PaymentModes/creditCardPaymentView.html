@@ -1,55 +1,64 @@
+<style>
+    .creditCardPaymentView_holderName_input_holder{
+        display: block; width: 100%;
+    }
+    .creditCardPaymentView_grid{
+        margin: 0;
+    }
+    .creditCardPaymentView_cardType_button{
+        height: 3rem; width: 6rem; margin: auto; color: rebeccapurple;
+    }
+    .creditCardPaymentView_creditCard_button_holder{
+        display: flex; margin: 0;
+    }
+</style>
+
 <div>
 
-</div>
-<div>
 
-
-    <div class="grid" style="margin: 0;">
+    <div class="grid creditCardPaymentView_grid" >
         <div class="row cells4">
             <div class="cell">
                 <h5>Holder Name :&nbsp;</h5>
             </div>
-            <div class="cell colspan3">
-                <div class="input-control text" data-role="input" style="display: block; width: 100%;">
+            <div class="cell colspan3 ">
+                <div class="input-control text creditCardPaymentView_holderName_input_holder" data-role="input">
                     <input type="text"
                            placeholder="Holder name.."
                            ng-model="PaymentDataModule.Payment.PaymentDetailDto.CreditCardHolderName">
-                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <div class="grid" style="margin: 0;">
+    <div class="grid creditCardPaymentView_grid">
         <div class="row cells4">
             <div class="cell">
                 <h5>Card No :&nbsp;</h5>
             </div>
             <div class="cell colspan3">
-                <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+                <div class="input-control number creditCardPaymentView_holderName_input_holder" data-role="input">
                     <input type="number"
                            placeholder="Credit Card No.."
                            ng-model="PaymentDataModule.Payment.PaymentDetailDto.CreditCardNo">
-                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <div class="grid" style="margin: 0;">
+    <div class="grid creditCardPaymentView_grid">
         <div class="row cells4">
             <div class="cell">
                 <h5>Pay Amount :&nbsp;</h5>
             </div>
             <div class="cell colspan3">
-                <div class="input-control number" data-role="input" style="display: block; width: 100%;">
+                <div class="input-control number creditCardPaymentView_holderName_input_holder" data-role="input">
                     <input type="number"
                            min="0"
                            placeholder="Pay Amount.."
                            ng-model="PaymentDataModule.Payment.PaymentDetailDto.PayAmount">
-                    <button class="button helper-button clear"><span class="mif-cross"></span></button>
                 </div>
             </div>
         </div>
@@ -57,24 +66,24 @@
 
 
 
-    <div class="grid" style="margin: 0;">
+    <div class="grid creditCardPaymentView_grid">
         <div class="row cells4" data-role="group" data-group-type="one-state">
-            <div class="cell" style="display: flex; margin: 0;">
-                <button class="button mif-visa mif-3x"
-                        style="height: 3rem; width: 6rem; margin: auto; color: rebeccapurple;"
+            <div class="cell creditCardPaymentView_creditCard_button_holder">
+                <button class="button mif-visa mif-3x creditCardPaymentView_cardType_button"
+
                         ng-click="PaymentDataModule.Payment.PaymentDetailDto.CreditCardTypeID=1"></button>
             </div>
-            <div class="cell" style="display: flex; margin: 0;">
-                <button class="button mif-mastercard mif-3x"
-                        style="height: 3rem; width: 6rem; margin: auto; color: rebeccapurple;"
+            <div class="cell creditCardPaymentView_creditCard_button_holder" >
+                <button class="button mif-mastercard mif-3x creditCardPaymentView_cardType_button"
+
                         ng-click="PaymentDataModule.Payment.PaymentDetailDto.CreditCardTypeID=2"></button>
             </div>
-            <div class="cell" style="display: flex; margin: 0;">
-                <button class="button mif-amex mif-3x"
-                        style="height: 3rem; width: 6rem; margin: auto; color: rebeccapurple;"
+            <div class="cell creditCardPaymentView_creditCard_button_holder">
+                <button class="button mif-amex mif-3x creditCardPaymentView_cardType_button"
+
                         ng-click="PaymentDataModule.Payment.PaymentDetailDto.CreditCardTypeID=3"></button>
             </div>
-            <div class="cell colspan2" style="display: flex; margin: 0;">
+            <div class="cell colspan2 creditCardPaymentView_creditCard_button_holder">
             </div>
         </div>
     </div>
